@@ -25,6 +25,7 @@ const store = new Vuex.Store({
                 test['sales_price'],
                 test['available_quantity'],1
             ]
+
             /*this.itemDataArr.push(`${test['item_name']}, ${test['sales_price']}, ${test['available_quantity']}`)*/
             this.itemDataArr.push(this.res)
             console.table(this.itemDataArr)

@@ -29,7 +29,7 @@
                                                 <div class="row">
                                                 <div class="form-group col-md-4">
                                                     <label for="item_name">Item Name<span class="text-danger">*</span></label>
-                                                    <input type="text" class="form-control" id="item_name" name="item_name" placeholder="Item Name" v-model="posts.itemName">
+                                                    <input type="text" class="form-control" id="item_name" name="item_name" placeholder="Item Name" v-model="posts.itemName" required>
                                                     <span id="item_name_msg" style="display:none" class="text-danger"></span>
                                                 </div>
                                                 <div class="form-group col-md-4">
@@ -67,31 +67,31 @@
                                                 </div>
                                                 <div class="form-group col-md-4">
                                                     <label for="sku">SKU</label>
-                                                    <input type="text" class="form-control" id="sku" name="sku" placeholder="SKU" v-model="posts.sku" >
+                                                    <input type="text" class="form-control" id="sku" name="sku" placeholder="SKU" v-model="posts.sku" required>
                                                     <span id="sku_msg" style="display:none" class="text-danger"></span>
                                                 </div>
                                                 <div class="form-group col-md-4">
                                                     <label for="hsn">HSN</label>
-                                                    <input type="text" class="form-control" id="hsn" name="hsn" placeholder="" v-model="posts.hsn">
+                                                    <input type="text" class="form-control" id="hsn" name="hsn" placeholder="" v-model="posts.hsn" required>
                                                 </div>
                                                 <div class="form-group col-md-4">
                                                     <label for="alert_qty">Alert Quantity</label>
-                                                    <input type="number" class="form-control no_special_char" id="alert_qty" name="alert_qty" placeholder="Alert Quantity" min="0" v-model="posts.alertQuantity">
+                                                    <input type="number" class="form-control no_special_char" id="alert_qty" name="alert_qty" placeholder="Alert Quantity" min="0" v-model="posts.alertQuantity" required>
                                                     <span  style="display:none" class="text-danger"></span>
                                                 </div>
                                                 <div class="form-group col-md-4">
                                                     <label for="lot_number">Lot Number</label>
-                                                    <input type="text" class="form-control"  placeholder="Lot Number" v-model="posts.lotNumber">
+                                                    <input type="text" class="form-control"  placeholder="Lot Number" v-model="posts.lotNumber" required>
                                                 </div>
                                                 <div class="form-group col-md-4">
                                                     <div class="form-group">
                                                     <label>Expire</label>
-                                                    <input type="date"  min="1000-01-01"  max="3000-12-31" class="form-control" v-model="posts.expire">
+                                                    <input type="date"  min="1000-01-01"  max="3000-12-31" class="form-control" v-model="posts.expire" required>
                                                     </div>
                                                 </div>
                                                 <div class="form-group col-md-4">
                                                     <label for="custom_barcode">Barcode</label>
-                                                    <input type="text" class="form-control" id="custom_barcode" name="custom_barcode" placeholder="BarCode" v-model="posts.barCode" >
+                                                    <input type="text" class="form-control" id="custom_barcode" name="custom_barcode" placeholder="BarCode" v-model="posts.barCode"  required>
                                                 </div>
                                                 <div class="form-group col-md-4">
                                                     <label for="custom_barcode">Description</label>
@@ -99,7 +99,7 @@
                                                 </div>
                                                 <div class="form-group col-md-4">
                                                     <label for="item_image">Select Image</label>
-                                                    <input type="file" name="item_image" id="item_image" ref="image">
+                                                    <input type="file" name="item_image" id="item_image" ref="image" required>
                                                     <span  style="display:block;" class="text-danger">Max Width/Height: 1000px * 1000px &amp; Size: 1MB </span>
                                                 </div>
                                                 </div>
@@ -107,7 +107,7 @@
                                                 <div class="row">
                                                 <div class="form-group col-md-4">
                                                     <label for="price">Price<span class="text-danger">*</span></label>
-                                                    <input type="number" class="form-control" id="price" name="price" placeholder="Price of Item without Tax" v-model="posts.price">
+                                                    <input type="number" class="form-control"  id="price" name="price" placeholder="Price of Item without Tax" v-model="posts.price" required>
                                                 </div>
                                                 <div class="form-group col-md-4">
                                                     <label for="tax_id">Tax<span class="text-danger">*</span></label>
@@ -122,7 +122,7 @@
                                                 </div>
                                                 <div class="form-group col-md-4">
                                                     <label for="purchase_price">Purchase Price<span class="text-danger">*</span></label>
-                                                    <input type="number" class="form-control" id="purchase_price" name="purchase_price" :value="calcuPurchasePrice()" disabled>
+                                                    <input type="number" class="form-control" id="purchase_price" name="purchase_price" :value="calcuPurchasePrice()" disabled required>
                                                 </div>
                                                 </div>
                                                 <!-- /row -->
@@ -141,17 +141,17 @@
                                                         <i class="hover-q " data-container="body" data-toggle="popover" data-placement="top" data-content="Based on Purchase Price" data-html="true" data-trigger="hover" data-original-title="">
                                                     <i class="fa fa-info-circle text-maroon text-black hover-q"></i>
                                                     </i></label>
-                                                    <input type="text" class="form-control" placeholder="Profit in %" v-model="posts.profitMargin">
+                                                    <input type="text" class="form-control" placeholder="Profit in %" v-model="posts.profitMargin" required>
                                                 </div>
                                                 <div class="form-group col-md-4">
                                                     <label for="sales_price" class="control-label">Sales Price<span class="text-danger">*</span></label>
-                                                    <input type="number" step=any class="form-control" placeholder="Sales Price" :value="calcuSalesPrice()">
+                                                    <input type="number" step=any class="form-control" placeholder="Sales Price" :value="calcuSalesPrice()" required>
                                                 </div>
                                                 </div>
                                                 <div class="row">
                                                 <div class="form-group col-md-4">
                                                     <label for="final_price" class="control-label">Final Price<span class="text-danger">*</span></label>
-                                                    <input type="number" disabled class="form-control" placeholder="Final Price" :value="calcufinalPrice()">
+                                                    <input type="number" disabled class="form-control" placeholder="Final Price" :value="calcufinalPrice()" required>
                                                 </div>
                                                 </div>
                                                 <!-- /row -->
@@ -159,11 +159,11 @@
                                                 <div class="row">
                                                 <div class="form-group col-md-4">
                                                     <label for="current_opening_stock">Current Opening Stock</label>
-                                                    <input type="text" class="form-control only_currency" id="current_opening_stock" name="current_opening_stock" placeholder="" readonly="" value="0">
+                                                    <input type="text" class="form-control only_currency" id="current_opening_stock" name="current_opening_stock" placeholder="" readonly="" value="0" required>
                                                 </div>
                                                 <div class="form-group col-md-4">
                                                     <label for="new_opening_stock">New Opening Stock</label>
-                                                    <input type="text" class="form-control" v-model="posts.availableQuantity" id="new_opening_stock" name="new_opening_stock" placeholder="-/+">
+                                                    <input type="text" class="form-control" v-model="posts.availableQuantity" id="new_opening_stock" name="new_opening_stock" placeholder="-/+" required>
                                                 </div>
                                                 </div>
                                                 <button class="btn btn-success" @click="Redirects()">Save</button>
