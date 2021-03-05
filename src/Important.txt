@@ -1,0 +1,128 @@
+ // async function(){
+    //   // let baseURL='http://192.168.100.9/Project_Laravel/public/api/test';
+    //   try{
+    //     let response = await fetch('http://192.168.100.9/Project_Laravel/public/api/test');
+    //     let data = await response.json();
+    //     console.log(data);
+    //     }
+    //     catch(error){
+    //       console.log(error)
+    //     }
+    //   }
+    // } 
+
+
+
+
+
+
+
+
+ // data(){
+  //   return{
+  //     state:[],
+  //   }
+  // },
+  // mounted:{
+  //   record(){ 
+  //     return this.state;
+  //   }    
+  // },
+
+
+
+
+
+ records: async function(){
+            try
+            {
+            fetch('http://192.168.100.9/Project_Laravel/public/api/country')
+            .then(function(res){
+              res.json()
+              .then(function(data){
+                console.log(data)
+                  })
+                  })
+                    }
+                catch(error)
+                {
+                  console.log(error)
+                }
+        }
+
+
+
+
+
+
+
+     // state: axios.get("http://192.168.100.9/Project_Laravel/public/api/test")
+    //   .then(function(response) {
+   //     console.log(response);
+  //     })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  statedata: async function(){
+            try{
+                fetch('http://192.168.100.9/Project_Laravel/public/api/state')
+                .then(function(response){
+                    response.json()
+                    .then(function(data){
+                        console.log(data);
+                        this.apidata = data;
+                    }.bind(this))
+                }.bind(this))
+            }catch(error){
+                console.log(error)
+            }
+        },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

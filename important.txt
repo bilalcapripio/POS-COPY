@@ -1,0 +1,135 @@
+/*selector #currencySelector{*/
+/*    width: 100px;*/
+/*    background: dodgerblue;*/
+/*    color: #fff;*/
+/*}*/
+
+
+
+
+
+
+
+
+/*   #currencySelector{
+    width: 100px;
+    background: dodgerblue;
+    color: #fff;
+    border: none;
+}
+#cp-currency{
+    width: 100px;
+    position: relative;
+    top: -40px;
+    left: 6.2rem;
+    border: none;
+
+
+}
+ */
+.elementor-widget-container{
+  /*   #currencySelector{
+    width: 100px;
+    background: dodgerblue;
+    color: #fff;
+    border: none;
+}
+#cp-currency{
+    width: 100px;
+    position: relative;
+    top: -40px;
+    left: 6.2rem;
+    border: none;
+
+}
+ */
+/* .elementor-widget-container{
+   
+    
+}
+.elementor-shortcode  div{
+     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#currencySelector{
+    background: dodgerblue;
+    color: #fff;
+}
+.cp-currency-changer label:nth-child(1){
+    position: relative;
+    top: -2.3rem;
+    left: 3rem;
+    color: #fff;
+}
+.cp-select , .cp-value{
+    width:5rem !important; 
+}
+.cp-btc{
+    background: dodgerblue;
+    color: #fff;
+    padding: 12px;
+    border-radius: 2px;
+}
+.cp-bitcoin{
+    width: 7rem !important;
+}
+.elementor-widget-wrap{
+    padding: 1rem;
+} */
+/* ----------------------------------*/
+/*  .elementor-shortcode div {
+    display: :flex;
+    justify-content: center;
+    align-items: center;
+}
+ */
+/* .elementor-widget-wrap{
+    margin-top: 1rem;
+} */
+.cp-btc{
+    background: dodgerblue;
+    color: #fff;
+    padding: 12px;
+    border-radius: 2px;
+    left: 1.6rem;
+    position: relative;
+}
+.cp-bitcoin{
+    left: 1.6rem;
+    position: relative;
+    width: 7rem !important;
+}
+@media(max-width:360px){
+    .elementor-shortcode  div{
+     display: flex;
+     flex-direction: column;
+}
+    .cp-value{
+        position: relative;
+        top: -40px;
+        left: 80px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

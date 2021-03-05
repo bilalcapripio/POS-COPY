@@ -1,0 +1,28 @@
+ // {
+        //     'Country_id': this.posts.country,
+        //     'State_id': this.posts.Cstate,
+        //     'Customer_Name': this.posts.customer,
+        //     'Mobile': this.posts.mobile,
+        //     'Email': this.posts.email,
+        //     'GST_Number': this.posts.gst,
+        //     'Opening_Balance': this.posts.balance,
+        //     'City': this.posts.city,
+        //     'Postcode': this.posts.postcode,
+        //     'Address': this.posts.addresss,
+        // }
+
+
+
+
+
+
+
+ .then((res)=>{
+            
+            console.log(res);
+            
+        }).catch(error =>{
+            console.log(error)
+        });
+        console.table(this.posts);
+        e.preventDefault();

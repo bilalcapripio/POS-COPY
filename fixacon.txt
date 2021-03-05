@@ -1,0 +1,54 @@
+selector .elementor-shortcode  div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+selector #currencySelector{
+    background: dodgerblue;
+    color: #fff;
+}
+selector .cp-currency-changer label:nth-child(1){
+    position: relative;
+    top: -2.3rem;
+    left: 3rem;
+    color: #fff;
+}
+selector .cp-select , .cp-value{
+    width:5rem !important; 
+}
+selector .cp-btc{
+    background: dodgerblue;
+    color: #fff;
+    padding: 11px;
+    border-radius: 2px;
+    left: 1.6rem;
+    position: relative;
+}
+selector .cp-bitcoin{
+    left: 1.6rem;
+    position: relative;
+    width: 7rem !important;
+}
+selector .elementor-widget-wrap{
+    padding:1rem;
+    margin-top: 2rem;
+}
+@media only screen and (max-width: 420px) {
+  selector .cp-top-div{
+    position: relative;
+    left: 4.5rem;
+    }
+  selector  .cp-bottom-div{
+    position: relative;
+    bottom: -5.8rem;
+    left: -8.3rem;
+    z-index: 2;
+    }
+  selector .elementor-button-wrapper{
+    margin-top: 2rem;
+    }
+
+}
+/*..............*/
+/*......*/
+/*...............*/
