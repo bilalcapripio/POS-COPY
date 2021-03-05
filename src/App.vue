@@ -8,9 +8,9 @@
           <router-link to="/Sidebar">Sidebar</router-link>
           <router-link to="/Footer">Footer</router-link> -->
           <!-- <Navbar/> -->
-          <transition name="slide" mode="out-in">
+          <!-- <transition name="slide" mode="out-in"> -->
                   <router-view></router-view>
-          </transition>
+          <!-- </transition> -->
           <!-- <Sidebar/> -->
           <!-- <Content/> -->
           <!-- <Footer/> -->
@@ -42,12 +42,12 @@ export default {
 <style  scoped>
 @import "./assets/Css/style.css"; 
 /* @import "./assets/admin-lte/css/adminlte.scss"; */
-.slide-enter-active , .slide-enter-active{
+/* .slide-enter-active , .slide-enter-active{
   transition: opacity 1 , transform 1;
 }
 .slide-leave , .slide-leave-to{
   opacity: 0;
   transform: translateX(-30%);
 
-}
+} */
 </style>
