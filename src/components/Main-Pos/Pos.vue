@@ -740,7 +740,6 @@
 
 <script>
 export default {
-    props:['links'],
     data(){
         return{
             itemData:[],
@@ -763,12 +762,7 @@ export default {
             }
         },
         methods:{
-            doCopy: function (e) {
-            let selectEl = (e.target).parents('.input-group').find('.copyLinkInput')[0];
-
-            selectEl.select();
-            document.execCommand("copy");
-            }
+          
         }
         
 }
