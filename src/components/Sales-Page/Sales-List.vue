@@ -90,19 +90,50 @@
                                                 </div>
                                                 <hr>
                                                 <div class="row">
-                                                    <div class="col-sm-12"><div class="pull-left">
-                                                    <div class="dataTables_length" id="example2_length">
-                                                    <label>Show <select name="example2_length" aria-controls="example2" class="form-control input-sm">
-                                                    <option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select></label></div></div><div class="pull-right"><div id="example2_filter" class="dataTables_filter">
-                                                    <label class="mt-4">
-                                                    <input type="search" class="form-control input-sm" placeholder="Search" aria-controls="example2">
-                                                    </label>
-                                                    </div><div id="example2_processing" class="dataTables_processing panel panel-default" style="display: none;"></div></div><div class="pull-right margin-left-10 ">
-                                                    <div class="dt-buttons btn-group mt-4 mr-2">              
-                                                    <button v-on:click="downloadCSVData" class="btn btn-default buttons-copy buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Copy</span></button> <button class="btn btn-default buttons-excel buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Excel</span></button> <button class="btn btn-default buttons-pdf buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>PDF</span></button> <button class="btn btn-default buttons-print bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Print</span></button> <button class="btn btn-default buttons-csv buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
-                                                    <span>CSV</span></button> 
-                                                    <button class="btn btn-default buttons-collection buttons-colvis bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button" aria-haspopup="true"><span>Columns</span></button> 
-                                                    </div></div></div>
+                                                    <div class="col-sm-12">
+                                                        <div class="pull-left">
+                                                            <div class="dataTables_length" id="example2_length">
+                                                                <label>Show
+                                                                    <select name="example2_length" aria-controls="example2" class="form-control input-sm">
+                                                                        <option value="10">10</option>
+                                                                        <option value="25">25</option>
+                                                                        <option value="50">50</option>
+                                                                        <option value="100">100</option>
+                                                                    </select>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="pull-right">
+                                                                <div id="example2_filter" class="dataTables_filter">
+                                                            <label class="mt-4">
+                                                                <input type="search" class="form-control input-sm" placeholder="Search" aria-controls="example2">
+                                                            </label>
+                                                            </div>
+                                                            <div id="example2_processing" class="dataTables_processing panel panel-default" style="display: none;"></div>
+                                                        </div>
+                                                        <div class="pull-right margin-left-10 ">
+                                                            <div class="dt-buttons btn-group mt-4 mr-2">              
+                                                                <button  class="btn btn-default buttons-copy buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
+                                                                        <span>Copy</span>
+                                                                </button> 
+                                                                <button class="btn btn-default buttons-excel buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
+                                                                    <span>Excel</span>
+                                                                </button>
+                                                                <button class="btn btn-default buttons-pdf buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
+                                                                        <span>PDF</span>
+                                                                </button> 
+                                                                <button class="btn btn-default buttons-print bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
+                                                                        <span>Print</span>
+                                                                </button>
+                                                                <button  class="btn btn-default buttons-csv buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
+                                                                        <span>CSV</span>
+                                                                </button> 
+                                                                <button class="btn btn-default buttons-collection buttons-colvis bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button" aria-haspopup="true">
+                                                                        <span>Columns</span>
+                                                                </button> 
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="card-body">
@@ -125,13 +156,13 @@
                                                             <tbody>
 
                                                                 <tr role="row" >
-                                                                        <td>11-02-2021</td>
-                                                                            <td>PU0018
-                                                                                <span class="label label-danger" style="cursor:pointer">
-                                                                                    <i class="fa fa-fw fa-undo"></i>Return Raised
-                                                                                </span>
-                                                                            </td>
-                                                                            <td>Received</td>
+                                                                            <td>11-02-2021</td>
+                                                                                <td>PU0018
+                                                                                    <span class="label label-danger" style="cursor:pointer">
+                                                                                        <i class="fa fa-fw fa-undo"></i>Return Raised
+                                                                                    </span>
+                                                                                </td>
+                                                                                <td>Received</td>
                                                                                 <td></td>
                                                                                 <td>Glenn M</td>
                                                                                 <td>1,000.00</td>
@@ -146,17 +177,16 @@
                                                                                         </a>
                                                                                         <ul role="menu" class="dropdown-menu dropdown-light pull-right">
                                                                                             <li>
-                                                                                                <a title="View Invoice" href="#"><i class="fa fa-fw fa-eye text-blue"></i>View Purchase
+                                                                                                <a  href="#"><i class="fa fa-fw fa-eye text-blue"></i>View Purchase
                                                                                                 </a>
                                                                                             </li>
-
                                                                                             <li>
-                                                                                                <a title="Update Record ?" href="#">
+                                                                                                <a  href="#">
                                                                                                     <i class="fa fa-fw fa-edit text-blue"></i>Edit
                                                                                                 </a>
                                                                                             </li>
                                                                                             <li>
-                                                                                                <a title="Pay" class="pointer" >
+                                                                                                <a  class="pointer" >
                                                                                                     <i class="fa fa-fw fa-money text-blue"></i>View Payments
                                                                                                 </a>
                                                                                             </li>
@@ -165,21 +195,24 @@
                                                                                                 <a title="Pay" class="pointer">
                                                                                                     <i class="fa fa-fw  fa-hourglass-half text-blue"></i>Pay Now
                                                                                                 </a>
-                                                                                            </li><li>
-                                                                                                <a title="Update Record ?" target="_blank" href="#">
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <a title="Update Record ?" target="#" href="#">
                                                                                                     <i class="fa fa-fw fa-print text-blue"></i>Print
                                                                                                 </a>
                                                                                             </li>
                                                                                             <li>
-                                                                                                <a title="Update Record ?" target="_blank" href="#">
+                                                                                                <a target="#" href="#">
                                                                                                     <i class="fa fa-fw fa-file-pdf-o text-blue"></i>PDF
                                                                                                 </a>
-                                                                                            </li><li>
-                                                                                                <a title="Purchase Return" href="#">
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <a  href="#">
                                                                                                     <i class="fa fa-fw fa-undo text-blue"></i>Purchase Return
                                                                                                 </a>
-                                                                                            </li><li>
-                                                                                                <a style="cursor:pointer" title="Delete Record ?" >
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <a style="cursor:pointer"  >
                                                                                                     <i class="fa fa-fw fa-trash text-red"></i>Delete
                                                                                                 </a>
                                                                                             </li>
@@ -810,23 +843,9 @@ export default {
         }
     },
     methods:{
-        downloadCSVData() {
-            let csv = 'Put,Column,Titles,Here\n';
-            let table=document.getElementById('example2');
-            this.csvdata.forEach((row) => {
-                    csv += row.join(',');
-                    csv += "\n";
-                    this.table.innerHTML=csv;
-                    console.log(table);
-            });
-
-            const anchor = document.createElement('a');
-            anchor.href = 'data:text/csv;charset=utf-8,' + encodeURIComponent(csv);
-            anchor.target = '_blank';
-            anchor.download = 'nameYourFileHere.csv';
-            anchor.click();
-}
-    }
+      
+  }
+    
 
 }
 </script>
