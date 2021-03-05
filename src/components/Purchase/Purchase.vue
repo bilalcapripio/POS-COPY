@@ -3,8 +3,7 @@
             <div>
                 <Navbar/>
                     <!-- /.content-wrapper -->
-                    <div class="content-wrapper p-2 mb-5">
-                        <h1 class="lead pt-2 px-4">New Purchase</h1>
+                    <div class="content-wrapper p-2">
                         <div class="content-header">
                             <div class="container-fluid">
                                     <!-- alert start -->
@@ -24,7 +23,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <form>
-                                                    <label>Supplier Name <span class="text-danger">*</span></label>
+                                                    <label>Customer Name <span class="text-danger">*</span></label>
                                                     <select id="inputState" class="form-control">
                                                         <option selected>Choose...</option>
                                                         <option>Walk-In Customer</option>
@@ -34,22 +33,23 @@
                                                         <option>Walk-In Customer</option>
                                                     </select>                                
                                                     <br>
-                                                    <label>Status  <span class="text-danger">*</span></label>
+                                                    <label>Sales Date <span class="text-danger">*</span></label>
                                                     <select id="inputState" class="form-control">
                                                         <option selected>Choose...</option>
-                                                        <option>Recieved</option>
-                                                        <option>Recieved</option>
-                                                        <option>Recieved</option>
-
+                                                        <option>Walk-In Customer</option>
+                                                        <option>Walk-In Customer</option>
+                                                        <option>Walk-In Customer</option>
+                                                        <option>Walk-In Customer</option>
+                                                        <option>Walk-In Customer</option>
                                                     </select>       
                                                 </form>
                                             </div>
                                             <div class="col-md-6">
                                                 <form>
-                                                        <label> Purchase Date <span class="text-danger">*</span></label>
-                                                        <input type="date" class="form-control" placeholder="First name">
+                                                        <label>Customer Name <span class="text-danger">*</span></label>
+                                                        <input type="text" class="form-control" placeholder="First name">
                                                         <br>
-                                                        <label> Refrence no <span class="text-danger">*</span></label>
+                                                        <label>Customer Name <span class="text-danger">*</span></label>
                                                         <input type="text" class="form-control" placeholder="Last name">
                                                 </form>
                                             </div>
@@ -63,28 +63,79 @@
                                         <div class="col-md-8 col-md-offset-2 d-flex justify-content mx-auto">
                                             <div class="input-group">
                                             <span class="bg-lightblue py-1 text-center"><i class="fa fa-barcode px-3 text-center mt-2"></i> </span>
-                                                <input type="text" class="form-control  py-3" placeholder="Item name/Barcode/Itemcode" id="item_search" autocomplete="off">
+                                                <input type="text" class="form-control py-3" placeholder="Item name/Barcode/Itemcode" v-model="query" id="item_search">
                                                 </div>
+                                               
                                         </div>
+                                                <ul>
+                                                    <li v-for="(data,index) in searchItems"  v-bind:key="data.id">
+                                                        <p @click="uploadItem(index)"> {{data.item_name}} </p>
+                                                    </li>
+                                                </ul>
                                     </div>
                                     <!-- End Barcode -->
                                     <br><br>
                                     <!------Start table----->
                                     <div class="box-body">
                                         <div class="table-responsive" style="width: 100%">
-                                            <table class="table table-hover table-bordered" style="width:100%" id="sales_table">
+                                            <table class="table table-hover table-bordered" style="width:100%; font-size:15px" id="sales_table">
                                                 <thead class="custom_thead ">
                                                     <tr class="bg-primary">
                                                         <th rowspan="2" style="width:15%">Item Name</th>
-                                                        <th rowspan="2" style="width:10%;min-width: 180px;">Quantity</th>
-                                                        <th rowspan="2" style="width:10%">Unit Price</th> 
-                                                        <th rowspan="2" style="width:10%">Discount($)</th>
+                                                        <th rowspan="2" style="width:15%;">Quantity</th>
+                                                        <th rowspan="2" style="width:10%">Purchase Price</th> 
+                                                        <th rowspan="2" style="width:10%">Tax%</th>
                                                         <th rowspan="2" style="width:10%">Tax Amount</th>
-                                                        <th rowspan="2" style="width:5%">Tax</th>
-                                                        <th rowspan="2" style="width:7.5%">Total Amount</th>
+                                                        <th rowspan="2" style="width:10%">Discount(%)</th>
+                                                        <th rowspan="2" style="width:8%">Unit Cost</th>
+                                                        <th rowspan="2" style="width:8%">Total Amount</th>
                                                         <th rowspan="2" style="width:7.5%">Action</th>
                                                     </tr>
                                                 </thead>
+                                                <tbody>
+                                                    <tr v-for="(data,index) in uploadItems" v-bind:key="data.id">
+                                                        <td>
+                                                            <input type="text" :value="data.item_name" disabled  class="form-control no-padding text-center" style="padding:17px; background-color:white; color:blue">
+                                                        </td>
+                                                        <td>
+                                                            <!-- {{data.qty}} -->
+                                                               <div class="input-group input-group-sm">
+                                                                <span class="input-group-btn">
+                                                                    <button type="button" class="btn btn-default btn-flat" @click="decrease(index)">
+                                                                        <i class="fa fa-minus text-danger"></i>
+                                                                    </button>
+                                                                </span>
+                                                                <!-- start count result -->
+                                                                <!-- <input type="" class="form-control"> -->
+                                                                <input type="text" :value="data.qty" class="form-control no-padding text-center" style="padding:17px">
+                                                                <!--end count result -->
+                                                                <span class="input-group-btn">
+                                                                    <button type="button" class="btn btn-default btn-flat" @click="increase(index)">
+                                                                        <i class="fa fa-plus text-success"></i>
+                                                                    </button>
+                                                                </span>
+                                                            </div>
+
+                                                        </td>
+                                                        <td>
+                                                             <input type="text" :value="data.purchase_price" disabled  class="form-control no-padding text-center" style="padding:17px; background-color:white;">
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" :value="'Tax '+data.tax+'%'" disabled  class="form-control no-padding text-center" style="padding:17px;background-color:white; color:blue">
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" :value="data.tax_amount" disabled  class="form-control no-padding text-center" style="padding:17px;">
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" v-model="uploadItems[index].discount" @input="getDiscount(index)" class="form-control no-padding text-center" style="padding:17px">
+                                                        </td>
+                                                        <td><input type="text" :value="data.unit_cost" disabled  class="form-control no-padding text-center" style="padding:17px;"></td>
+                                                        <td><input type="text" :value="data.total_amount" disabled  class="form-control no-padding text-center" style="padding:17px;"></td>
+                                                        <td>
+                                                            <a href="#" @click="removeRow(index)" class="fa fa-fw fa-minus-square text-red" style="cursor: pointer;font-size: 34px;"></a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
                                             </table>
                                         </div>
                                     </div>
@@ -142,19 +193,19 @@
                                                     <tbody><tr>
                                                     <th class="text-right" style="font-size: 20px;">Subtotal</th>
                                                     <th class="text-right" style="padding-left:10%;font-size: 20px;">
-                                                        <h4><b>0.00</b></h4>
+                                                        <h4><b id="subtotal_amt" name="subtotal_amt">0.00</b></h4>
                                                     </th>
                                                     </tr>
                                                     <tr>
                                                     <th class="text-right" style="font-size: 20px;">Other Charges</th>
                                                     <th class="text-right" style="padding-left:10%;font-size: 20px;">
-                                                        <h4><b>0.00</b></h4>
+                                                        <h4><b id="other_charges_amt" name="other_charges_amt">0.00</b></h4>
                                                     </th>
                                                     </tr>
                                                     <tr>
                                                     <th class="text-right" style="font-size: 20px;">Discount on All</th>
                                                     <th class="text-right" style="padding-left:10%;font-size: 20px;">
-                                                        <h4><b>0.00</b></h4>
+                                                        <h4><b id="discount_to_all_amt" name="discount_to_all_amt">0.00</b></h4>
                                                     </th>
                                                     </tr>
                                                     <tr style="display: none;">
@@ -164,13 +215,13 @@
                                                         
                                                     </th>
                                                     <th class="text-right" style="padding-left:10%;font-size: 20px;">
-                                                        <h4><b>0.00</b></h4>
+                                                        <h4><b id="round_off_amt" name="tot_round_off_amt">0.00</b></h4>
                                                     </th>
                                                     </tr>
                                                     <tr>
                                                     <th class="text-right" style="font-size: 20px;">Grand Total</th>
                                                     <th class="text-right" style="padding-left:10%;font-size: 17px;">
-                                                        <h4><b>0.00</b></h4>
+                                                        <h4><b id="total_amt" name="total_amt">0.00</b></h4>
                                                     </th>
                                                     </tr>
                                                 </tbody></table>
@@ -206,7 +257,7 @@
                                     <br>
                                     <br>
                                     <div class="col-md-12 payments_div payments_div_">
-                                        <h4 class="box-title text-info">Make Payment :</h4>
+                                        <h4 class="box-title text-info">Subtotal :</h4>
                                         <div class="box box-solid bg-gray p-3">        
                                         <div class="box-body">
                                             <div class="row">
@@ -273,14 +324,77 @@
 import Navbar from  '../../components/Navbar.vue'
 import Sidebar from '../../components/Sidebar.vue'
 import Footer from  '../../components/Footer.vue'
+// import { debounce } from "lodash"
+import axios from 'axios'
+// import ItemSalesReportVue from '../Report/Item-Sales-Report.vue'
 
 export default {
     name:'',
+    data(){
+        return{
+            uploadItems:[],
+            searchItems:[],
+            query:'',
+            discount:''
+        }
+    },
     components: {
-    Navbar,
-    Sidebar,
-    Footer
-}
+        Navbar,
+        Sidebar,
+        Footer
+    },
+    updated(){
+        if (this.query != '') {
+            this.search();            
+        } 
+        if (this.query == '') {
+            this.searchItems=''
+        }
+    },
+    methods:{
+        increase: function(index){
+            this.uploadItems[index].qty++
+        },
+        decrease: function(index){
+            if (this.uploadItems[index].qty > 1) {
+                this.uploadItems[index].qty--
+            }
+        },
+        getDiscount:function(index){
+            var unit_cost = this.uploadItems[index].purchase_price + this.uploadItems[index].tax_amount 
+            var test =  Math.ceil(unit_cost * (this.uploadItems[index].discount / 100))
+            this.uploadItems[index].total_amount = unit_cost-test
+            console.log(this.uploadItems[index].total_amount);
+        },
+        removeRow: function(index){
+            this.uploadItems.splice(index,1)
+        },  
+        search: function() {
+            const api ='http://192.168.100.9/Project_Laravel/public/api/item/search/'+this.query; 
+            axios.get(api)
+            .then((res)=>{
+                this.searchItems = res.data
+            })
+        },
+        uploadItem: function(index){
+            const items = this.searchItems[index];
+            let tax_amount = Math.ceil(items.purchase_price * (items.tax_id / 100));
+            let unit_cost = tax_amount + items.purchase_price;
+            var selected_items = {
+                'item_name':items.item_name,
+                'qty':1,
+                'purchase_price':items.purchase_price,
+                'tax':items.tax_id,
+                'tax_amount': tax_amount,
+                "discount":'',
+                'unit_cost': unit_cost,
+                'total_amount': unit_cost,
+            }
+            this.uploadItems.push(selected_items)
+            this.query = ''
+            console.log(selected_items); 
+        },
+    }
 
 }
 </script>
