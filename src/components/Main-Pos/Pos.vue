@@ -688,7 +688,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="input-group pt-2">
-                                                    <input type="text" class="form-control" placeholder=" Filters Items">
+                                                    <input type="text" class="form-control" placeholder="Filters Items">
                                                     <div class="input-group-prepend">
                                                         <button class="btn btn-primary">All</button>
                                                     </div>
