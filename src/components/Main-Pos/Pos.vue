@@ -743,7 +743,6 @@ export default {
             quantity:0,
             Price:2000,
             res:[]
-
         }
     },
     mounted(){
@@ -769,8 +768,7 @@ export default {
             this.res = [
                 test['item_name'],
                 test['sales_price'],
-                test['available_quantity'],
-                1
+                test['available_quantity'],1
             ]
             /*this.itemDataArr.push(`${test['item_name']}, ${test['sales_price']}, ${test['available_quantity']}`)*/
             this.itemDataArr.push(this.res)
