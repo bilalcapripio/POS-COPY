@@ -372,7 +372,7 @@
     <!-- /.content-wrapper -->
           <Sidebar/>
 
-           <Footer/>
+          <Footer/>
 
 
 </div>
