@@ -62,9 +62,11 @@
                                         <br><br>
                                         <div class="col-md-8 col-md-offset-2 d-flex justify-content mx-auto">
                                             <div class="input-group">
-                                            <span class="bg-lightblue py-1 text-center"><i class="fa fa-barcode px-3 text-center mt-2"></i> </span>
+                                                <span class="bg-lightblue py-1 text-center">
+                                                    <i class="fa fa-barcode px-3 text-center mt-2"></i>
+                                                </span>
                                                 <input type="text" class="form-control  py-3" placeholder="Item name/Barcode/Itemcode" id="item_search" autocomplete="off">
-                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <!-- End Barcode -->
@@ -105,12 +107,12 @@
                                                     <div class="form-group col-md-6">
                                                         <label for="inputState">Select</label>
                                                             <select id="inputState" class="form-control">
-                                                            <option selected>None</option>
-                                                            <option>...</option>
-                                                            <option>...</option>
-                                                            <option>...</option>
-                                                            <option>...</option>
-                                                            <option>...</option>
+                                                                <option selected>None</option>
+                                                                <option>...</option>
+                                                                <option>...</option>
+                                                                <option>...</option>
+                                                                <option>...</option>
+                                                                <option>...</option>
                                                             </select>
                                                     </div>
                                                     <div class="form-group col-md-6">
@@ -120,12 +122,12 @@
                                                     <div class="form-group col-md-6">
                                                         <label for="inputState">Select</label>
                                                             <select id="inputState" class="form-control">
-                                                            <option selected>Per%</option>
-                                                            <option>...</option>
-                                                            <option>...</option>
-                                                            <option>...</option>
-                                                            <option>...</option>
-                                                            <option>...</option>
+                                                                <option selected>Per%</option>
+                                                                <option>...</option>
+                                                                <option>...</option>
+                                                                <option>...</option>
+                                                                <option>...</option>
+                                                                <option>...</option>
                                                             </select>
                                                     </div>
                                                 </div>
