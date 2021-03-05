@@ -1,5 +1,6 @@
 <template>
     <div>
+<!--//////////////////----Start Navbar----//////////////////-->
         <nav class=" navbar navbar-expand-lg navbar-primary navbar-dark">
             <!-- Left navbar links -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -113,7 +114,7 @@
                 </ul>
             </div>
         </nav>   
-<!-- //////////////////----End Navbar----//////////////////  -->
+<!--//////////////////----End Navbar----//////////////////-->
         <main>
             <div class="container-fluid mt-3">
                 <div class="row">
@@ -133,13 +134,13 @@
                                                         <i class="fa fa-user input-group-text"></i>
                                                     </div>
                                                     <select name="" id="" class="form-control">
-                                                        <option value="">Walk-in-Customer</option>
-                                                        <option value="">John p</option>
-                                                        <option value="">Chris Moris</option>   
-                                                        <option value="">Joe Root</option>
-                                                        <option value="">John p</option>
-                                                        <option value="">Chris Moris</option>   
-                                                        <option value="">Joe Root</option>
+                                                        <option value="1">Walk-in-Customer</option>
+                                                        <option value="2">John p</option>
+                                                        <option value="3">Chris Moris</option>   
+                                                        <option value="4">Joe Root</option>
+                                                        <option value="5">John p</option>
+                                                        <option value="5">Chris Moris</option>   
+                                                        <option value="6">Joe Root</option>
                                                     </select>
                                                     <div class="input-group-prepend">
                                                         <i class="fa fa-user-plus text-primary fa-lg input-group-text"></i>
