@@ -33,19 +33,6 @@
                             Item List
                         </a>
                     </li>
-                    <li class="nav-item pl-2">
-                        <a class="nav-link" data-toggle="dropdown" href="/items">
-                            <div class="input-group">
-                                <input type="text" class="form-control copyLinkInput" :value="link">
-                                <div class="input-group-append" @click="doCopy">
-                                    <div class="input-group-text">
-                                    <i class="fa fa-copy"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-
                 </ul>
                 <!-- Right navbar links -->
                 <ul class="navbar-nav ml-auto">         
