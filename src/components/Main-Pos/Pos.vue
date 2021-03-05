@@ -671,8 +671,8 @@
                                             <div class="col-md-6">
                                                 <div class="input-group pt-2">
                                                     <select name="" id="" class="form-control">
-                                                        <option value="">All Categories</option>
-                                                        <option value="">Watches</option>
+                                                        <option value="1">All Categories</option>
+                                                        <option value="2">Watches</option>
                                                         <option value="">Adidas</option>
                                                         <option value="">Nike</option>
                                                         <option value="">Watches</option>
@@ -739,18 +739,16 @@ export default {
             res:[]
         }
     },
-
     mounted(){
         this.$store.state.getitemsData
     },
-
     computed:{
         Product(){
-        return this.$store.state.bundle
+        return this.$store.state.bundles
             }
         },
         methods:{
-          
+        
         }
         
 }

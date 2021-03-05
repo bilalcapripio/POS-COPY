@@ -2,7 +2,7 @@ import Vuex from 'vuex';
 import axios from 'axios';
 const store = new Vuex.Store({  
     state:{
-        bundle:{ 
+        bundles:{ 
             getitemsData: function(){
                 axios.get("http://192.168.100.9/Project_Laravel/public/api/item")
                 // return promise
