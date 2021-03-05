@@ -30,18 +30,22 @@ const store = new Vuex.Store({
             console.table(this.itemDataArr)
             /*  this.quantity++;*/
             },
+
             // alert('Vue js')
             deleteTableRow: function (idx) { 
                 this.counter--;
                 this.itemDataArr.splice(idx, 1);   
                 this.quantity--;
             },
+
             ProAdd(index){
                 this.itemDataArr[index][3]++;
             },
+
             ProRem(index){
                 this.itemDataArr[index][3]--;
             },
+
             totalAmount(){
                 var sum = 0;
                 this.itemDataArr.forEach(value => {
@@ -51,9 +55,11 @@ const store = new Vuex.Store({
                 console.log(sum);
                 return sum;
             },
+
             Savesure(){
                 confirm('Are you sure to save this payment');
             },
+
             printDiv() {
                     var printContents = document.getElementById('printableArea').innerHTML;
                     var originalContents = document.body.innerHTML;
@@ -61,6 +67,7 @@ const store = new Vuex.Store({
                     window.print();
                     document.body.innerHTML = originalContents;
             }
+
         }
     },
 
