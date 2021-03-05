@@ -99,7 +99,7 @@
                                                     </label>
                                                     </div><div id="example2_processing" class="dataTables_processing panel panel-default" style="display: none;"></div></div><div class="pull-right margin-left-10 ">
                                                     <div class="dt-buttons btn-group mt-4 mr-2">              
-                                                    <button class="btn btn-default buttons-copy buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Copy</span></button> <button class="btn btn-default buttons-excel buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Excel</span></button> <button class="btn btn-default buttons-pdf buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>PDF</span></button> <button class="btn btn-default buttons-print bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Print</span></button> <button class="btn btn-default buttons-csv buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
+                                                    <button v-on:click="downloadCSVData" class="btn btn-default buttons-copy buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Copy</span></button> <button class="btn btn-default buttons-excel buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Excel</span></button> <button class="btn btn-default buttons-pdf buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>PDF</span></button> <button class="btn btn-default buttons-print bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Print</span></button> <button class="btn btn-default buttons-csv buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
                                                     <span>CSV</span></button> 
                                                     <button class="btn btn-default buttons-collection buttons-colvis bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button" aria-haspopup="true"><span>Columns</span></button> 
                                                     </div></div></div>
@@ -107,7 +107,7 @@
                                             </div>
                                             <div class="card-body">
                                                 <div class="box-body">
-                                                    <table id="example2" class="table table-bordered table-striped dataTable dtr-inline" width="100%" role="grid" aria-describedby="example2_info" style="width: 100%;">
+                                                    <table id="example2"  class="table table-bordered table-striped dataTable dtr-inline" width="100%" role="grid"  style="width: 100%;">
                                                             <thead class="bg-primary ">
                                                                 <tr role="row">
                                                                         <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" style="width: 70px;" aria-label="Purchase Date: activate to sort column ascending">Purchase Date</th>
@@ -803,6 +803,29 @@ export default {
         Navbar,
         Sidebar,
         Footer
+    },
+    data(){
+        return{
+
+        }
+    },
+    methods:{
+        downloadCSVData() {
+            let csv = 'Put,Column,Titles,Here\n';
+            let table=document.getElementById('example2');
+            this.csvdata.forEach((row) => {
+                    csv += row.join(',');
+                    csv += "\n";
+                    this.table.innerHTML=csv;
+                    console.log(table);
+            });
+
+            const anchor = document.createElement('a');
+            anchor.href = 'data:text/csv;charset=utf-8,' + encodeURIComponent(csv);
+            anchor.target = '_blank';
+            anchor.download = 'nameYourFileHere.csv';
+            anchor.click();
+}
     }
 
 }

@@ -231,9 +231,9 @@
                                                                 <tfoot>
                                                                     <tr class="bg-gray">
                                                                     <th colspan="5" style="text-align:right" class="text-center" rowspan="1">Total</th>
-                                                                    <th rowspan="1" colspan="1">1,100.0</th>
-                                                                    <th rowspan="1" colspan="1">1,100.0</th>
-                                                                    <th rowspan="1" colspan="1">0.0</th>
+                                                                    <th rowspan="1" colspan="1"></th>
+                                                                    <th rowspan="1" colspan="1">13,20.00</th>
+                                                                    <th rowspan="1" colspan="1">13,20.00</th>
                                                                     <th rowspan="1" colspan="1"></th>
                                                                     <th rowspan="1" colspan="1"></th>
                                                                     <th rowspan="1" colspan="1"></th>

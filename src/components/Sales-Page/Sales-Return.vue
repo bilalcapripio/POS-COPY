@@ -75,7 +75,7 @@
                                     <div class="box-body">
                                         <div class="table-responsive" style="width: 100%">
                                             <table class="table table-hover table-bordered" style="width:100%" id="sales_table">
-                                                <thead class="custom_thead ">
+                                                <thead class="custom_thead">
                                                     <tr class="bg-primary">
                                                         <th rowspan="2" style="width:15%">Item Name</th>
                                                         <th rowspan="2" style="width:10%;min-width: 180px;">Quantity</th>
