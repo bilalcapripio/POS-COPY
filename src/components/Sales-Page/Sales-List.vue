@@ -154,74 +154,6 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-
-                                                                <tr role="row" >
-                                                                            <td>11-02-2021</td>
-                                                                                <td>PU0018
-                                                                                    <span class="label label-danger" style="cursor:pointer">
-                                                                                        <i class="fa fa-fw fa-undo"></i>Return Raised
-                                                                                    </span>
-                                                                                </td>
-                                                                                <td>Received</td>
-                                                                                <td></td>
-                                                                                <td>Glenn M</td>
-                                                                                <td>1,000.00</td>
-                                                                                <td>0.00</td>
-                                                                                <td>1,000.00</td>
-                                                                                <td><span class="label label-danger" style="cursor:pointer">Unpaid</span></td>
-                                                                                <td>Admin</td>
-                                                                            <td>
-                                                                                <div class="btn-group" title="View Account">
-                                                                                        <a class="btn btn-primary btn-o dropdown-toggle" data-toggle="dropdown" href="#">
-                                                                                            Action <span class="caret"></span>
-                                                                                        </a>
-                                                                                        <ul role="menu" class="dropdown-menu dropdown-light pull-right">
-                                                                                            <li>
-                                                                                                <a  href="#"><i class="fa fa-fw fa-eye text-blue"></i>View Purchase
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <a  href="#">
-                                                                                                    <i class="fa fa-fw fa-edit text-blue"></i>Edit
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <a  class="pointer" >
-                                                                                                    <i class="fa fa-fw fa-money text-blue"></i>View Payments
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            
-                                                                                            <li>
-                                                                                                <a title="Pay" class="pointer">
-                                                                                                    <i class="fa fa-fw  fa-hourglass-half text-blue"></i>Pay Now
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <a title="Update Record ?" target="#" href="#">
-                                                                                                    <i class="fa fa-fw fa-print text-blue"></i>Print
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <a target="#" href="#">
-                                                                                                    <i class="fa fa-fw fa-file-pdf-o text-blue"></i>PDF
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <a  href="#">
-                                                                                                    <i class="fa fa-fw fa-undo text-blue"></i>Purchase Return
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <a style="cursor:pointer"  >
-                                                                                                    <i class="fa fa-fw fa-trash text-red"></i>Delete
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            
-                                                                                        </ul>
-                                                                                </div>
-                                                                            </td>
-                                                                </tr>
-
                                                                 <tr role="row" >
                                                                     <td>11-02-2021</td>
                                                                         <td>PU0018
@@ -230,565 +162,63 @@
                                                                             </span>
                                                                         </td>
                                                                         <td>Received</td>
-                                                                            <td></td>
-                                                                            <td>Glenn M</td>
-                                                                            <td>1,000.00</td>
-                                                                            <td>0.00</td>
-                                                                            <td>1,000.00</td>
-                                                                            <td><span class="label label-danger" style="cursor:pointer">Unpaid</span></td>
-                                                                            <td>Admin</td>
-                                                                        <td>
-                                                                            <div class="btn-group" title="View Account">
-                                                                                    <a class="btn btn-primary btn-o dropdown-toggle" data-toggle="dropdown" href="#">
-                                                                                        Action <span class="caret"></span>
-                                                                                    </a>
-                                                                                    <ul role="menu" class="dropdown-menu dropdown-light pull-right">
-                                                                                        <li>
-                                                                                            <a title="View Invoice" href="#"><i class="fa fa-fw fa-eye text-blue"></i>View Purchase
-                                                                                            </a>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <a title="Update Record ?" href="#">
-                                                                                                <i class="fa fa-fw fa-edit text-blue"></i>Edit
-                                                                                            </a>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <a title="Pay" class="pointer" >
-                                                                                                <i class="fa fa-fw fa-money text-blue"></i>View Payments
-                                                                                            </a>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <a title="Pay" class="pointer">
-                                                                                                <i class="fa fa-fw  fa-hourglass-half text-blue"></i>Pay Now
-                                                                                            </a>
-                                                                                        </li><li>
-                                                                                            <a title="Update Record ?" target="_blank" href="#">
-                                                                                                <i class="fa fa-fw fa-print text-blue"></i>Print
-                                                                                            </a>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <a title="Update Record ?" target="_blank" href="#">
-                                                                                                <i class="fa fa-fw fa-file-pdf-o text-blue"></i>PDF
-                                                                                            </a>
-                                                                                        </li><li>
-                                                                                            <a title="Purchase Return" href="#">
-                                                                                                <i class="fa fa-fw fa-undo text-blue"></i>Purchase Return
-                                                                                            </a>
-                                                                                        </li><li>
-                                                                                            <a style="cursor:pointer" title="Delete Record ?" >
-                                                                                                <i class="fa fa-fw fa-trash text-red"></i>Delete
-                                                                                            </a>
-                                                                                        </li>
-                                                                                        
-                                                                                    </ul>
-                                                                            </div>
-                                                                        </td>
-                                                                </tr>
-
-                                                                <tr role="row" >
-                                                                        <td>11-02-2021</td>
-                                                                            <td>PU0018
-                                                                                <span class="label label-danger" style="cursor:pointer">
-                                                                                    <i class="fa fa-fw fa-undo"></i>Return Raised
-                                                                                </span>
-                                                                            </td>
-                                                                            <td>Received</td>
-                                                                                <td></td>
-                                                                                <td>Glenn M</td>
-                                                                                <td>1,000.00</td>
-                                                                                <td>0.00</td>
-                                                                                <td>1,000.00</td>
-                                                                                <td><span class="label label-danger" style="cursor:pointer">Unpaid</span></td>
-                                                                                <td>Admin</td>
-                                                                            <td>
-                                                                                <div class="btn-group" title="View Account">
-                                                                                        <a class="btn btn-primary btn-o dropdown-toggle" data-toggle="dropdown" href="#">
-                                                                                            Action <span class="caret"></span>
+                                                                        <td></td>
+                                                                        <td>Glenn M</td>
+                                                                        <td>1,000.00</td>
+                                                                        <td>0.00</td>
+                                                                        <td>1,000.00</td>
+                                                                        <td><span class="label label-danger" style="cursor:pointer">Unpaid</span></td>
+                                                                        <td>Admin</td>
+                                                                    <td>
+                                                                        <div class="btn-group" title="View Account">
+                                                                                <a class="btn btn-primary btn-o dropdown-toggle" data-toggle="dropdown" href="#">
+                                                                                    Action <span class="caret"></span>
+                                                                                </a>
+                                                                                <ul role="menu" class="dropdown-menu dropdown-light pull-right">
+                                                                                    <li>
+                                                                                        <a  href="#"><i class="fa fa-fw fa-eye text-blue"></i>View Purchase
                                                                                         </a>
-                                                                                        <ul role="menu" class="dropdown-menu dropdown-light pull-right">
-                                                                                            <li>
-                                                                                                <a title="View Invoice" href="#"><i class="fa fa-fw fa-eye text-blue"></i>View Purchase
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <a title="Update Record ?" href="#">
-                                                                                                    <i class="fa fa-fw fa-edit text-blue"></i>Edit
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <a title="Pay" class="pointer" >
-                                                                                                    <i class="fa fa-fw fa-money text-blue"></i>View Payments
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <a title="Pay" class="pointer">
-                                                                                                    <i class="fa fa-fw  fa-hourglass-half text-blue"></i>Pay Now
-                                                                                                </a>
-                                                                                            </li><li>
-                                                                                                <a title="Update Record ?" target="_blank" href="#">
-                                                                                                    <i class="fa fa-fw fa-print text-blue"></i>Print
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <a title="Update Record ?" target="_blank" href="#">
-                                                                                                    <i class="fa fa-fw fa-file-pdf-o text-blue"></i>PDF
-                                                                                                </a>
-                                                                                            </li><li>
-                                                                                                <a title="Purchase Return" href="#">
-                                                                                                    <i class="fa fa-fw fa-undo text-blue"></i>Purchase Return
-                                                                                                </a>
-                                                                                            </li><li>
-                                                                                                <a style="cursor:pointer" title="Delete Record ?" >
-                                                                                                    <i class="fa fa-fw fa-trash text-red"></i>Delete
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            
-                                                                                        </ul>
-                                                                                </div>
-                                                                            </td>
-                                                                </tr>
-
-                                                                <tr role="row" >
-                                                                        <td>11-02-2021</td>
-                                                                            <td>PU0018
-                                                                                <span class="label label-danger" style="cursor:pointer">
-                                                                                    <i class="fa fa-fw fa-undo"></i>Return Raised
-                                                                                </span>
-                                                                            </td>
-                                                                            <td>Received</td>
-                                                                                <td></td>
-                                                                                <td>Glenn M</td>
-                                                                                <td>1,000.00</td>
-                                                                                <td>0.00</td>
-                                                                                <td>1,000.00</td>
-                                                                                <td><span class="label label-danger" style="cursor:pointer">Unpaid</span></td>
-                                                                                <td>Admin</td>
-                                                                            <td>
-                                                                                <div class="btn-group" title="View Account">
-                                                                                        <a class="btn btn-primary btn-o dropdown-toggle" data-toggle="dropdown" href="#">
-                                                                                            Action <span class="caret"></span>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <a  href="#">
+                                                                                            <i class="fa fa-fw fa-edit text-blue"></i>Edit
                                                                                         </a>
-                                                                                        <ul role="menu" class="dropdown-menu dropdown-light pull-right">
-                                                                                            <li>
-                                                                                                <a title="View Invoice" href="#"><i class="fa fa-fw fa-eye text-blue"></i>View Purchase
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <a title="Update Record ?" href="#">
-                                                                                                    <i class="fa fa-fw fa-edit text-blue"></i>Edit
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <a title="Pay" class="pointer" >
-                                                                                                    <i class="fa fa-fw fa-money text-blue"></i>View Payments
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <a title="Pay" class="pointer">
-                                                                                                    <i class="fa fa-fw  fa-hourglass-half text-blue"></i>Pay Now
-                                                                                                </a>
-                                                                                            </li><li>
-                                                                                                <a title="Update Record ?" target="_blank" href="#">
-                                                                                                    <i class="fa fa-fw fa-print text-blue"></i>Print
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <a title="Update Record ?" target="_blank" href="#">
-                                                                                                    <i class="fa fa-fw fa-file-pdf-o text-blue"></i>PDF
-                                                                                                </a>
-                                                                                            </li><li>
-                                                                                                <a title="Purchase Return" href="#">
-                                                                                                    <i class="fa fa-fw fa-undo text-blue"></i>Purchase Return
-                                                                                                </a>
-                                                                                            </li><li>
-                                                                                                <a style="cursor:pointer" title="Delete Record ?" >
-                                                                                                    <i class="fa fa-fw fa-trash text-red"></i>Delete
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            
-                                                                                        </ul>
-                                                                                </div>
-                                                                            </td>
-                                                                </tr>
-
-                                                                <tr role="row" >
-                                                                        <td>11-02-2021</td>
-                                                                            <td>PU0018
-                                                                                <span class="label label-danger" style="cursor:pointer">
-                                                                                    <i class="fa fa-fw fa-undo"></i>Return Raised
-                                                                                </span>
-                                                                            </td>
-                                                                            <td>Received</td>
-                                                                                <td></td>
-                                                                                <td>Glenn M</td>
-                                                                                <td>1,000.00</td>
-                                                                                <td>0.00</td>
-                                                                                <td>1,000.00</td>
-                                                                                <td><span class="label label-danger" style="cursor:pointer">Unpaid</span></td>
-                                                                                <td>Admin</td>
-                                                                            <td>
-                                                                                <div class="btn-group" title="View Account">
-                                                                                        <a class="btn btn-primary btn-o dropdown-toggle" data-toggle="dropdown" href="#">
-                                                                                            Action <span class="caret"></span>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <a  class="pointer" >
+                                                                                            <i class="fa fa-fw fa-money text-blue"></i>View Payments
                                                                                         </a>
-                                                                                        <ul role="menu" class="dropdown-menu dropdown-light pull-right">
-                                                                                            <li>
-                                                                                                <a title="View Invoice" href="#"><i class="fa fa-fw fa-eye text-blue"></i>View Purchase
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <a title="Update Record ?" href="#">
-                                                                                                    <i class="fa fa-fw fa-edit text-blue"></i>Edit
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <a title="Pay" class="pointer" >
-                                                                                                    <i class="fa fa-fw fa-money text-blue"></i>View Payments
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <a title="Pay" class="pointer">
-                                                                                                    <i class="fa fa-fw  fa-hourglass-half text-blue"></i>Pay Now
-                                                                                                </a>
-                                                                                            </li><li>
-                                                                                                <a title="Update Record ?" target="_blank" href="#">
-                                                                                                    <i class="fa fa-fw fa-print text-blue"></i>Print
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <a title="Update Record ?" target="_blank" href="#">
-                                                                                                    <i class="fa fa-fw fa-file-pdf-o text-blue"></i>PDF
-                                                                                                </a>
-                                                                                            </li><li>
-                                                                                                <a title="Purchase Return" href="#">
-                                                                                                    <i class="fa fa-fw fa-undo text-blue"></i>Purchase Return
-                                                                                                </a>
-                                                                                            </li><li>
-                                                                                                <a style="cursor:pointer" title="Delete Record ?" >
-                                                                                                    <i class="fa fa-fw fa-trash text-red"></i>Delete
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            
-                                                                                        </ul>
-                                                                                </div>
-                                                                            </td>
-                                                                </tr>
-
-                                                                <tr role="row" >
-                                                                        <td>11-02-2021</td>
-                                                                            <td>PU0018
-                                                                                <span class="label label-danger" style="cursor:pointer">
-                                                                                    <i class="fa fa-fw fa-undo"></i>Return Raised
-                                                                                </span>
-                                                                            </td>
-                                                                            <td>Received</td>
-                                                                                <td></td>
-                                                                                <td>Glenn M</td>
-                                                                                <td>1,000.00</td>
-                                                                                <td>0.00</td>
-                                                                                <td>1,000.00</td>
-                                                                                <td><span class="label label-danger" style="cursor:pointer">Unpaid</span></td>
-                                                                                <td>Admin</td>
-                                                                            <td>
-                                                                                <div class="btn-group" title="View Account">
-                                                                                        <a class="btn btn-primary btn-o dropdown-toggle" data-toggle="dropdown" href="#">
-                                                                                            Action <span class="caret"></span>
+                                                                                    </li>
+                                                                                    
+                                                                                    <li>
+                                                                                        <a  class="pointer">
+                                                                                            <i class="fa fa-fw  fa-hourglass-half text-blue"></i>Pay Now
                                                                                         </a>
-                                                                                        <ul role="menu" class="dropdown-menu dropdown-light pull-right">
-                                                                                            <li>
-                                                                                                <a title="View Invoice" href="#"><i class="fa fa-fw fa-eye text-blue"></i>View Purchase
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <a title="Update Record ?" href="#">
-                                                                                                    <i class="fa fa-fw fa-edit text-blue"></i>Edit
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <a title="Pay" class="pointer" >
-                                                                                                    <i class="fa fa-fw fa-money text-blue"></i>View Payments
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <a title="Pay" class="pointer">
-                                                                                                    <i class="fa fa-fw  fa-hourglass-half text-blue"></i>Pay Now
-                                                                                                </a>
-                                                                                            </li><li>
-                                                                                                <a title="Update Record ?" target="_blank" href="#">
-                                                                                                    <i class="fa fa-fw fa-print text-blue"></i>Print
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <a title="Update Record ?" target="_blank" href="#">
-                                                                                                    <i class="fa fa-fw fa-file-pdf-o text-blue"></i>PDF
-                                                                                                </a>
-                                                                                            </li><li>
-                                                                                                <a title="Purchase Return" href="#">
-                                                                                                    <i class="fa fa-fw fa-undo text-blue"></i>Purchase Return
-                                                                                                </a>
-                                                                                            </li><li>
-                                                                                                <a style="cursor:pointer" title="Delete Record ?" >
-                                                                                                    <i class="fa fa-fw fa-trash text-red"></i>Delete
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            
-                                                                                        </ul>
-                                                                                </div>
-                                                                            </td>
-                                                                </tr>
-
-                                                                <tr role="row" >
-                                                                    <td>11-02-2021</td>
-                                                                        <td>PU0018
-                                                                            <span class="label label-danger" style="cursor:pointer">
-                                                                                <i class="fa fa-fw fa-undo"></i>Return Raised
-                                                                            </span>
-                                                                        </td>
-                                                                        <td>Received</td>
-                                                                            <td></td>
-                                                                            <td>Glenn M</td>
-                                                                            <td>1,000.00</td>
-                                                                            <td>0.00</td>
-                                                                            <td>1,000.00</td>
-                                                                            <td><span class="label label-danger" style="cursor:pointer">Unpaid</span></td>
-                                                                            <td>Admin</td>
-                                                                        <td>
-                                                                            <div class="btn-group" title="View Account">
-                                                                                    <a class="btn btn-primary btn-o dropdown-toggle" data-toggle="dropdown" href="#">
-                                                                                        Action <span class="caret"></span>
-                                                                                    </a>
-                                                                                    <ul role="menu" class="dropdown-menu dropdown-light pull-right">
-                                                                                        <li>
-                                                                                            <a title="View Invoice" href="#"><i class="fa fa-fw fa-eye text-blue"></i>View Purchase
-                                                                                            </a>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <a title="Update Record ?" href="#">
-                                                                                                <i class="fa fa-fw fa-edit text-blue"></i>Edit
-                                                                                            </a>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <a title="Pay" class="pointer" >
-                                                                                                <i class="fa fa-fw fa-money text-blue"></i>View Payments
-                                                                                            </a>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <a title="Pay" class="pointer">
-                                                                                                <i class="fa fa-fw  fa-hourglass-half text-blue"></i>Pay Now
-                                                                                            </a>
-                                                                                        </li><li>
-                                                                                            <a title="Update Record ?" target="_blank" href="#">
-                                                                                                <i class="fa fa-fw fa-print text-blue"></i>Print
-                                                                                            </a>
-                                                                                        </li>
-                                                                                        <li>
-                                                                                            <a title="Update Record ?" target="_blank" href="#">
-                                                                                                <i class="fa fa-fw fa-file-pdf-o text-blue"></i>PDF
-                                                                                            </a>
-                                                                                        </li><li>
-                                                                                            <a title="Purchase Return" href="#">
-                                                                                                <i class="fa fa-fw fa-undo text-blue"></i>Purchase Return
-                                                                                            </a>
-                                                                                        </li><li>
-                                                                                            <a style="cursor:pointer" title="Delete Record ?" >
-                                                                                                <i class="fa fa-fw fa-trash text-red"></i>Delete
-                                                                                            </a>
-                                                                                        </li>
-                                                                                        
-                                                                                    </ul>
-                                                                            </div>
-                                                                        </td>
-                                                                </tr>
-
-                                                                <tr role="row" >
-                                                                        <td>11-02-2021</td>
-                                                                            <td>PU0018
-                                                                                <span class="label label-danger" style="cursor:pointer">
-                                                                                    <i class="fa fa-fw fa-undo"></i>Return Raised
-                                                                                </span>
-                                                                            </td>
-                                                                            <td>Received</td>
-                                                                                <td></td>
-                                                                                <td>Glenn M</td>
-                                                                                <td>1,000.00</td>
-                                                                                <td>0.00</td>
-                                                                                <td>1,000.00</td>
-                                                                                <td><span class="label label-danger" style="cursor:pointer">Unpaid</span></td>
-                                                                                <td>Admin</td>
-                                                                            <td>
-                                                                                <div class="btn-group" title="View Account">
-                                                                                        <a class="btn btn-primary btn-o dropdown-toggle" data-toggle="dropdown" href="#">
-                                                                                            Action <span class="caret"></span>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <a  target="#" href="#">
+                                                                                            <i class="fa fa-fw fa-print text-blue"></i>Print
                                                                                         </a>
-                                                                                        <ul role="menu" class="dropdown-menu dropdown-light pull-right">
-                                                                                            <li>
-                                                                                                <a title="View Invoice" href="#"><i class="fa fa-fw fa-eye text-blue"></i>View Purchase
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <a title="Update Record ?" href="#">
-                                                                                                    <i class="fa fa-fw fa-edit text-blue"></i>Edit
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <a title="Pay" class="pointer" >
-                                                                                                    <i class="fa fa-fw fa-money text-blue"></i>View Payments
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <a title="Pay" class="pointer">
-                                                                                                    <i class="fa fa-fw  fa-hourglass-half text-blue"></i>Pay Now
-                                                                                                </a>
-                                                                                            </li><li>
-                                                                                                <a title="Update Record ?" target="_blank" href="#">
-                                                                                                    <i class="fa fa-fw fa-print text-blue"></i>Print
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <a title="Update Record ?" target="_blank" href="#">
-                                                                                                    <i class="fa fa-fw fa-file-pdf-o text-blue"></i>PDF
-                                                                                                </a>
-                                                                                            </li><li>
-                                                                                                <a title="Purchase Return" href="#">
-                                                                                                    <i class="fa fa-fw fa-undo text-blue"></i>Purchase Return
-                                                                                                </a>
-                                                                                            </li><li>
-                                                                                                <a style="cursor:pointer" title="Delete Record ?" >
-                                                                                                    <i class="fa fa-fw fa-trash text-red"></i>Delete
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            
-                                                                                        </ul>
-                                                                                </div>
-                                                                            </td>
-                                                                </tr>
-
-                                                                <tr role="row" >
-                                                                        <td>11-02-2021</td>
-                                                                            <td>PU0018
-                                                                                <span class="label label-danger" style="cursor:pointer">
-                                                                                    <i class="fa fa-fw fa-undo"></i>Return Raised
-                                                                                </span>
-                                                                            </td>
-                                                                            <td>Received</td>
-                                                                                <td></td>
-                                                                                <td>Glenn M</td>
-                                                                                <td>1,000.00</td>
-                                                                                <td>0.00</td>
-                                                                                <td>1,000.00</td>
-                                                                                <td><span class="label label-danger" style="cursor:pointer">Unpaid</span></td>
-                                                                                <td>Admin</td>
-                                                                            <td>
-                                                                                <div class="btn-group" title="View Account">
-                                                                                        <a class="btn btn-primary btn-o dropdown-toggle" data-toggle="dropdown" href="#">
-                                                                                            Action <span class="caret"></span>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <a target="#" href="#">
+                                                                                            <i class="fa fa-fw fa-file-pdf-o text-blue"></i>PDF
                                                                                         </a>
-                                                                                        <ul role="menu" class="dropdown-menu dropdown-light pull-right">
-                                                                                            <li>
-                                                                                                <a title="View Invoice" href="#"><i class="fa fa-fw fa-eye text-blue"></i>View Purchase
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <a title="Update Record ?" href="#">
-                                                                                                    <i class="fa fa-fw fa-edit text-blue"></i>Edit
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <a title="Pay" class="pointer" >
-                                                                                                    <i class="fa fa-fw fa-money text-blue"></i>View Payments
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <a title="Pay" class="pointer">
-                                                                                                    <i class="fa fa-fw  fa-hourglass-half text-blue"></i>Pay Now
-                                                                                                </a>
-                                                                                            </li><li>
-                                                                                                <a title="Update Record ?" target="_blank" href="#">
-                                                                                                    <i class="fa fa-fw fa-print text-blue"></i>Print
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <a title="Update Record ?" target="_blank" href="#">
-                                                                                                    <i class="fa fa-fw fa-file-pdf-o text-blue"></i>PDF
-                                                                                                </a>
-                                                                                            </li><li>
-                                                                                                <a title="Purchase Return" href="#">
-                                                                                                    <i class="fa fa-fw fa-undo text-blue"></i>Purchase Return
-                                                                                                </a>
-                                                                                            </li><li>
-                                                                                                <a style="cursor:pointer" title="Delete Record ?" >
-                                                                                                    <i class="fa fa-fw fa-trash text-red"></i>Delete
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            
-                                                                                        </ul>
-                                                                                </div>
-                                                                            </td>
-                                                                </tr>
-
-                                                                <tr role="row" >
-                                                                        <td>11-02-2021</td>
-                                                                            <td>PU0018
-                                                                                <span class="label label-danger" style="cursor:pointer">
-                                                                                    <i class="fa fa-fw fa-undo"></i>Return Raised
-                                                                                </span>
-                                                                            </td>
-                                                                            <td>Received</td>
-                                                                                <td></td>
-                                                                                <td>Glenn M</td>
-                                                                                <td>1,000.00</td>
-                                                                                <td>0.00</td>
-                                                                                <td>1,000.00</td>
-                                                                                <td><span class="label label-danger" style="cursor:pointer">Unpaid</span></td>
-                                                                                <td>Admin</td>
-                                                                            <td>
-                                                                                <div class="btn-group" title="View Account">
-                                                                                        <a class="btn btn-primary btn-o dropdown-toggle" data-toggle="dropdown" href="#">
-                                                                                            Action <span class="caret"></span>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <a  href="#">
+                                                                                            <i class="fa fa-fw fa-undo text-blue"></i>Purchase Return
                                                                                         </a>
-                                                                                        <ul role="menu" class="dropdown-menu dropdown-light pull-right">
-                                                                                            <li>
-                                                                                                <a title="View Invoice" href="#"><i class="fa fa-fw fa-eye text-blue"></i>View Purchase
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <a title="Update Record ?" href="#">
-                                                                                                    <i class="fa fa-fw fa-edit text-blue"></i>Edit
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <a title="Pay" class="pointer" >
-                                                                                                    <i class="fa fa-fw fa-money text-blue"></i>View Payments
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <a title="Pay" class="pointer">
-                                                                                                    <i class="fa fa-fw  fa-hourglass-half text-blue"></i>Pay Now
-                                                                                                </a>
-                                                                                            </li><li>
-                                                                                                <a title="Update Record ?" target="_blank" href="#">
-                                                                                                    <i class="fa fa-fw fa-print text-blue"></i>Print
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            <li>
-                                                                                                <a title="Update Record ?" target="_blank" href="#">
-                                                                                                    <i class="fa fa-fw fa-file-pdf-o text-blue"></i>PDF
-                                                                                                </a>
-                                                                                            </li><li>
-                                                                                                <a title="Purchase Return" href="#">
-                                                                                                    <i class="fa fa-fw fa-undo text-blue"></i>Purchase Return
-                                                                                                </a>
-                                                                                            </li><li>
-                                                                                                <a style="cursor:pointer" title="Delete Record ?" >
-                                                                                                    <i class="fa fa-fw fa-trash text-red"></i>Delete
-                                                                                                </a>
-                                                                                            </li>
-                                                                                            
-                                                                                        </ul>
-                                                                                </div>
-                                                                            </td>
+                                                                                    </li>
+                                                                                    <li>
+                                                                                        <a style="cursor:pointer"  >
+                                                                                            <i class="fa fa-fw fa-trash text-red"></i>Delete
+                                                                                        </a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                        </div>
+                                                                    </td>
                                                                 </tr>
-
                                                             </tbody>        
                                                     </table>
                                                     <div class="next d-flex justify-content-between align-items-center">
@@ -801,7 +231,7 @@
                                                                 <li class="page-item"><a class="page-link" href="#">3</a></li>
                                                                 <li class="page-item"><a class="page-link" href="#">Next</a></li>
                                                             </ul>
-                                                            </nav>
+                                                        </nav>
                                                     </div>                              
                                                 </div>
                                             </div>
