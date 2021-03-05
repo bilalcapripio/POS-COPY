@@ -77,7 +77,7 @@
                                                     </thead>
                                                 <tbody>
                                                     <tr role="row" v-for="(data,index) in itemData" v-bind:key="data.id">  
-                                                            <td> <img :src="'http://192.168.100.9/Project_Laravel/public/images/'+data.image" width=50 height=50 alt=""> </td> 
+                                                            <td> <img :src="'http://192.168.100.9/Project_Laravel/public/images/'+data.image" width=50 height=50 alt="Product Image"> </td> 
                                                             <td>{{data.item_code}}</td>
                                                             <td>{{data.item_name}}</td>
                                                             <td>{{data.brand_name}}</td>

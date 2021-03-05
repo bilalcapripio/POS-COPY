@@ -702,7 +702,7 @@
                                                         <span class="badge badge-danger push-right">Qty:{{data.available_quantity}}</span>
                                                         <div class="box-body box-profile">
                                                             <center class="pt-1">
-                                                                <img :src="'http://192.168.100.9/Project_Laravel/public/images/'+data.image" alt="image Not Found" style="height:60px" class=" img-responsive border border-gray">
+                                                                <img :src="'http://192.168.100.9/Project_Laravel/public/images/'+data.image" alt="Product Image" style="height:60px" class=" img-responsive border border-gray">
                                                             </center>
                                                             <center class="py-3">
                                                             <label class="text-center" style="cursor: pointer; color:black;">{{data.item_name}}
