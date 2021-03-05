@@ -789,5 +789,5 @@ export default {
             clear: none;
         }
     }
-    
+
 </style>
