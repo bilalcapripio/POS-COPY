@@ -33,6 +33,19 @@
                             Item List
                         </a>
                     </li>
+                    <li class="nav-item pl-2">
+                        <a class="nav-link" data-toggle="dropdown" href="/items">
+                            <div class="input-group">
+                                <input type="text" class="form-control copyLinkInput" :value="link">
+                                <div class="input-group-append" @click="doCopy">
+                                    <div class="input-group-text">
+                                    <i class="fa fa-copy"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
                 </ul>
                 <!-- Right navbar links -->
                 <ul class="navbar-nav ml-auto">         
@@ -727,6 +740,7 @@
 
 <script>
 export default {
+    props:['links'],
     data(){
         return{
             itemData:[],
@@ -746,6 +760,14 @@ export default {
     computed:{
         Product(){
         return this.$store.state.bundle
+            }
+        },
+        methods:{
+            doCopy: function (e) {
+            let selectEl = (e.target).parents('.input-group').find('.copyLinkInput')[0];
+
+            selectEl.select();
+            document.execCommand("copy");
             }
         }
         
