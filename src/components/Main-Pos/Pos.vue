@@ -748,7 +748,7 @@
 
     computed:{
         Product(){
-        return this.$store.state.bundles
+        return this.$store.state.bundle
             }
         }
         
