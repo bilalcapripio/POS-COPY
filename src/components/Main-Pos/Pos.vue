@@ -697,7 +697,7 @@
                                         </div>
                                         <div style="overflow-y: scroll;min-height: 100px;height: 600px; overflow-x:hidden" class="over">
                                             <div class="row mt-2">
-                                                <div class="col-md-3 col-6" style="cursor: pointer;"  id="printableArea" v-for="(data,index) in itemData" @click="addTableRow(index)" v-bind:key="data.id">
+                                                <div class="col-md-3 col-6" style="cursor: pointer;"  id="printableArea" v-for="(data,index) in itemData" @click="$store.state.addTableRow(index)" v-bind:key="data.id">
                                                     <div class="box box-default bg-success border" style="border-radius:5px">
                                                         <span class="badge badge-danger push-right">Qty:{{data.available_quantity}}</span>
                                                         <div class="box-body box-profile">
