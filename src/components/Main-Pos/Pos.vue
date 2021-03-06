@@ -117,7 +117,7 @@
         </nav>   
 <!--//////////////////----End Navbar----//////////////////-->
         <main>
-            <div class="container mt-3">
+            <div class="container-fluid mt-3">
                 <div class="row">
                     <PosRight/>
                     <PosLeft/>
@@ -145,9 +145,9 @@ export default {
         return{
          
             itemDataArr:[],
-            counter:0,
-            incre:0,
-            quantity:0,
+            // counter:0,
+            // incre:0,
+            // quantity:0,
             Price:2000,
             res:[]
         }
@@ -168,6 +168,14 @@ export default {
 }
 </script>
 <style>
+body{
+    overflow-x:hidden;
+
+}
+main{
+    position: relative;
+    left: 10%;
+}
     ::-webkit-scrollbar {
         width: 8px;
     }
@@ -176,7 +184,6 @@ export default {
     ::-webkit-scrollbar-track {
             box-shadow: inset 0 0 5px grey,
             inset -0 0 10px grey; 
-            border-radius: 10px;
     }
 
     /* Handle */

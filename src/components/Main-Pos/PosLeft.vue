@@ -36,7 +36,7 @@
                                             <span class="badge badge-danger push-right">Qty:{{data.available_quantity}}</span>
                                             <div class="box-body box-profile">
                                                 <center class="pt-1">
-                                                    <img :src="'http://192.168.100.9/Project_Laravel/public/images/'+data.image" alt="Product Image" style="height:60px" class=" img-responsive border border-gray">
+                                                    <img :src="'http://192.168.100.9/Project_Laravel/public/images/'+data.image" alt="Product Image" height="60" class="img-responsive border border-gray">
                                                 </center>
                                                 <center class="py-3">
                                                     <label class="text-center" style="cursor: pointer; color:black;">{{data.item_name}}
@@ -63,7 +63,7 @@ export default {
     data() {
         return {
             itemData:[],
-            sendArr:[]
+            sendArr:[],
         }
     },
     mounted(){
@@ -84,7 +84,6 @@ export default {
                 
             },
             addTableRow: function(index){
-
                 this.sendArr.push(this.itemData[index]);
                 this.$store.state.selectedData = this.sendArr
                 // console.log(this.$store.state.selectedData)

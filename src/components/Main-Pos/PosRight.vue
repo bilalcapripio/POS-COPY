@@ -196,7 +196,7 @@ h<template>
                                             <div class="col-md-4 text-right">
                                                 <b>Total Amount</b>
                                                 <br>
-                                                <span class="text-primary text-bold">{{$store.state.totalAmount}}</span>
+                                                <span class="text-primary text-bold">{{totalAmount()}}</span>
                                             </div>    
                                             <!-- <div class="col-md-3 text-right">
                                                 <b>Total Discount:</b>
@@ -206,7 +206,7 @@ h<template>
                                             <div class="col-md-4 text-right">
                                                 <b>Grand Total:</b>
                                                 <br>
-                                                <span class="text-primary text-bold">{{$store.state.totalAmount}}</span>
+                                                <span class="text-primary text-bold">{{totalAmount()}}</span>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -299,7 +299,7 @@ h<template>
                                                                             <div class="row border-top">
                                                                                 <div class="col-md-12 bg-primary text-center p-2 rounded">
                                                                                     <span class="col-md-6 text-bold">Total:</span>
-                                                                                    <span class="col-md-6 text-bold">{{$store.state.totalAmount}}</span>
+                                                                                    <span class="col-md-6 text-bold">{{totalAmount()}}</span>
                                                                                 </div>
                                                                             </div>
 
@@ -313,7 +313,7 @@ h<template>
                                                                             <div class="row border-top">
                                                                                 <div class="col-md-12 bg-danger text-center p-3 rounded">
                                                                                     <span class="col-md-6 text-bold">Total Payable:</span>
-                                                                                    <span class="col-md-6 text-bold">{{$store.state.totalAmount}}</span>
+                                                                                    <span class="col-md-6 text-bold">{{totalAmount()}}</span>
                                                                                 </div>
                                                                             </div>
 
@@ -327,7 +327,7 @@ h<template>
                                                                             <div class="row border-top">
                                                                                 <div class="col-md-12 bg-primary text-center p-2 rounded">
                                                                                     <span class="col-md-6 text-bold">Balance :</span>
-                                                                                    <span class="col-md-6 text-bold">{{$store.state.totalAmount}}</span>
+                                                                                    <span class="col-md-6 text-bold">{{totalAmount()}}</span>
                                                                                 </div>
                                                                             </div>
 
@@ -394,7 +394,7 @@ h<template>
                                                                             <div class="row border-top">
                                                                                 <div class="col-md-12 bg-primary text-center p-2 rounded">
                                                                                     <span class="col-md-6 text-bold">Total:</span>
-                                                                                    <span class="col-md-6 text-bold">{{$store.state.totalAmount}}</span>
+                                                                                    <span class="col-md-6 text-bold">{{totalAmount()}}</span>
                                                                                 </div>
                                                                             </div>
 
@@ -408,7 +408,7 @@ h<template>
                                                                             <div class="row border-top">
                                                                                 <div class="col-md-12 bg-danger text-center p-3 rounded">
                                                                                     <span class="col-md-6 text-bold">Total Payable:</span>
-                                                                                    <span class="col-md-6 text-bold">{{$store.state.totalAmount}}</span>
+                                                                                    <span class="col-md-6 text-bold">{{totalAmount()}}</span>
                                                                                 </div>
                                                                             </div>
 
@@ -422,7 +422,7 @@ h<template>
                                                                             <div class="row border-top">
                                                                                 <div class="col-md-12 bg-primary text-center p-2 rounded">
                                                                                     <span class="col-md-6 text-bold">Balance :</span>
-                                                                                    <span class="col-md-6 text-bold">{{$store.state.totalAmount}}</span>
+                                                                                    <span class="col-md-6 text-bold">{{totalAmount()}}</span>
                                                                                 </div>
                                                                             </div>
 
@@ -554,7 +554,10 @@ export default {
     name:'PosRight',
     data() {
         return {
-            insertedData:[]
+            insertedData:[],
+            counter:0,
+            incre:0,
+            quantity:0,
         }
     },
 
@@ -566,14 +569,33 @@ export default {
     
     methods:{
         deleteTableRow: function(index){
+            this.counter--;
             this.getData.splice(index,1)
-        }   ,
+            this.quantity--;
+
+        },
+        totalAmount(){
+                var sum = 0;
+                this.getData.forEach(value => {
+                    sum += value.sales_price
+                    // console.log(sum);
+                })
+                console.log(sum);
+                return sum;
+        },
 
         printDiv() {
             window.open("http://localhost:8080/pos","","width=700,height=500");
             // invoice.document.write("<h1>This is Invoice Page</h1>" );
             // console.log(invoice)
-        }
+        },
+            ProAdd(index){
+                this.itemDataArr[index][3]++;
+            },
+
+            ProRem(index){
+                this.itemDataArr[index][3]--;
+            },
 }
     
 
