@@ -26,7 +26,7 @@ h<template>
                                                     <option value="6">Joe Root</option>
                                                 </select>
                                                 <div class="input-group-prepend">
-                                                    <i class="fa fa-user-plus text-primary fa-lg input-group-text"></i>
+                                                    <i class="fa fa-user-plus text-primary input-group-text"></i>
                                                 </div>
                                             </div>
                                         </div>
@@ -45,14 +45,14 @@ h<template>
                                                     <table class="table table-bordered table-striped table-responsive">
                                                         <thead class="bg-primary">
                                                             <tr>
-                                                                <th width="30%">Item Name</th>
-                                                                <th width="10%">Stock</th>
-                                                                <th width="25%">Quantity</th>
-                                                                <th width="15%">Price</th>
-                                                                <!-- <th width="10%">Discount</th> -->
-                                                                <th width="10%">Tax</th>
-                                                                <th width="15%">Subtotal</th>
-                                                                <th width="5%"><i class="fa fa-close"></i></th>
+                                                                <th width="20%">Item Name</th>
+                                                                <th>Stock</th>
+                                                                <th>Quantity</th>
+                                                                <th>Price</th>
+                                                                <!-- <th>Discount</th> -->
+                                                                <th>Tax</th>
+                                                                <th>Subtotal</th>
+                                                                <th ><i class="fa fa-close"></i></th>
                                                             </tr>
                                                         </thead>
                                                         <tbody style="font-size: 16px;font-weight: bold;overflow: scroll;">

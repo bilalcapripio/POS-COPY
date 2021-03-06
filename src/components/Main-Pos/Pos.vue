@@ -117,7 +117,7 @@
         </nav>   
 <!--//////////////////----End Navbar----//////////////////-->
         <main>
-            <div class="mt-3">
+            <div class="container mt-3">
                 <div class="row">
                     <PosRight/>
                     <PosLeft/>
@@ -167,7 +167,7 @@ export default {
         
 }
 </script>
-<style scoped>
+<style>
     ::-webkit-scrollbar {
         width: 8px;
     }
