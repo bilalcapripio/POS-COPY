@@ -571,7 +571,7 @@ export default {
         deleteTableRow: function(index){
             this.counter--;
             this.getData.splice(index,1)
-            this.quantity--;
+            // this.quantity--;
 
         },
         totalAmount(){
