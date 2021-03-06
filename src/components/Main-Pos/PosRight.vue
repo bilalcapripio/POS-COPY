@@ -1,8 +1,7 @@
 h<template>
         <div>
             <div class="">
-                <div class="col-md-12
-                ">
+                <div class="col-md-12">
                     <div class="container-fluid pt-2">
                         <div class="card border-top border-primary">
                             <div class="card-header">                                                                      
