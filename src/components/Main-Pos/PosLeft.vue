@@ -84,7 +84,17 @@ export default {
                 
             },
             addTableRow: function(index){
-                this.sendArr.push(this.itemData[index]);
+                let spData = this.itemData[index]
+                let sendData = { 
+                    'item_name': spData.item_name,
+                    'stock':spData.available_quantity,
+                    'qty':1,
+                    'price':spData.sales_price,
+                    'tax':spData.tax_id,
+                    'subtotal':spData.sales_price,
+
+                }
+                this.sendArr.push(sendData);
                 this.$store.state.selectedData = this.sendArr
                 // console.log(this.$store.state.selectedData)
             },

@@ -136,7 +136,7 @@ h<template>
                                                                         </div>
                                                                     </div>
                                                                 </td>
-                                                                <td>{{content.available_quantity}}</td>
+                                                                <td>{{content.qty}}</td>
                                                                 <td>
                                                                     <div class="input-group input-group-sm">
                                                                         <span class="input-group-btn">
@@ -156,13 +156,13 @@ h<template>
                                                                     </div>
                                                                 </td>
                                                                 <td class="text-right"  name="Price">
-                                                                    <input  type="text" class="form-control no-padding" :value="content.sales_price">
+                                                                    <input  type="text" class="form-control no-padding" :value="content.price">
                                                                 </td>
                                                                 <td>
-                                                                    <input  title="" type="text" class="form-control no-padding pointer" :value="content.tax_id">
+                                                                    <input  title="" type="text" class="form-control no-padding pointer" :value="content.tax">
                                                                 </td>
                                                                 <td  class="text-right">
-                                                                    <input type="text" class="form-control no-padding pointer" :value="content.sales_price">
+                                                                    <input type="text" class="form-control no-padding pointer" :value="content.price">
                                                                 </td>
                                                                 <td @click='deleteTableRow(index)' >
                                                                     <a class="fa fa-fw fa-trash-o text-red" style="cursor: pointer;font-size: 20px;"></a>
@@ -194,7 +194,7 @@ h<template>
                                             <div class="col-md-4 text-right">
                                                 <b>Quantity:</b>
                                                 <br>
-                                                <span class="text-primary text-bold">{{quantity}}</span>
+                                                <span class="text-primary text-bold">{{totat_quantity()}}</span>
                                             </div>
                                             <div class="col-md-4 text-right">
                                                 <b>Total Amount</b>
@@ -586,13 +586,20 @@ export default {
         deleteTableRow: function(index){
             this.counter--;
             this.getData.splice(index,1)
-            // this.quantity--;
+            this.quantity--;
 
+        },
+        totat_quantity: function(){
+            var sum = 0;
+            this.getData.forEach(value=>{
+                sum += parseFloat(value.qty)
+            })
+            return sum
         },
         totalAmount(){
                 var sum = 0;
                 this.getData.forEach(value => {
-                    sum += value.sales_price
+                    sum += Math.ceil(value.price)
                     // console.log(sum);
                 })
                 console.log(sum);
@@ -623,17 +630,16 @@ export default {
             const items = this.searchItems[index];
             // let tax_amount = Math.ceil(items.purchase_price * (items.tax_id / 100));
             // let unit_cost = tax_amount + items.purchase_price;
-            // var selected_items = {
-            //     'item_name':items.item_name,
-            //     'qty':1,
-            //     'purchase_price':items.purchase_price,
-            //     'tax':items.tax_id,
-            //     'tax_amount': tax_amount,
-            //     "discount":'',
-            //     'unit_cost': unit_cost,
-            //     'total_amount': unit_cost,
-            // }
-            this.getData.push(items)
+                let sendData = { 
+                    'item_name': items.item_name,
+                    'stock':items.available_quantity,
+                    'qty':1,
+                    'price':items.sales_price,
+                    'tax':items.tax_id,
+                    'subtotal':items.sales_price,
+
+                }
+            this.getData.push(sendData)
             this.query = ''
             // console.log(selected_items); 
         },
