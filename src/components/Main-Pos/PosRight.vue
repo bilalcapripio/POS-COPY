@@ -448,7 +448,7 @@
                                             <!-- End Third Modal Cash -->
                                             <!-- Start Fourth Modal PayAll -->
                                             <div class="col-md-3" style="cursor: pointer;">
-                                                <button class="btn btn-info btn-block btn-flat btn-lg"  @click="printDiv('printableArea')"> 
+                                                <button class="btn btn-info btn-block btn-flat btn-lg"  @click="printDiv"> 
                                                     <i class="fa fa-money"></i> PayAll
                                                 </button>
                                                 <!-- Modal -->
@@ -565,10 +565,13 @@ export default {
     },
     
     methods:{
-
         deleteTableRow: function(index){
             this.getData.splice(index,1)
-        }   
+        }   ,
+
+        printDiv() {
+            
+       
     }
     
 
