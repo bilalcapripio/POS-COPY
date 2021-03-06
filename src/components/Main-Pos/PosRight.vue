@@ -35,7 +35,10 @@ h<template>
                                                 <div class="input-group-prepend">
                                                     <i class="fa fa-barcode input-group-text"></i>
                                                 </div>
-                                                <input type="text" class="form-control" placeholder="Item name/Barcode/Itemcode">
+                                                <input type="text" class="form-control"  v-model="query" placeholder="Item name/Barcode/Itemcode">
+                                                <ul>
+                                                    <li v-for="(data , index) in searchItems" v-bind:key="data.id" @click="uploaditem(index)">{{data.item_name}}</li>
+                                                </ul>   
                                             </div>
                                         </div>
                                     </div>
@@ -550,20 +553,32 @@ h<template>
         </div>
 </template>
 <script>
+import axios from 'axios'
 export default {
     name:'PosRight',
     data() {
         return {
             insertedData:[],
+            searchItems:[],
             counter:0,
             incre:0,
             quantity:0,
+            query:''
         }
     },
 
     computed:{
         getData(){
             return this.$store.state.selectedData
+        }
+    },
+
+    updated(){
+        if (this.query != '') {
+            this.search();            
+        } 
+        if (this.query == '') {
+            this.searchItems=''
         }
     },
     
@@ -589,13 +604,39 @@ export default {
             // invoice.document.write("<h1>This is Invoice Page</h1>" );
             // console.log(invoice)
         },
-            ProAdd(index){
-                this.itemDataArr[index][3]++;
-            },
 
-            ProRem(index){
-                this.itemDataArr[index][3]--;
-            },
+        ProAdd(index){
+            this.itemDataArr[index][3]++;
+        },
+
+        ProRem(index){
+            this.itemDataArr[index][3]--;
+        },
+        search: function() {
+        const api ='http://192.168.100.9/Project_Laravel/public/api/item/search/'+this.query; 
+        axios.get(api)
+        .then((res)=>{
+            this.searchItems = res.data
+        })
+    },
+     uploadItem(index){
+            const items = this.searchItems[index];
+            let tax_amount = Math.ceil(items.purchase_price * (items.tax_id / 100));
+            let unit_cost = tax_amount + items.purchase_price;
+            var selected_items = {
+                'item_name':items.item_name,
+                'qty':1,
+                'purchase_price':items.purchase_price,
+                'tax':items.tax_id,
+                'tax_amount': tax_amount,
+                "discount":'',
+                'unit_cost': unit_cost,
+                'total_amount': unit_cost,
+            }
+            this.uploadItems.push(selected_items)
+            this.query = ''
+            console.log(selected_items); 
+        },
 }
     
 
