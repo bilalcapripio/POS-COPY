@@ -388,7 +388,7 @@ h<template>
                                                                             <div class="row">
                                                                                 <div class="col-md-12 bg-primary text-center p-2 rounded">
                                                                                     <span class="col-md-6 text-bold">Total Items:</span>
-                                                                                    <span class="col-md-6 text-bold">{{data.sales_price}}</span>
+                                                                                    <span class="col-md-6 text-bold">{{quantity}}</span>
                                                                                 </div>
                                                                             </div>
 
