@@ -117,8 +117,8 @@
         </nav>   
 <!--//////////////////----End Navbar----//////////////////-->
         <main>
-            <div class="container-fluid mt-3">
-                <div>
+            <div class="container mt-3">
+                <div class="row">
                     <PosRight/>
                     <PosLeft/>
                 </div>

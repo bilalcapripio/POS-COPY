@@ -1,7 +1,8 @@
 h<template>
         <div>
-            <div class="row">
-                <div class="col-md-7">
+            <div class="">
+                <div class="col-md-12
+                ">
                     <div class="container-fluid pt-2">
                         <div class="card border-top border-primary">
                             <div class="card-header">                                                                      
@@ -387,7 +388,7 @@ h<template>
                                                                             <div class="row">
                                                                                 <div class="col-md-12 bg-primary text-center p-2 rounded">
                                                                                     <span class="col-md-6 text-bold">Total Items:</span>
-                                                                                    <span class="col-md-6 text-bold">{{quantity}}</span>
+                                                                                    <span class="col-md-6 text-bold">{{data.sales_price}}</span>
                                                                                 </div>
                                                                             </div>
 
@@ -570,8 +571,9 @@ export default {
         }   ,
 
         printDiv() {
-            let invoice = window.open("","https://www.google.com/","width=300,height=300");
-            invoice.document.write("<h1>This is Invoice Page</h1>")
+            window.open("http://localhost:8080/pos","","width=700,height=500");
+            // invoice.document.write("<h1>This is Invoice Page</h1>" );
+            // console.log(invoice)
         }
 }
     

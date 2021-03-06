@@ -1,7 +1,7 @@
 <template>
     <div>
-        <div class="row">
-            <div class="col-md-5">
+        <div class="">
+            <div class="col-md-12">
                 <div class="container-fluid pt-2">
                     <div class="card border-top border-primary">
                         <div class="card-header">                                                                      
