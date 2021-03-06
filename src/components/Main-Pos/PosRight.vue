@@ -37,7 +37,7 @@ h<template>
                                                 </div>
                                                 <input type="text" class="form-control"  v-model="query" placeholder="Item name/Barcode/Itemcode">
                                                 <ul>
-                                                    <li v-for="(data , index) in searchItems" v-bind:key="data.id" @click="uploaditem(index)">{{data.item_name}}</li>
+                                                    <li v-for="(data , index) in searchItems" v-bind:key="data.id" @click="uploadItem(index)">{{data.item_name}}</li>
                                                 </ul>   
                                             </div>
                                         </div>
@@ -621,21 +621,21 @@ export default {
     },
      uploadItem(index){
             const items = this.searchItems[index];
-            let tax_amount = Math.ceil(items.purchase_price * (items.tax_id / 100));
-            let unit_cost = tax_amount + items.purchase_price;
-            var selected_items = {
-                'item_name':items.item_name,
-                'qty':1,
-                'purchase_price':items.purchase_price,
-                'tax':items.tax_id,
-                'tax_amount': tax_amount,
-                "discount":'',
-                'unit_cost': unit_cost,
-                'total_amount': unit_cost,
-            }
-            this.uploadItems.push(selected_items)
+            // let tax_amount = Math.ceil(items.purchase_price * (items.tax_id / 100));
+            // let unit_cost = tax_amount + items.purchase_price;
+            // var selected_items = {
+            //     'item_name':items.item_name,
+            //     'qty':1,
+            //     'purchase_price':items.purchase_price,
+            //     'tax':items.tax_id,
+            //     'tax_amount': tax_amount,
+            //     "discount":'',
+            //     'unit_cost': unit_cost,
+            //     'total_amount': unit_cost,
+            // }
+            this.getData.push(items)
             this.query = ''
-            console.log(selected_items); 
+            // console.log(selected_items); 
         },
 }
     
