@@ -1,4 +1,4 @@
-<template>
+h<template>
         <div>
             <div class="row">
                 <div class="col-md-7">
@@ -570,9 +570,10 @@ export default {
         }   ,
 
         printDiv() {
-            
-       
-    }
+            let invoice = window.open("","https://www.google.com/","width=300,height=300");
+            invoice.document.write("<h1>This is Invoice Page</h1>")
+        }
+}
     
 
 }
