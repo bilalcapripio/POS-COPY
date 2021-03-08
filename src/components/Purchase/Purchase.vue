@@ -46,11 +46,11 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <form>
-                                                        <label>Customer Name <span class="text-danger">*</span></label>
-                                                        <input type="text" class="form-control" placeholder="First name">
-                                                        <br>
-                                                        <label>Customer Name <span class="text-danger">*</span></label>
-                                                        <input type="text" class="form-control" placeholder="Last name">
+                                                    <label>Customer Name <span class="text-danger">*</span></label>
+                                                    <input type="text" class="form-control" placeholder="First name">
+                                                    <br>
+                                                    <label>Customer Name <span class="text-danger">*</span></label>
+                                                    <input type="text" class="form-control" placeholder="Last name">
                                                 </form>
                                             </div>
                                         </div>    
