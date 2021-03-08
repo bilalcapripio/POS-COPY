@@ -94,7 +94,7 @@
                                                 <tbody>
                                                     <tr v-for="(data,index) in uploadItems" v-bind:key="data.id">
                                                         <td>
-                                                            <input type="text" :value="data.item_name" disabled  class="form-control no-padding text-center" style="padding:17px; background-color:white; color:blue">
+                                                            <input type="text" :value="data.item_name" disabled  class="form-control no-padding text-center text-dark" style="padding:17px; background-color:white;">
                                                         </td>
                                                         <td>
                                                             <!-- {{data.qty}} -->
@@ -120,7 +120,7 @@
                                                              <input type="text" :value="data.purchase_price" disabled  class="form-control no-padding text-center" style="padding:17px; background-color:white;">
                                                         </td>
                                                         <td>
-                                                            <input type="text" :value="'Tax '+data.tax+'%'" disabled  class="form-control no-padding text-center" style="padding:17px;background-color:white; color:blue">
+                                                            <input type="text" :value="'Tax '+data.tax+'%'" disabled  class="form-control no-padding text-center text-dark" style="padding:17px;background-color:white;">
                                                         </td>
                                                         <td>
                                                             <input type="text" :value="data.tax_amount" disabled  class="form-control no-padding text-center" style="padding:17px;">
