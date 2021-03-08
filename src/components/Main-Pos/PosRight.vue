@@ -31,15 +31,15 @@ h<template>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                                <div class="input-group pt-2">
-                                                    <div class="input-group-prepend">
-                                                        <i class="fa fa-barcode input-group-text"></i>
-                                                    </div>
-                                                    <input type="text" class="form-control"  v-model="query" placeholder="Item name/Barcode/Itemcode">
+                                            <div class="input-group pt-2">
+                                                <div class="input-group-prepend">
+                                                    <i class="fa fa-barcode input-group-text"></i>
                                                 </div>
-                                                <ul class="bg-light list-unstyled">
-                                                    <li class="px-5 py-2 lead border text-success" v-for="(data , index) in searchItems" v-bind:key="data.id" @click="uploadItem(index)">{{data.item_name}}</li>
-                                                </ul>
+                                                <input type="text" class="form-control"  v-model="query" placeholder="Item name/Barcode/Itemcode">
+                                            </div>
+                                            <ul class="bg-light list-unstyled">
+                                                <li class="px-5 py-2 lead border text-success" v-for="(data , index) in searchItems" v-bind:key="data.id" @click="uploadItem(index)">{{data.item_name}}</li>
+                                            </ul>
                                         </div>
                                     </div>
                                         <div class="box-body mt-4 border border-primary" style="width:100%; height:300px">
