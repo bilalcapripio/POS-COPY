@@ -60,14 +60,16 @@
                                     <!-- Start Barcode -->
                                     <div class="container border-top">
                                         <br><br>
-                                        <div class="col-md-8 col-md-offset-2 d-flex justify-content mx-auto">
+                                        <div class="col-md-8 col-md-offset-2 d-flex mx-auto">
                                             <div class="input-group">
-                                                <span class="bg-lightblue py-1 text-center"><i class="fa fa-barcode px-3 text-center mt-2"></i> </span>
+                                                <span class="bg-lightblue py-1 text-center">
+                                                    <i class="fa fa-barcode px-3 text-center mt-2"></i> 
+                                                </span>
                                                 <input type="text" class="form-control py-3" placeholder="Item name/Barcode/Itemcode" v-model="query" id="item_search">
                                             </div>
                                         </div>
-                                        <ul class="bg-light list-unstyled">
-                                            <li v-for="(data,index) in searchItems"  v-bind:key="data.id" class="px-5 py-2 lead border text-success">
+                                        <ul class="bg-light list-unstyled" style="margin-left:15rem; width:61%;">
+                                            <li v-for="(data,index) in searchItems"  v-bind:key="data.id" class="p-1 lead border text-success" style="cursor:pointer">
                                                 <p @click="uploadItem(index)"> {{data.item_name}} </p>
                                             </li>
                                         </ul>
