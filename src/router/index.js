@@ -57,8 +57,11 @@ import Add_Supplier from '@/components/Suppplier/Supplier.vue';
 import Role from '@/components/Users/Role.vue';
 import Users from '@/components/Users/User-List.vue';
 import Add_User from '@/components/Users/User.vue';
+import Authentication from '@/components/Authentication';
+
 const routes=[
     {path:'/', name:'Content', component:Content},
+    {path:'/Authentication',name:'Authentication' ,component:Authentication},
     {path:'/pos', name:'pos', component:pos},
     {path:'/Home',name:'Home', component:Home}, 
     {path:'/Customers', name:'Customers', component:Customers},
