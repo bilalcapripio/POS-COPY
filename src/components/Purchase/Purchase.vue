@@ -62,16 +62,15 @@
                                         <br><br>
                                         <div class="col-md-8 col-md-offset-2 d-flex justify-content mx-auto">
                                             <div class="input-group">
-                                            <span class="bg-lightblue py-1 text-center"><i class="fa fa-barcode px-3 text-center mt-2"></i> </span>
+                                                <span class="bg-lightblue py-1 text-center"><i class="fa fa-barcode px-3 text-center mt-2"></i> </span>
                                                 <input type="text" class="form-control py-3" placeholder="Item name/Barcode/Itemcode" v-model="query" id="item_search">
-                                                </div>
-                                               
+                                            </div>
                                         </div>
-                                                <ul>
-                                                    <li v-for="(data,index) in searchItems"  v-bind:key="data.id">
-                                                        <p @click="uploadItem(index)"> {{data.item_name}} </p>
-                                                    </li>
-                                                </ul>
+                                        <ul>
+                                            <li v-for="(data,index) in searchItems"  v-bind:key="data.id">
+                                                <p @click="uploadItem(index)"> {{data.item_name}} </p>
+                                            </li>
+                                        </ul>
                                     </div>
                                     <!-- End Barcode -->
                                     <br><br>
