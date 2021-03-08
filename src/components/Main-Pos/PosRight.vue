@@ -38,7 +38,7 @@ h<template>
                                                 <input type="text" class="form-control"  v-model="query" placeholder="Item name/Barcode/Itemcode">
                                             </div>
                                             <ul class="bg-light list-unstyled">
-                                                <li class="px-5 py-2 lead border text-success" v-for="(data , index) in searchItems" v-bind:key="data.id" @click="uploadItem(index)">{{data.item_name}}</li>
+                                                <li class="px-5 py-2 lead border text-success" v-for="(data , index) in searchItems" v-bind:key="data.id" @click="uploadItem(index)" style="cursor:pointer;">{{data.item_name}}</li>
                                             </ul>
                                         </div>
                                     </div>
