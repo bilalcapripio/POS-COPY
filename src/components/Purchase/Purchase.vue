@@ -193,22 +193,24 @@
                                                         </th>
                                                     </tr>
                                                     <tr>
-                                                    <th class="text-right" style="font-size: 20px;">Other Charges:</th>
-                                                    <th class="text-right" style="padding-left:5%;font-size: 15px;">
-                                                        <h4><b id="other_charges_amt" name="other_charges_amt">{{other_charges_func()}}</b></h4>
+                                                    <th class="text-right text-lg">Other Charges:</th>
+                                                    <th class="text-right">
+                                                        <h4 class="text-success">
+                                                            <b id="other_charges_amt" name="other_charges_amt">{{other_charges_func()}}</b>
+                                                        </h4>
                                                     </th>
                                                     </tr>
                                                     <tr>
-                                                    <th class="text-right" style="font-size: 20px;">Discount on All:</th>
-                                                    <th class="text-right" style="padding-left:10%;font-size: 20px;">
-                                                        <h4><b id="discount_to_all_amt" name="discount_to_all_amt">{{discount_to_all()}}</b></h4>
+                                                    <th class="text-right text-lg">Discount on All:</th>
+                                                    <th class="text-right">
+                                                        <h4 class="text-success">
+                                                            <b id="discount_to_all_amt" name="discount_to_all_amt">{{discount_to_all()}}</b>
+                                                        </h4>
                                                     </th>
                                                     </tr>
                                                     <tr style="display: none;">
-                                                    <th class="text-right" style="font-size: 20px;">Round Off:                                                <i class="hover-q " data-container="body" data-toggle="popover" data-placement="top" data-content="Go to Site Settings-> Site -> Disable the Round Off(Checkbox)." data-html="true" data-trigger="hover" data-original-title="Do you wants to Disable Round Off ?" title="">
+                                                    <th class="text-right" style="font-size: 20px;">Round Off:                                  
                                                             <i class="fa fa-info-circle text-maroon text-black hover-q"></i>
-                                                        </i>
-                                                        
                                                     </th>
                                                     <th class="text-right" style="padding-left:10%;font-size: 20px;">
                                                         <h4><b id="round_off_amt" name="tot_round_off_amt">0.00</b></h4>
