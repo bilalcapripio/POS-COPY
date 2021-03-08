@@ -66,8 +66,8 @@
                                                 <input type="text" class="form-control py-3" placeholder="Item name/Barcode/Itemcode" v-model="query" id="item_search">
                                             </div>
                                         </div>
-                                        <ul>
-                                            <li v-for="(data,index) in searchItems"  v-bind:key="data.id">
+                                        <ul class="bg-light list-unstyled">
+                                            <li v-for="(data,index) in searchItems"  v-bind:key="data.id" class="px-5 py-2 lead border text-success">
                                                 <p @click="uploadItem(index)"> {{data.item_name}} </p>
                                             </li>
                                         </ul>
