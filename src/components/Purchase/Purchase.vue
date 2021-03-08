@@ -4,15 +4,15 @@
                 <Navbar/>
                     <!-- /.content-wrapper -->
                     <div class="content-wrapper p-2">
-                        <div class="content-header">
+                        <div class="content-header ">
                             <div class="container-fluid">
                                     <!-- alert start -->
-                                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
                                     <strong>Ultimate Inventory with POS new Version 1.7.7 released , Faster and Customizable Application Software. If you have any queries please message here. [Some features are disabled in demo and it will be reset after each hour.]</strong> 
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true" class="text-white">&times;</span>
                                     </button>
-                                        </div>
+                                    </div>
                                     <!-- alert end -->
 
                                 <!---------------- Start Table  --------------->
@@ -46,11 +46,11 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <form>
-                                                    <label>Customer Name <span class="text-danger">*</span></label>
-                                                    <input type="text" class="form-control" placeholder="First name">
-                                                    <br>
-                                                    <label>Customer Name <span class="text-danger">*</span></label>
-                                                    <input type="text" class="form-control" placeholder="Last name">
+                                                        <label>Customer Name <span class="text-danger">*</span></label>
+                                                        <input type="text" class="form-control" placeholder="First name">
+                                                        <br>
+                                                        <label>Customer Name <span class="text-danger">*</span></label>
+                                                        <input type="text" class="form-control" placeholder="Last name">
                                                 </form>
                                             </div>
                                         </div>    
@@ -60,13 +60,11 @@
                                     <!-- Start Barcode -->
                                     <div class="container border-top">
                                         <br><br>
-                                        <div class="col-md-8 col-md-offset-2 d-flex mx-auto">
+                                        <div class="col-md-8 col-md-offset-2 d-flex justify-content mx-auto">
                                             <div class="input-group">
-                                                <span class="bg-lightblue py-1 text-center">
-                                                    <i class="fa fa-barcode px-3 text-center mt-2"></i> 
-                                                </span>
-                                                <input type="text" class="form-control py-3" placeholder="Item name/Barcode/Itemcode" v-model="query" id="item_search">
-                                            </div>
+                                            <span class="bg-lightblue py-1 text-center"><i class="fa fa-barcode px-3 text-center mt-2"></i> </span>
+                                                <input type="text" class="form-control py-3" placeholder="Item name/Barcode/Itemcode" v-model="query" id="item_search" autocomplete="off">
+                                                </div>
                                         </div>
                                         <ul class="bg-light list-unstyled" style="margin-left:15rem; width:61%;">
                                             <li v-for="(data,index) in searchItems"  v-bind:key="data.id" class="p-1 lead border text-success" style="cursor:pointer">
@@ -88,8 +86,8 @@
                                                         <th rowspan="2" style="width:10%">Tax%</th>
                                                         <th rowspan="2" style="width:10%">Tax Amount</th>
                                                         <th rowspan="2" style="width:10%">Discount(%)</th>
-                                                        <th rowspan="2" style="width:8%">Unit Cost</th>
-                                                        <th rowspan="2" style="width:8%">Total Amount</th>
+                                                        <th rowspan="2" style="width:10%">Unit Cost</th>
+                                                        <th rowspan="2" style="width:10%">Total Amount</th>
                                                         <th rowspan="2" style="width:7.5%">Action</th>
                                                     </tr>
                                                 </thead>
@@ -101,20 +99,20 @@
                                                         <td>
                                                             <!-- {{data.qty}} -->
                                                                <div class="input-group input-group-sm">
-                                                                <span class="input-group-btn">
+                                                                <!-- <span class="input-group-btn">
                                                                     <button type="button" class="btn btn-default btn-flat" @click="decrease(index)">
                                                                         <i class="fa fa-minus text-danger"></i>
                                                                     </button>
-                                                                </span>
+                                                                </span> -->
                                                                 <!-- start count result -->
                                                                 <!-- <input type="" class="form-control"> -->
-                                                                <input type="text" :value="data.qty" class="form-control no-padding text-center" style="padding:17px">
+                                                                <input type="number" min="1" v-model="uploadItems[index].qty" @input="getQuantity(index)"  class="form-control no-padding text-center" style="padding:17.5px">
                                                                 <!--end count result -->
-                                                                <span class="input-group-btn">
+                                                                <!-- <span class="input-group-btn">
                                                                     <button type="button" class="btn btn-default btn-flat" @click="increase(index)">
                                                                         <i class="fa fa-plus text-success"></i>
                                                                     </button>
-                                                                </span>
+                                                                </span> -->
                                                             </div>
 
                                                         </td>
@@ -128,7 +126,7 @@
                                                             <input type="text" :value="data.tax_amount" disabled  class="form-control no-padding text-center" style="padding:17px;">
                                                         </td>
                                                         <td>
-                                                            <input type="text" v-model="uploadItems[index].discount" @input="getDiscount(index)" class="form-control no-padding text-center" style="padding:17px">
+                                                            <input type="number" v-model="uploadItems[index].discount" @input="getDiscount(index)" class="form-control no-padding text-center" style="padding:17px">
                                                         </td>
                                                         <td><input type="text" :value="data.unit_cost" disabled  class="form-control no-padding text-center" style="padding:17px;"></td>
                                                         <td><input type="text" :value="data.total_amount" disabled  class="form-control no-padding text-center" style="padding:17px;"></td>
@@ -146,38 +144,32 @@
                                         <div class="col-md-7 p-5">
                                             <form>
                                                 <div class="d-flex justify-content-between mx-auto">
-                                                    <h1 class="display-3">Quantity <span class="text-success font-weight-bold">0</span></h1>
+                                                    <h1 class="display-3">Quantity <span class="text-success font-weight-bold">{{totat_quantity()}}</span></h1>
                                                 </div>
                                                 <br>
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
                                                         <label for="inputEmail4">Other Charges</label>
-                                                        <input type="email" class="form-control" id="inputEmail4">
+                                                        <input type="text" v-model="other_charges" class="text-right form-control" id="inputEmail4">
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <label for="inputState">Select</label>
-                                                            <select id="inputState" class="form-control">
-                                                            <option selected>None</option>
-                                                            <option>...</option>
-                                                            <option>...</option>
-                                                            <option>...</option>
-                                                            <option>...</option>
-                                                            <option>...</option>
+                                                            <select id="inputState" class="form-control" v-model="other_charges_tax">
+                                                                <option selected value="">None</option>
+                                                                <option v-for="data in taxData" v-bind:key="data.id" :value="data.tax">
+                                                                    {{data.tax_name}} {{data.tax}}%
+                                                                </option>
                                                             </select>
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <label for="inputEmail4">Discount on All</label>
-                                                        <input type="email" class="form-control" id="inputEmail4">
+                                                        <input type="text" v-model="discount_on_all" class="text-right form-control" id="inputEmail4">
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                         <label for="inputState">Select</label>
-                                                            <select id="inputState" class="form-control">
-                                                            <option selected>Per%</option>
-                                                            <option>...</option>
-                                                            <option>...</option>
-                                                            <option>...</option>
-                                                            <option>...</option>
-                                                            <option>...</option>
+                                                            <select id="inputState" v-model="select_discount_type" class="form-control">
+                                                                <option value="">Fixed</option>
+                                                                <option value="percent">Per%</option>
                                                             </select>
                                                     </div>
                                                 </div>
@@ -191,26 +183,29 @@
                                             <!-- table total -->
                                             <div class="record" style="line-height: 3;">
                                                 <table class="col-md-6 ml-5">
-                                                    <tbody><tr>
-                                                    <th class="text-right" style="font-size: 20px;">Subtotal</th>
-                                                    <th class="text-right" style="padding-left:10%;font-size: 20px;">
-                                                        <h4><b id="subtotal_amt" name="subtotal_amt">0.00</b></h4>
+                                                    <tbody>
+                                                    <tr>
+                                                        <th class="text-right text-lg">Subtotal:</th>
+                                                        <th class="text-right">
+                                                            <h4 class="text-success">
+                                                                <b id="subtotal_amt" name="subtotal_amt">{{subtotal()}}</b>
+                                                            </h4>
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+                                                    <th class="text-right" style="font-size: 20px;">Other Charges:</th>
+                                                    <th class="text-right" style="padding-left:5%;font-size: 15px;">
+                                                        <h4><b id="other_charges_amt" name="other_charges_amt">{{other_charges_func()}}</b></h4>
                                                     </th>
                                                     </tr>
                                                     <tr>
-                                                    <th class="text-right" style="font-size: 20px;">Other Charges</th>
+                                                    <th class="text-right" style="font-size: 20px;">Discount on All:</th>
                                                     <th class="text-right" style="padding-left:10%;font-size: 20px;">
-                                                        <h4><b id="other_charges_amt" name="other_charges_amt">0.00</b></h4>
-                                                    </th>
-                                                    </tr>
-                                                    <tr>
-                                                    <th class="text-right" style="font-size: 20px;">Discount on All</th>
-                                                    <th class="text-right" style="padding-left:10%;font-size: 20px;">
-                                                        <h4><b id="discount_to_all_amt" name="discount_to_all_amt">0.00</b></h4>
+                                                        <h4><b id="discount_to_all_amt" name="discount_to_all_amt">{{discount_to_all()}}</b></h4>
                                                     </th>
                                                     </tr>
                                                     <tr style="display: none;">
-                                                    <th class="text-right" style="font-size: 20px;">Round Off                                                <i class="hover-q " data-container="body" data-toggle="popover" data-placement="top" data-content="Go to Site Settings-> Site -> Disable the Round Off(Checkbox)." data-html="true" data-trigger="hover" data-original-title="Do you wants to Disable Round Off ?" title="">
+                                                    <th class="text-right" style="font-size: 20px;">Round Off:                                                <i class="hover-q " data-container="body" data-toggle="popover" data-placement="top" data-content="Go to Site Settings-> Site -> Disable the Round Off(Checkbox)." data-html="true" data-trigger="hover" data-original-title="Do you wants to Disable Round Off ?" title="">
                                                             <i class="fa fa-info-circle text-maroon text-black hover-q"></i>
                                                         </i>
                                                         
@@ -220,9 +215,9 @@
                                                     </th>
                                                     </tr>
                                                     <tr>
-                                                    <th class="text-right" style="font-size: 20px;">Grand Total</th>
+                                                    <th class="text-right" style="font-size: 20px;">Grand Total:</th>
                                                     <th class="text-right" style="padding-left:10%;font-size: 17px;">
-                                                        <h4><b id="total_amt" name="total_amt">0.00</b></h4>
+                                                        <h4><b id="total_amt" name="total_amt">{{grand_total()}}</b></h4>
                                                     </th>
                                                     </tr>
                                                 </tbody></table>
@@ -335,8 +330,14 @@ export default {
         return{
             uploadItems:[],
             searchItems:[],
+            taxData:[],
             query:'',
-            discount:''
+            discount:'',
+            total:'',
+            other_charges_tax:'',
+            other_charges:'',
+            discount_on_all:'',
+            select_discount_type:''
         }
     },
     components: {
@@ -352,31 +353,112 @@ export default {
             this.searchItems=''
         }
     },
+    mounted(){
+        this.getTaxData()
+    },
     methods:{
+
+         getTaxData: function(){
+            axios.get("http://192.168.100.9/Project_Laravel/public/api/tax")
+                // return promise
+            .then((res)=>{
+                this.taxData=res.data;
+                    console.log(res.data);
+            })
+                // catch error
+            .catch(error =>{
+                console.log(error)
+            });
+        },
+
         increase: function(index){
             this.uploadItems[index].qty++
+            this.uploadItems[index].tax_amount = this.uploadItems[index].tax_amount * this.uploadItems[index].qty;
+            this.uploadItems[index].total_amount = this.uploadItems[index].total_amount * this.uploadItems[index].qty;
         },
+
         decrease: function(index){
             if (this.uploadItems[index].qty > 1) {
                 this.uploadItems[index].qty--
             }
         },
+
+        subtotal: function(){
+            var sum = 0.00;
+            this.uploadItems.forEach(value=>{
+                sum += value.total_amount
+            })
+              
+            return sum
+        },
+
+        totat_quantity: function(){
+            var sum = 0;
+            this.uploadItems.forEach(value=>{
+                sum += parseFloat(value.qty)
+            })
+            return sum
+        },
+
+        discount_to_all: function (){
+            var sum = 0.00
+            if (this.uploadItems != '') {
+                if (this.select_discount_type == 'percent' && this.discount_on_all != '') {
+                    sum+= this.subtotal()+this.other_charges_func() * (this.discount_on_all / 100)
+                }else if(this.discount_on_all != ''){
+                    sum+= parseFloat(this.discount_on_all)
+                }
+            }
+            return sum          
+        },
+
+        other_charges_func: function (){
+            var sum = 0.00
+            if (this.uploadItems != '') {
+                if (this.other_charges_tax != '' && this.other_charges != '') {
+                    var tax = parseFloat(this.other_charges * (this.other_charges_tax / 100))
+                    sum +=  parseFloat(this.other_charges)+parseFloat(tax)
+                }else if(this.other_charges != ''){
+                    sum += parseFloat(this.other_charges)
+                }
+            }
+            return sum;
+        },
+
+        grand_total: function(){
+            var sum = 0.00
+            sum += this.subtotal()+this.other_charges_func()-this.discount_to_all()
+            return sum
+        },
+
+        getQuantity: function(index){
+            if (this.uploadItems[index].qty > 0) {
+                var tax_amount = Math.ceil(this.uploadItems[index].purchase_price * (this.uploadItems[index].tax / 100));
+                var total_amount = this.uploadItems[index].qty * this.uploadItems[index].unit_cost 
+                this.uploadItems[index].tax_amount = this.uploadItems[index].qty * tax_amount
+                this.uploadItems[index].total_amount = total_amount 
+            }
+        },
+
         getDiscount:function(index){
-            var unit_cost = this.uploadItems[index].purchase_price + this.uploadItems[index].tax_amount 
+            var unit_cost = this.uploadItems[index].purchase_price * this.uploadItems[index].qty + this.uploadItems[index].tax_amount 
             var test =  Math.ceil(unit_cost * (this.uploadItems[index].discount / 100))
             this.uploadItems[index].total_amount = unit_cost-test
             console.log(this.uploadItems[index].total_amount);
         },
+
         removeRow: function(index){
             this.uploadItems.splice(index,1)
         },  
+
         search: function() {
             const api ='http://192.168.100.9/Project_Laravel/public/api/item/search/'+this.query; 
             axios.get(api)
-            .then((res)=>{
-                this.searchItems = res.data
+           .then((res)=>{
+               this.searchItems = res.data
             })
         },
+
         uploadItem: function(index){
             const items = this.searchItems[index];
             let tax_amount = Math.ceil(items.purchase_price * (items.tax_id / 100));
@@ -396,7 +478,6 @@ export default {
             console.log(selected_items); 
         },
     }
-
 }
 </script>
 

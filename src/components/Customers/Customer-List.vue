@@ -78,6 +78,7 @@
                                                                 <td>310,644.40</td>
                                                                 <td>2,625.00</td>
                                                                 <td>0.00</td>
+                                                                <td><span class="bg-success p-1 rounded"> Active</span></td>
                                                                 <td v-for="(item, i ) in items" :key="i" :class="{ active: i === activeItem}"><span @click="selectItem(i)" class="bg-success p-1 rounded" style="cursor:pointer">Active </span></td>
                                                                 <td>
                                                                     <div class="btn-group" title="View Account">
