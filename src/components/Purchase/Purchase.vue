@@ -144,7 +144,7 @@
                                         <div class="col-md-7 p-5">
                                             <form>
                                                 <div class="d-flex justify-content-between mx-auto">
-                                                    <h1 class="display-3">Quantity <span class="text-success font-weight-bold">{{totat_quantity()}}</span></h1>
+                                                    <h1 class="display-3">Quantity : <span class="text-success font-weight-bold">{{totat_quantity()}}</span></h1>
                                                 </div>
                                                 <br>
                                                 <div class="form-row">
@@ -208,18 +208,22 @@
                                                         </h4>
                                                     </th>
                                                     </tr>
-                                                    <tr style="display: none;">
+                                                    <!-- <tr style="display: none;">
                                                     <th class="text-right" style="font-size: 20px;">Round Off:                                  
                                                             <i class="fa fa-info-circle text-maroon text-black hover-q"></i>
                                                     </th>
-                                                    <th class="text-right" style="padding-left:10%;font-size: 20px;">
-                                                        <h4><b id="round_off_amt" name="tot_round_off_amt">0.00</b></h4>
+                                                    <th class="text-right">
+                                                        <h4 class="text-success">
+                                                            <b id="round_off_amt" name="tot_round_off_amt">0.00</b>
+                                                        </h4>
                                                     </th>
-                                                    </tr>
+                                                    </tr> -->
                                                     <tr>
-                                                    <th class="text-right" style="font-size: 20px;">Grand Total:</th>
-                                                    <th class="text-right" style="padding-left:10%;font-size: 17px;">
-                                                        <h4><b id="total_amt" name="total_amt">{{grand_total()}}</b></h4>
+                                                    <th class="text-right text-lg">Grand Total:</th>
+                                                    <th class="text-right">
+                                                        <h4 class="text-success pl-2">
+                                                            <b id="total_amt" name="total_amt">{{grand_total()}}</b>
+                                                        </h4>
                                                     </th>
                                                     </tr>
                                                 </tbody></table>
