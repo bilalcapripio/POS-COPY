@@ -51,23 +51,23 @@ export default {
 }
 </script>
 <style scoped>
-body{
-  background: url("https://images.unsplash.com/photo-1465146633011-14f8e0781093?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3450&q=80");
+section{
+  background-image: linear-gradient(rgba(0,0,0,0.4)rgba(0,0,0,0.4)),url("https://i.postimg.cc/XNccJMQk/apple-pay-nfc-payment-picjumbo-com.jpg");
   width: 100%;
   height: 100vh;
-  animation: animation 100s linear infinite;
+  /* animation: animation 100s linear infinite; */
 }
-@keyframes animation {
+/* @keyframes animation {
   100%{
     background-position:0px -3000px;
   }
+} */
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
 }
-      section{
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-direction: column;
-          min-height: 100vh;
-      }
 </style>>
     
