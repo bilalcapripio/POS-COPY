@@ -52,7 +52,8 @@ export default {
 </script>
 <style scoped>
 section{
-  background-image: linear-gradient(rgba(0,0,0,0.4)rgba(0,0,0,0.4)),url("https://i.postimg.cc/XNccJMQk/apple-pay-nfc-payment-picjumbo-com.jpg");
+  background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.5)), url("https://i.postimg.cc/XNccJMQk/apple-pay-nfc-payment-picjumbo-com.jpg") no-repeat;
+  background-size:cover ;
   width: 100%;
   height: 100vh;
   /* animation: animation 100s linear infinite; */
