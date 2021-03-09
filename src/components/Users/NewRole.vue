@@ -36,7 +36,7 @@
                                             <!-- start table -->
                                             <div class="col-sm-12 mt-4">
                                                 <table class="table table-bordered">
-                                                    <thead class="thead-dark">
+                                                    <thead class="bg-primary">
                                                         <tr>
                                                             <th scope="col">#</th>
                                                             <th scope="col">Modules</th>
