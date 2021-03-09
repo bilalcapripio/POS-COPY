@@ -23,8 +23,8 @@
                             </div>
                             <!-- form card login -->
                                 <div class="card card-outline-secondary w-75">
-                                    <div class="card-header py- text-center">
-                                        <h4 class="mb-0 lead">Sign in to start your session</h4>
+                                    <div class="card-header text-center">
+                                        <h5 class="mb-0  text-sm font-light font-italic">Sign in to start your session</h5>
                                     </div>
                                     <div class="card-body p-5">
                                         <form>
@@ -129,14 +129,12 @@
 export default {
     name:'Authentication',
     components:{
-
     }
-    
 }
 </script>
 <style scoped>
 section{
-    background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.5)), url("https://i.postimg.cc/XNccJMQk/apple-pay-nfc-payment-picjumbo-com.jpg") no-repeat;
+    background:linear-gradient(rgba(255, 254, 254, 0.479),rgba(20, 19, 19, 0.705)), url("https://i.postimg.cc/XNccJMQk/apple-pay-nfc-payment-picjumbo-com.jpg") no-repeat;
     background-size:cover ;
     width: 100%;
     height: 100vh;
@@ -144,6 +142,7 @@ section{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    position: fixed;
 }
 .circles{
     position: absolute;
@@ -241,8 +240,6 @@ section{
     animation-delay: 0s;
     animation-duration: 11s;
 }
-
-
 
 @keyframes animate {
 
