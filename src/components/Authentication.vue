@@ -49,7 +49,7 @@
                                                     <br>
                                                 </div>
                                                     <p class="py-1"><a href="#">I Forget my password</a></p>
-                                                <button type="submit" class="btn btn-info float-right">Sign in</button>
+                                                <button type="submit" class="btn btn-info float-right" @click="Redirect()">Sign in</button>
                                             </form>
                                             <br>
 
@@ -159,6 +159,9 @@ export default {
             // submit data without page reload 
             e.preventDefault();
         },
+        Redirect(){
+            setTimeout("window.location='/'",3000);
+            }
 
     }
 }

@@ -55,26 +55,26 @@
           <li class="dropdown user user-menu open mt-2 ml-2">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
               <img src="../assets/Img/admin.png" class="user-image" alt="User Image">
-              <span class="hidden-xs text-light">Admin</span>
+              <span class="hidden-xs text-light">
+                <a href="/Authentication" class="text-light">Logout</a> 
+                </span>
             </a>
-
+            <!-- 
             <ul class="dropdown-menu bg-gradient-navy rounded">
-              <!-- User image -->
               <li class="user-header">
                 <img src="@/assets/Img/admin.png" class="img-circle img-fluid" alt="User Image">
                     <p>Admin<small>Year 2021</small> </p>
               </li>
-              <!-- Menu Body -->
-              <!-- Menu Footer-->
-              <li class="user-footer">
+               <li class="user-footer">
                 <div class="pull-left">
                   <a href="#" class="btn btn-primary btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="Logout.html" class="btn btn-danger btn-flat">Sign out</a>
+                  <a href="#" class="btn btn-danger btn-flat">Sign out</a>
                 </div>
               </li>
-            </ul>
+            </ul> -->
+
           </li>
         </ul>
       </nav>
