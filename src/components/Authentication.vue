@@ -1,98 +1,40 @@
 <template>
     <div>
-        <section>        
+        <section>
             <div class="container">
-                    <div class="login-logo">
-                        <a href="index.php"><b>
-                        <img src="https://pos.creatantech.com/uploads/invenoty_with_POS1(1).png" width="60%" height="70px">
-                        </b></a>
-                    </div>
-                    <!-- /.login-logo -->
-                    <div class="login-box-body">
-                        <p class="login-box-msg">Sign in to start your session</p>
-                        <div class="text-danger tex-center"></div>
-                        <div class="text-success tex-center"></div>
-                            
-                        
-                            <form action="https://pos.creatantech.com/login/verify" method="post">
-                            <input type="hidden" name="csrf_test_name" value="fa0ca356a603b8d474b72d1068162961">
-                            <div class="form-group has-feedback">
-                                <input type="text" class="form-control" value="admin" placeholder="Username" id="username" name="username" autofocus=""><span class="glyphicon glyphicon-user form-control-feedback"></span>
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <div class="d-flex mx-auto p-3">
+                                <img src="../assets/Img/pos.png" width="250" alt="AdminLTE Logo" class="img-fluid">
                             </div>
-                            <div class="form-group has-feedback">
-                                <input type="password" class="form-control" value="123456" placeholder="Password" id="pass" name="pass">
-                                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-8">
-                                <div class="checkbox icheck">
-                                    <label>
-                                    <div class="icheckbox_square-blue" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> Remember Me
-                                    </label>
+                            <span class="anchor" id="formLogin"></span> 
+                                    <!-- form card login -->
+                            <div class="card card-outline-secondary ">
+                                <div class="card-header py-4 text-center">
+                                    <h4 class="mb-0 lead">Sign in to start your session</h4>
                                 </div>
-                                </div>
-                                <!-- /.col -->
-                                <div class="col-xs-4">
-                                <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
-                                </div>
-                                <!-- /.col -->
-                            </div>
-                            </form>
-                            <a href="#">I forgot my password</a><br>
-                            <div class="row">
-                            <div class="col-md-12 text-right">
-                                <p style="font-style: italic;">Version 1.7.7</p>   
-                            </div>
-                            </div>
-                    </div>
-                    <!-- /.login-box-body -->
-                <div class="box">
-                        <div class="box-body">
-                        <div class="row">
-                            
-                            <div class="btn-group col-xs-12">
-                                <button type="button" class="col-xs-4 btn btn-default btn-md bg-maroon admin" title="Click here for Login as Admin">Admin</button>
-                                <button type="button" class="col-xs-4 btn btn-default btn-md bg-green sales" title="Click here for Login as Sales Person">Sales</button>
-                                <button type="button" class="col-xs-4 btn btn-default btn-md bg-purple purchase" title="Click here for Login as Purchase Person">Purchase</button>
-                            </div>
-                            <br>
-                            <br>
-                            
-                        <div class="col-xs-12">
-                            <table class="table table-bordered table-condensed text-center">
-                            <thead class="bg-gray">
-                            <tr>
-                            <td>Role</td>
-                            <td>Username</td>
-                            <td>Password</td>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                            <td>Admin</td>
-                            <td>admin</td>
-                            <td>123456</td>
-                            </tr>
-                            <tr>
-                            <td>Sales</td>
-                            <td>sales</td>
-                            <td>123456</td>
-                            </tr>
-                            <tr>
-                            <td>Purchase</td>
-                            <td>purchase</td>
-                            <td>123456</td>
-                            </tr>
-                            <tr>
-                            <td colspan="3">Any number of Users &amp; Roles you can create.</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                        </div>
-                        </div>
+                                <div class="card-body p-5">
+                                    <form autocomplete="off" class="form">
+                                        <div class="form-group">
+                                        <label for="uname1">Username</label> 
+                                            <input class="form-control" id="uname1" name="uname1" required="" type="text">
+                                        </div>
+                                        <div class="form-group">
+                                        <label>Password</label> 
+                                                            <input autocomplete="new-password" class="form-control" id="pwd1" required="" type="password">
+                                        </div>
+                                        <div class="form-check small">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox"> 
+                                            <span>Remember me on this computer</span>
+                                        </label>
+                                        </div>
+                                        <button class="btn btn-success btn-lg float-right" type="button">Login</button>
+                                    </form>
+                                </div><!--/card-block-->
+                            </div><!-- /form card login -->
                         </div>
                     </div>
-            
             </div>
         </section>
     </div>
