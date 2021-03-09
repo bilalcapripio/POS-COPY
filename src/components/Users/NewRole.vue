@@ -93,7 +93,7 @@
                                         </tr>
                                         <tr>
                                             <th scope="row">12</th>
-                                            <td>User</td>
+                                            <td>Items</td>
                                         </tr>
                                         <tr>
                                             <th scope="row">13</th>
