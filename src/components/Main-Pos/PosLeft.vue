@@ -48,7 +48,7 @@ h<template>
                                                     <table class="table table-bordered table-striped table-responsive">
                                                         <thead class="bg-primary">
                                                             <tr>
-                                                                <th width="20%">Item Name</th>
+                                                                <th width="30%">Item Name</th>
                                                                 <th>Stock</th>
                                                                 <th>Quantity</th>
                                                                 <th>Price</th>

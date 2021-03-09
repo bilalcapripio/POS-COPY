@@ -31,12 +31,12 @@
                             </div>
                             <div style="overflow-y: scroll;min-height: 100px;height:600px; overflow-x:hidden" class="over p-1">
                                 <div class="row mt-2">
-                                    <div class="col-md-3 col-6" style="cursor: pointer;"  id="printableArea" v-for="(data,index) in itemData" @click="addTableRow(index)" v-bind:key="data.id">
+                                    <div class="col-md-4 col-6" style="cursor: pointer;"  id="printableArea" v-for="(data,index) in itemData" @click="addTableRow(index)" v-bind:key="data.id">
                                         <div class="box box-default bg-success border" style="border-radius:5px">
                                             <span class="badge badge-danger push-right">Qty:{{data.available_quantity}}</span>
                                             <div class="box-body box-profile">
                                                 <center class="pt-1">
-                                                    <img :src="'http://192.168.100.9/Project_Laravel/public/images/'+data.image" alt="Product Image" height="50" class="img-responsive border border-gray">
+                                                    <img :src="'http://192.168.100.9/Project_Laravel/public/images/'+data.image" alt="Product Image" width="80" class="img-responsive border border-gray">
                                                 </center>
                                                 <center class="py-3">
                                                     <label class="text-center" style="cursor: pointer; color:black;">{{data.item_name}}

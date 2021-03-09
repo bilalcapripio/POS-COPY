@@ -121,7 +121,6 @@
                 <div class="row">
                     <PosLeft/>
                     <PosRight/>
-
                 </div>
             </div>
         </main>
@@ -175,7 +174,7 @@ body{
 }
 main{
     position: relative;
-    left: 10%;
+    left: 14%;
 }
     ::-webkit-scrollbar {
         width: 8px;
