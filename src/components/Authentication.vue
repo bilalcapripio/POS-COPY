@@ -22,24 +22,46 @@
                                                 </div>
 
                                                 <div class="input-group mb-2 ">
-                                                    <input type="text" class="form-control"  placeholder="" value="admin">
+                                                    <input type="password" class="form-control"  placeholder="" value="admin">
                                                     <div class="input-group-prepend">
-                                                    <div class="input-group-text"><i class="fa fa-user"></i></div>
+                                                    <div class="input-group-text"><i class="fa fa-lock"></i></div>
                                                     </div>
                                                 </div>
 
 
-                                                <div class="form-check mb-2 mr-sm-2">
+                                                <div class="form-check">
                                                     <input class="form-check-input" type="checkbox" id="inlineFormCheck">
-                                                    <label class="form-check-label" for="inlineFormCheck">
-                                                    Remember me
-                                                    </label>
+                                                    <label class="form-check-label" for="inlineFormCheck">Remember me</label>
+                                                    <br>
                                                 </div>
-
+                                                    <p class="py-2"><a href="#">I Forget my password</a></p>
                                                 <button type="submit" class="btn btn-info float-right">Sign in</button>
                                             </form>
+                                            <br>
+
+                                            
                                     </div>
                                     <!--/card-block-->
+                                </div>
+                                <div class="card card-outline-secondary w-75 border-top border-danger">
+                                    <div class="card-body">
+                                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                            <label class="btn btn-secondary active">
+                                                <input type="radio" name="options" id="option1" autocomplete="off" checked> Active
+                                            </label>
+                                            <label class="btn btn-secondary">
+                                                <input type="radio" name="options" id="option2" autocomplete="off"> Radio
+                                            </label>
+                                            <label class="btn btn-secondary">
+                                                <input type="radio" name="options" id="option3" autocomplete="off"> Radio
+                                            </label>
+                                        </div>
+                                            <div class="row">
+
+                                            
+                                                
+                                            </div>
+                                    </div>
                                 </div>
                             <!-- /form card login -->
                         </div>
