@@ -275,8 +275,8 @@ section{
     animation-delay: 0s;
     animation-duration: 11s;
 }
-
-/* @keyframes animate {
+ 
+ @keyframes animate {
 
     0%{
         transform: translateY(0) rotate(0deg);
@@ -290,5 +290,5 @@ section{
         border-radius: 50%;
     }
 
-} */
+} 
 </style>

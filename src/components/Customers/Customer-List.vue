@@ -146,9 +146,6 @@ import Sidebar from '../../components/Sidebar.vue'
 import Footer from  '../../components/Footer.vue'
 import axios from 'axios'
 import { jsPDF } from "jspdf";
-import {table2excel} from 'table2excel';
-
-
 
 
 export default {
@@ -190,10 +187,10 @@ export default {
             doc.save("Table.pdf");
             // console.log(table)
         },
-        ExcelTable(){
-        let tableexcel = new Table2Excel();
-        tableexcel.export(document.querySelectorAll("#example-table"));
-        }
+        // ExcelTable(){
+        // let tableexcel = new Table2Excel();
+        // tableexcel.export(document.querySelectorAll("#example-table"));
+        // }
     },    mounted(){
         axios.get("http://192.168.100.9/Project_Laravel/public/api/customer")
                 // return promise
