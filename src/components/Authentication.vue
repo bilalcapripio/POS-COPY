@@ -1,6 +1,6 @@
 <template>
     <div>
-        <section>
+        <section class="p-5">
             <div class="container">
                     <div class="" >
                         <ul class="circles">
@@ -43,10 +43,11 @@
                                                 </div>
 
 
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="inlineFormCheck">
-                                                    <label class="form-check-label" for="inlineFormCheck">Remember me</label>
-                                                    <br>
+                                                <div class="custom-control custom-checkbox py-2">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                                    <label class="custom-control-label " for="customCheck1" style="font-size:12px">
+                                                        <span style="line-height:2">Remember on this computer</span>
+                                                        </label>
                                                 </div>
                                                     <p class="py-1"><a href="#">I Forget my password</a></p>
                                                 <button type="submit" class="btn btn-info float-right" @click="Redirect()">Sign in</button>
@@ -57,7 +58,7 @@
                                     </div>
                                     <!--/card-block-->
                                 </div>
-                                <!-- <div class="card card-outline-secondary w-75 border-top border-danger">
+                                <div class="card card-outline-secondary w-75 border-top border-danger">
                                     <div class="card-body">
                                      
                                             <div class="row">
@@ -117,7 +118,7 @@
                                                 
                                             </div>
                                     </div>
-                                </div> -->
+                                </div>
                             <!-- /form card login -->
                         </div>
                     </div>
