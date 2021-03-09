@@ -187,6 +187,15 @@ export default {
             doc.text("Pdf", 10, 10);
             doc.save("Table.pdf");
             // console.log(table)
+        },
+            copyToClipboard(containerid){
+            var range = document.createRange();
+            range.selectNode(containerid); 
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            document.execCommand("copy");
+            window.getSelection().removeAllRanges();
+            alert("data copied");
         }
     },    mounted(){
         axios.get("http://192.168.100.9/Project_Laravel/public/api/customer")
