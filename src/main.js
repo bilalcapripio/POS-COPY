@@ -12,6 +12,7 @@ import store from './store'
 createApp(App)
 .use(Vuex)
 .use(store)
+.use(table2excel)
 .use(router)
 .use(VueAxios, axios)
 .mount('#app')
