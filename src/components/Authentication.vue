@@ -29,14 +29,14 @@
                                     <div class="card-body p-5">
                                         <form  v-on:submit="PostAuthen" method="post">
                                                 <div class="input-group mb-2">
-                                                    <input type="text" class="form-control"  placeholder="" value="admin" v-model="postss.admin">
+                                                    <input type="text" class="form-control" placeholder="" v-model="postss.admin">
                                                     <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="fa fa-user"></i></div>
                                                     </div>
                                                 </div>
 
                                                 <div class="input-group mb-2 ">
-                                                    <input type="password" class="form-control"  placeholder="" value="admin" v-model="postss.password">
+                                                    <input type="password" class="form-control" placeholder=""  v-model="postss.password">
                                                     <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="fa fa-lock"></i></div>
                                                     </div>
@@ -134,18 +134,17 @@ export default {
     data(){
         return{
             postss:{
-                admin:'',
-                password:''
+                admin:"",
+                password:"",
             }
-
         }
     },
     methods:{
         PostAuthen(e){
             confirm('Do You Wants Save ?')
             const formdata = new FormData();
-            formdata.append('admin',this.posts.admin),
-            formdata.append('password',this.posts.password),
+            formdata.append('admin',this.postss.admin),
+            formdata.append('password',this.postss.password),
             axios.post("http://192.168.100.9/Project_Laravel/public/api/customer",formdata)
             // return promise
             .then((res)=>{
@@ -156,7 +155,7 @@ export default {
                 console.log(error)
             });
             // show data [testing]
-            console.table(this.posts);
+            console.table(this.postss);
             // submit data without page reload 
             e.preventDefault();
         },
@@ -289,4 +288,3 @@ section{
 
 } */
 </style>
-    
