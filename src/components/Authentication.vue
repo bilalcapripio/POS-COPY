@@ -27,16 +27,16 @@
                                         <h5 class="mb-0  text-sm font-light font-italic">Sign in to start your session</h5>
                                     </div>
                                     <div class="card-body p-5">
-                                        <form>
+                                        <form method="post" v-on:submit="PostAuthen">
                                                 <div class="input-group mb-2">
-                                                    <input type="text" class="form-control"  placeholder="" value="admin">
+                                                    <input type="text" class="form-control"  placeholder="" value="admin" v-model="postss.admin">
                                                     <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="fa fa-user"></i></div>
                                                     </div>
                                                 </div>
 
                                                 <div class="input-group mb-2 ">
-                                                    <input type="password" class="form-control"  placeholder="" value="admin">
+                                                    <input type="password" class="form-control"  placeholder="" value="admin" v-model="postss.password">
                                                     <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="fa fa-lock"></i></div>
                                                     </div>
@@ -57,7 +57,7 @@
                                     </div>
                                     <!--/card-block-->
                                 </div>
-                                <div class="card card-outline-secondary w-75 border-top border-danger">
+                                <!-- <div class="card card-outline-secondary w-75 border-top border-danger">
                                     <div class="card-body">
                                      
                                             <div class="row">
@@ -117,7 +117,7 @@
                                                 
                                             </div>
                                     </div>
-                                </div>
+                                </div> -->
                             <!-- /form card login -->
                         </div>
                     </div>
@@ -126,9 +126,35 @@
     </div>
 </template>
 <script>
+import axios from 'axios'
 export default {
     name:'Authentication',
     components:{
+    },
+    methods:{
+        PostAuthen(e){
+            confirm('Do You Wants to Save Record ?')
+            const formdata = new FormData();
+            formdata.append('address',this.posts.addresss),
+            formdata.append('city',this.posts.city),
+            axios.post("http://192.168.100.9/Project_Laravel/public/api/customer",formdata)
+            // return promise
+            .then((res)=>{
+                console.log(res);
+            })
+            // catch error
+            .catch(error =>{
+                console.log(error)
+            });
+            // show data [testing]
+            console.table(this.posts);
+            // submit data without page reload 
+            e.preventDefault();
+        },
+        Redirect(){
+            setTimeout("window.location='/Customers'",3000);
+            }
+
     }
 }
 </script>
@@ -241,7 +267,7 @@ section{
     animation-duration: 11s;
 }
 
-@keyframes animate {
+/* @keyframes animate {
 
     0%{
         transform: translateY(0) rotate(0deg);
@@ -255,6 +281,6 @@ section{
         border-radius: 50%;
     }
 
-}
-</style>>
+} */
+</style>
     
