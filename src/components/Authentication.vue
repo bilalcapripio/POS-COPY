@@ -45,18 +45,52 @@
                                 </div>
                                 <div class="card card-outline-secondary w-75 border-top border-danger">
                                     <div class="card-body">
-                                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                            <label class="btn btn-secondary active">
-                                                <input type="radio" name="options" id="option1" autocomplete="off" checked> Active
-                                            </label>
-                                            <label class="btn btn-secondary">
-                                                <input type="radio" name="options" id="option2" autocomplete="off"> Radio
-                                            </label>
-                                            <label class="btn btn-secondary">
-                                                <input type="radio" name="options" id="option3" autocomplete="off"> Radio
-                                            </label>
-                                        </div>
+                                     
                                             <div class="row">
+                                                <div class="col-md-12">
+                                                        <div class="btn-group btn-group-toggle d-flex mx-auto" data-toggle="buttons">
+                                                            <label class="btn btn-danger border-left">
+                                                                <input type="radio" name="options" id="option1" autocomplete="off" checked> Admin
+                                                            </label>
+                                                            <label class="btn btn-success border-left">
+                                                                <input type="radio" name="options" id="option2" autocomplete="off">Sales
+                                                            </label>
+                                                            <label class="btn btn-info border-left">
+                                                                <input type="radio" name="options" id="option3" autocomplete="off"> Purchase
+                                                            </label>
+                                                        </div>
+                                                        <table class="table table-bordered my-2">
+                                                                <thead class="">
+                                                                    <tr>
+                                                                    <th scope="col">#</th>
+                                                                    <th scope="col">Role</th>
+                                                                    <th scope="col">Username</th>
+                                                                    <th scope="col">Password</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                    <th scope="row">1</th>
+                                                                    <td>Mark</td>
+                                                                    <td>Otto</td>
+                                                                    <td>@mdo</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                    <th scope="row">2</th>
+                                                                    <td>Jacob</td>
+                                                                    <td>Thornton</td>
+                                                                    <td>@fat</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                    <th scope="row">3</th>
+                                                                    <td>Larry</td>
+                                                                    <td>the Bird</td>
+                                                                    <td>@twitter</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                        </table>
+                                                </div>
+
 
                                             
                                                 
