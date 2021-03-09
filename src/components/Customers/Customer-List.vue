@@ -26,6 +26,8 @@
                                                 <div class="col-md-4">
                                                     <h1 class="display-4">Customer List</h1>
                                                 </div> 
+                                                {{text}} <button @click="copy">copy</button>
+                                                <input class="input" type="text" placeholder="Text input">
                                                 <div class="col-md-6"></div> 
                                                 <div class=" col-md-2 box-tools float-right mb-3">
                                                     <a class="btn btn-block btn-info " href="/Add_Customer">
@@ -43,7 +45,7 @@
                                                 </label>
                                                 </div><div id="example2_processing" class="dataTables_processing panel panel-default" style="display: none;"></div></div><div class="pull-right margin-left-10 ">
                                                 <div class="dt-buttons btn-group mt-4 mr-2">              
-                                                <button @click="copyToClipboard(select_txt)" class="btn btn-default buttons-copy buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Copy</span></button>
+                                                <button class="btn btn-default buttons-copy buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Copy</span></button>
                                                 <button @click="download" class="btn btn-default buttons-excel buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Excel</span></button> 
                                                 <button @click="fracture" class="btn btn-default buttons-pdf buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>PDF</span></button>
                                                 <button class="btn btn-default buttons-print bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Print</span></button> 
@@ -55,7 +57,7 @@
                                         </div>
                                         <div class="card-body">
                                             <div class="box-body">
-                                                <table id="example2 tabl select_txt" class="table table-bordered table-striped dataTable dtr-inline" width="100%" role="grid" aria-describedby="example2_info" style="width: 100%;">
+                                                <table id="example2 tabl" class="table table-bordered table-striped dataTable dtr-inline" width="100%" role="grid" aria-describedby="example2_info" style="width: 100%;">
                                                         <thead class="bg-primary ">
                                                             <tr role="row">
                                                                     <th class="sorting" rowspan="1" colspan="1" style="width: 120px;"> Customer ID </th>
@@ -160,8 +162,8 @@ export default {
         return{
             custdata:[],
             auto:0,
-            activeItem: null
-
+            activeItem: null,
+            text:"This is Text"
         }
     },
     methods:{
@@ -188,14 +190,12 @@ export default {
             doc.save("Table.pdf");
             // console.log(table)
         },
-            copyToClipboard(containerid){
-            var range = document.createRange();
-            range.selectNode(containerid); 
-            window.getSelection().removeAllRanges();
-            window.getSelection().addRange(range);
-            document.execCommand("copy");
-            window.getSelection().removeAllRanges();
-            alert("data copied");
+        copy(){
+            try{            
+                navigator.clipboard.writeText(this.text)
+            }catch(e){
+                throw e
+            }
         }
     },    mounted(){
         axios.get("http://192.168.100.9/Project_Laravel/public/api/customer")
