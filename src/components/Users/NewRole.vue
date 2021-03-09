@@ -124,16 +124,12 @@
                                             <td>Sales Return</td>
                                         </tr>
                                         <tr>
-                                            <th scope="row">1</th>
-                                            <td>User</td>
+                                            <th scope="row">20</th>
+                                            <td>SMS</td>
                                         </tr>
                                         <tr>
-                                            <th scope="row">1</th>
-                                            <td>User</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>User</td>
+                                            <th scope="row">21</th>
+                                            <td>Reports</td>
                                         </tr>
                                     </tbody>
                                 </table>
