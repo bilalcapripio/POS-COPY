@@ -119,8 +119,9 @@
         <main>
             <div class="container-fluid mt-3">
                 <div class="row">
-                    <PosRight/>
                     <PosLeft/>
+                    <PosRight/>
+
                 </div>
             </div>
         </main>
