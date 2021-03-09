@@ -24,10 +24,11 @@
                             <!-- form card login -->
                                 <div class="card card-outline-secondary w-75">
                                     <div class="card-header text-center">
+
                                         <h5 class="mb-0  text-sm font-light font-italic">Sign in to start your session</h5>
                                     </div>
                                     <div class="card-body p-5">
-                                        <form  v-on:submit="PostAuthen" method="post">
+                                        <form  v-on:submit="PostAuthen">
                                                 <div class="input-group mb-2">
                                                     <input type="text" class="form-control" placeholder="" v-model="postss.admin">
                                                     <div class="input-group-prepend">
@@ -36,7 +37,7 @@
                                                 </div>
 
                                                 <div class="input-group mb-2 ">
-                                                    <input type="password" class="form-control" placeholder=""  v-model="postss.password">
+                                                    <input type="password" class="form-control" placeholder="" v-model="postss.password">
                                                     <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="fa fa-lock"></i></div>
                                                     </div>
@@ -50,7 +51,7 @@
                                                         </label>
                                                 </div>
                                                     <p class="py-1"><a href="#">I Forget my password</a></p>
-                                                <button type="submit" class="btn btn-info float-right" @click="Redirect()">Sign in</button>
+                                                <button type="submit" class="btn btn-info float-right" >Sign in</button>
                                             </form>
                                             <br>
 
@@ -127,7 +128,7 @@
     </div>
 </template>
 <script>
-import axios from 'axios'
+// import axios from 'axios'
 export default {
     name:'Authentication',
     components:{
@@ -141,29 +142,14 @@ export default {
         }
     },
     methods:{
-        PostAuthen(e){
-            confirm('Do You Wants Save ?')
-            const formdata = new FormData();
-            formdata.append('admin',this.postss.admin),
-            formdata.append('password',this.postss.password),
-            axios.post("http://192.168.100.9/Project_Laravel/public/api/customer",formdata)
-            // return promise
-            .then((res)=>{
-                console.log(res);
-            })
-            // catch error
-            .catch(error =>{
-                console.log(error)
-            });
-            // show data [testing]
-            console.table(this.postss);
-            // submit data without page reload 
-            e.preventDefault();
-        },
-        Redirect(){
-            setTimeout("window.location='/'",3000);
+        PostAuthen(){
+            if(this.postss.admin == 'admin' && this.postss.password == 'admin'){
+                this.$router.push('/');
             }
-
+            else{
+                alert("Please Enter Valid Detail")
+            }
+        },
     }
 }
 </script>
