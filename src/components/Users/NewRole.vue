@@ -112,8 +112,8 @@
                                             <td>Purchase</td>
                                         </tr>
                                         <tr>
-                                            <th scope="row">1</th>
-                                            <td>User</td>
+                                            <th scope="row">17</th>
+                                            <td>Purchase Return</td>
                                         </tr>
                                         <tr>
                                             <th scope="row">1</th>
