@@ -29,7 +29,7 @@
                                                                     </div> 
                                                                     <div class="col-md-6"></div> 
                                                                     <div class=" col-md-2 box-tools float-right mb-3">
-                                                                        <a class="btn btn-block btn-info " href="#">
+                                                                        <a class="btn btn-block btn-info " href="/NewRole">
                                                                         <i class="fa fa-plus "></i> New Role </a>
                                                                     </div>  
                                                                 </div>
@@ -53,7 +53,9 @@
                                                                 <div class="box-body">
                                                                     <table id="example2" class="table table-bordered table-striped dataTable dtr-inline" width="100%" role="grid" aria-describedby="example2_info" style="width: 100%;">
                                                                         <thead class="bg-primary ">
-                                                                            <tr role="row"><th class="text-center sorting_disabled" rowspan="1" colspan="1" style="width: 54px;" aria-label="#">#</th><th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" style="width: 263px;" aria-label="Role Name: activate to sort column ascending">Role Name</th><th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" style="width: 375px;" aria-label="Description: activate to sort column ascending">Description</th><th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" style="width: 186px;" aria-label="Status: activate to sort column ascending">Status</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 245px;" aria-label="Action">Action</th></tr>
+                                                                            <tr role="row">
+                                                                                <th class="text-center sorting_disabled" rowspan="1" colspan="1" style="width: 54px;" aria-label="#">#</th>
+                                                                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" style="width: 263px;" aria-label="Role Name: activate to sort column ascending">Role Name</th><th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" style="width: 375px;" aria-label="Description: activate to sort column ascending">Description</th><th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" style="width: 186px;" aria-label="Status: activate to sort column ascending">Status</th><th class="sorting_disabled" rowspan="1" colspan="1" style="width: 245px;" aria-label="Action">Action</th></tr>
                                                                         </thead>
                                                                         <tbody>
                                                                             <tr role="row">

@@ -58,10 +58,13 @@ import Role from '@/components/Users/Role.vue';
 import Users from '@/components/Users/User-List.vue';
 import Add_User from '@/components/Users/User.vue';
 import Authentication from '@/components/Authentication';
+import NewRole from '@/components/Users/NewRole';
+
 
 const routes=[
     {path:'/', name:'Content', component:Content},
     {path:'/Authentication',name:'Authentication' ,component:Authentication},
+    {path:'/NewRole',name:'NewRole' ,component:NewRole},
     {path:'/pos', name:'pos', component:pos},
     {path:'/Home',name:'Home', component:Home}, 
     {path:'/Customers', name:'Customers', component:Customers},

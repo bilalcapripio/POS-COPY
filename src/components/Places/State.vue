@@ -26,39 +26,38 @@
                                                             <div class="card">
                                                                 <h5 class="card-header display-5">Please Enter Valid Data</h5>
                                                                 <div class="card-body">
-                                                                <form @submit="statePost">
-                                                                    <div class="box-body">
-                                                                        <div class="form-group">
-                                                                            <label for="category" class="col-sm-2 control-label">State Name<label class="text-danger">*</label></label>
-                                                                        <div class="col-sm-4">
-                                                                        <input type="text" class="form-control input-sm" id="state_name" name="state_name" placeholder="State Name" v-model="posts.state_name" >
-                                                                            <span id="category_msg" style="display:none" class="text-danger"></span>
-                                                                        </div>
-                                                                        </div> 
-                                                                        <div class="form-group">
-                                                                            <label for="country_name" class="col-sm-2 control-label">Country<label class="text-danger">*</label></label>
+                                                                    <form @submit="statePost">
+                                                                        <div class="box-body">
+                                                                            <div class="form-group">
+                                                                                <label for="category" class="col-sm-2 control-label">State Name<label class="text-danger">*</label></label>
                                                                             <div class="col-sm-4">
-                                                                            <select class="form-control" id="country" name="country" v-model="posts.country" style="width: 100%;">
-                                                                                    <option value="">-Select-</option>
-                                                                                    <option v-for="country in countryData" v-bind:key="country.id" :value="country.id">
-                                                                                        {{country.country_name}}
-                                                                                    </option>
-                                                                                </select>
-                                                                            <span id="country_msg" style="display:none" class="text-danger"></span>
+                                                                            <input type="text" class="form-control input-sm" id="state_name" name="state_name" placeholder="State Name" v-model="posts.state_name" >
+                                                                                <span id="category_msg" style="display:none" class="text-danger"></span>
+                                                                            </div>
+                                                                            </div> 
+                                                                            <div class="form-group">
+                                                                                <label for="country_name" class="col-sm-2 control-label">Country<label class="text-danger">*</label></label>
+                                                                                <div class="col-sm-4">
+                                                                                <select class="form-control" id="country" name="country" v-model="posts.country" style="width: 100%;">
+                                                                                        <option value="">-Select-</option>
+                                                                                        <option v-for="country in countryData" v-bind:key="country.id" :value="country.id">
+                                                                                            {{country.country_name}}
+                                                                                        </option>
+                                                                                    </select>
+                                                                                <span id="country_msg" style="display:none" class="text-danger"></span>
+                                                                                </div>
                                                                             </div>
                                                                         </div>
-                                                                    </div>
-                                                                    <button class="btn btn-success">Save</button>
-                                                                    &nbsp;
-                                                                    <button class="btn btn-warning">Close</button>
-                                                                </form>
-                                                        </div>
+                                                                        <button class="btn btn-success">Save</button>
+                                                                        &nbsp;
+                                                                        <button class="btn btn-warning">Close</button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
                                                     </div>
                                                 </div>
-                                            </div>
-
                                             <!--End Product Table-->
-                                        </div>
+                                            </div>
                                     </div> 
                             <Footer/>
                             <Sidebar/>
