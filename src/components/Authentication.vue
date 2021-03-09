@@ -27,7 +27,7 @@
                                         <h5 class="mb-0  text-sm font-light font-italic">Sign in to start your session</h5>
                                     </div>
                                     <div class="card-body p-5">
-                                        <form method="post" v-on:submit="PostAuthen">
+                                        <form  v-on:submit="PostAuthen" method="post">
                                                 <div class="input-group mb-2">
                                                     <input type="text" class="form-control"  placeholder="" value="admin" v-model="postss.admin">
                                                     <div class="input-group-prepend">
@@ -131,12 +131,21 @@ export default {
     name:'Authentication',
     components:{
     },
+    data(){
+        return{
+            postss:{
+                admin:'',
+                password:''
+            }
+
+        }
+    },
     methods:{
         PostAuthen(e){
-            confirm('Do You Wants to Save Record ?')
+            confirm('Do You Wants Save ?')
             const formdata = new FormData();
-            formdata.append('address',this.posts.addresss),
-            formdata.append('city',this.posts.city),
+            formdata.append('admin',this.posts.admin),
+            formdata.append('password',this.posts.password),
             axios.post("http://192.168.100.9/Project_Laravel/public/api/customer",formdata)
             // return promise
             .then((res)=>{
@@ -151,9 +160,6 @@ export default {
             // submit data without page reload 
             e.preventDefault();
         },
-        Redirect(){
-            setTimeout("window.location='/Customers'",3000);
-            }
 
     }
 }
