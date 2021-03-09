@@ -13,25 +13,30 @@
                                         <h4 class="mb-0 lead">Sign in to start your session</h4>
                                     </div>
                                     <div class="card-body p-5">
-                                        <form class="form-inline">
-                                            <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
-                                            <div class="input-group mb-2 mr-sm-2">
-                                                <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Username">
-                                                <div class="input-group-prepend">
-                                                <div class="input-group-text">@</div>
+                                        <form>
+                                                <div class="input-group mb-2">
+                                                    <input type="text" class="form-control"  placeholder="" value="admin">
+                                                    <div class="input-group-prepend">
+                                                    <div class="input-group-text"><i class="fa fa-user"></i></div>
+                                                    </div>
                                                 </div>
-                                            </div>
 
-                                            
+                                                <div class="input-group mb-2 ">
+                                                    <input type="text" class="form-control"  placeholder="" value="admin">
+                                                    <div class="input-group-prepend">
+                                                    <div class="input-group-text"><i class="fa fa-user"></i></div>
+                                                    </div>
+                                                </div>
 
-                                            <div class="form-check mb-2 mr-sm-2">
-                                                <input class="form-check-input" type="checkbox" id="inlineFormCheck">
-                                                <label class="form-check-label" for="inlineFormCheck">
-                                                Remember me
-                                                </label>
-                                            </div>
 
-                                            <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                                                <div class="form-check mb-2 mr-sm-2">
+                                                    <input class="form-check-input" type="checkbox" id="inlineFormCheck">
+                                                    <label class="form-check-label" for="inlineFormCheck">
+                                                    Remember me
+                                                    </label>
+                                                </div>
+
+                                                <button type="submit" class="btn btn-info float-right">Sign in</button>
                                             </form>
                                     </div>
                                     <!--/card-block-->
