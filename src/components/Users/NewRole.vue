@@ -97,19 +97,19 @@
                                         </tr>
                                         <tr>
                                             <th scope="row">13</th>
-                                            <td>User</td>
+                                            <td>Brands</td>
                                         </tr>
                                         <tr>
-                                            <th scope="row">1</th>
-                                            <td>User</td>
+                                            <th scope="row">14</th>
+                                            <td>Supplier</td>
                                         </tr>
                                         <tr>
-                                            <th scope="row">1</th>
-                                            <td>User</td>
+                                            <th scope="row">15</th>
+                                            <td>Customers</td>
                                         </tr>
                                         <tr>
-                                            <th scope="row">1</th>
-                                            <td>User</td>
+                                            <th scope="row">16</th>
+                                            <td>Purchase</td>
                                         </tr>
                                         <tr>
                                             <th scope="row">1</th>
