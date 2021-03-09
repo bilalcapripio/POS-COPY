@@ -116,12 +116,12 @@
                                             <td>Purchase Return</td>
                                         </tr>
                                         <tr>
-                                            <th scope="row">1</th>
-                                            <td>User</td>
+                                            <th scope="row">18</th>
+                                            <td>Sales (Include POS)</td>
                                         </tr>
                                         <tr>
-                                            <th scope="row">1</th>
-                                            <td>User</td>
+                                            <th scope="row">19</th>
+                                            <td>Sales Return</td>
                                         </tr>
                                         <tr>
                                             <th scope="row">1</th>
