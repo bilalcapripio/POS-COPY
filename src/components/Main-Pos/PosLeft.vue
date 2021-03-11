@@ -213,7 +213,6 @@ h<template>
                                             </div>
                                         </div>
                                         <div class="row">
-
                                             <!-- Start First Modal Hold -->
                                             <div class="col-md-3" style="cursor: pointer;">
                                                 <button class="btn btn-danger btn-block btn-flat btn-lg"  data-toggle="modal" data-target=".bds-example-modal-lg"> 
@@ -296,7 +295,7 @@ h<template>
                                                                             <div class="row">
                                                                                 <div class="col-md-12 bg-primary text-center p-2 rounded">
                                                                                     <span class="col-md-6 text-bold">Total Items:</span>
-                                                                                    <span class="col-md-6 text-bold">{{quantity}}</span>
+                                                                                    <span class="col-md-6 text-bold">{{totat_quantity()}}</span>
                                                                                 </div>
                                                                             </div>
                                                                             <div class="row border-top">
@@ -390,7 +389,7 @@ h<template>
                                                                             <div class="row">
                                                                                 <div class="col-md-12 bg-primary text-center p-2 rounded">
                                                                                     <span class="col-md-6 text-bold">Total Items:</span>
-                                                                                    <span class="col-md-6 text-bold">{{quantity}}</span>
+                                                                                    <span class="col-md-6 text-bold">{{totat_quantity()}}</span>
                                                                                 </div>
                                                                             </div>
 
