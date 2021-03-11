@@ -41,7 +41,7 @@
                                                 <div class="input-group mb-2 ">
                                                     <input :type="postss.passwordFieldType" class="form-control" placeholder="admin" v-model="postss.password">
                                                     <div class="input-group-prepend">
-                                                    <div class="input-group-text" @click="switchVisibility">
+                                                    <div class="input-group-text" @click="switchVisibility" v-bind:class="{'white': !clicked, 'blue': clicked}" v-on:click ="!clicked">
                                                         <i class="fa fa-lock"></i>
                                                         </div>
                                                     </div>
@@ -156,8 +156,8 @@ export default {
                 alert("Please Enter Valid Detail")
             }
         },
-            switchVisibility() {
-                this.postss.passwordFieldType = this.postss.passwordFieldType === 'password' ? 'text' : 'password'
+        switchVisibility() {
+            this.postss.passwordFieldType = this.postss.passwordFieldType === 'password' ? 'text' : 'password'
     }
     }
 }
