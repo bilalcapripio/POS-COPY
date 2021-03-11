@@ -78,7 +78,7 @@
                                         </div>
                                         <div class="card-body">
                                             <div class="box-body">
-                                                <table ref="printTable" id="example2 tabl example-table loremTables" class="table table-bordered table-striped dataTable dtr-inline" width="100%" role="grid" ref="table" rules="groups" frame="hsides">
+                                                <table id="example2 tabl example-table loremTables " class="table table-bordered table-striped dataTable dtr-inline" width="100%" role="grid" ref="table" rules="groups" frame="hsides">
                                                         <thead class="bg-primary ">
                                                             <tr role="row">
                                                                     <th class="sorting" rowspan="1" colspan="1" style="width: 120px;"> Customer ID </th>
@@ -235,6 +235,8 @@ export default {
         //     // invoice.document.write("<h1>This is Invoice Page</h1>" );
         //     // console.log(invoice)
         // },
+
+
 
         // Csv Table
         csvExport(arrData) {
