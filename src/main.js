@@ -15,7 +15,7 @@ createApp(App)
 .use(Vuex)
 .use(store)
 .use(router)
-.use()
+.use(VueHtmlToPaper)
 .use(VueAxios, axios)
 .mount('#app')
 
