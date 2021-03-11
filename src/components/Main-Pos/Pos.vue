@@ -94,7 +94,7 @@
                         <span class="hidden-xs text-light">Admin</span>
                         </a>
 
-                        <ul class="dropdown-menu bg-gradient-navy rounded">
+                        <ul class="dropdown-menu bg-gradient-navy rounded" style="margin-left:-12rem;margin-top:2rem;">
                         <!-- User image -->
                         <li class="user-header">
                             <img src="@/assets/Img/admin.png" class="img-circle img-fluid" alt="User Image">
