@@ -32,16 +32,18 @@
                                                 <div class="input-group mb-2">
                                                     <input type="text" class="form-control" placeholder="admin" v-model="postss.admin">
                                                     <div class="input-group-prepend">
-                                                    <div class="input-group-text"><i class="fa fa-user"></i></div>
+                                                        <div class="input-group-text">
+                                                            <i class="fa fa-user"></i>
+                                                        </div>
                                                     </div>
                                                 </div>
 
                                                 <div class="input-group mb-2 ">
                                                     <input :type="postss.passwordFieldType" class="form-control" placeholder="admin" v-model="postss.password">
                                                     <div class="input-group-prepend">
-                                                    <button class="input-group-text"  @click="switchVisibility">
+                                                    <div class="input-group-text" @click="switchVisibility">
                                                         <i class="fa fa-lock"></i>
-                                                        </button>
+                                                        </div>
                                                     </div>
                                                 </div>
 
@@ -140,8 +142,7 @@ export default {
             postss:{
                 admin:"",
                 password:"",
-                type: 'password',
-                passwordFieldType:'password'
+                passwordFieldType:'password',
 
             }
         }
@@ -156,7 +157,7 @@ export default {
             }
         },
             switchVisibility() {
-                this.passwordFieldType = this.passwordFieldType === 'password' ? 'text' : 'password'
+                this.postss.passwordFieldType = this.postss.passwordFieldType === 'password' ? 'text' : 'password'
     }
     }
 }
