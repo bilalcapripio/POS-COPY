@@ -178,7 +178,13 @@ export default {
             format: function(s, c) { return s.replace(/{(\w+)}/g, function(m, p) { return c[p]; }) }
         }
     },
-    
+    computed: {
+            csvData() {
+            return this.custdata.map(item => ({
+                ...item,
+            }));
+            }
+        },    
     methods:{
         // delete row data
         deleteData: function(id,index) {
@@ -204,7 +210,7 @@ export default {
             doc.save("Customer-List.pdf");
             // console.log(table)
         },
-          // Excel or Csv Data
+        // Excel or Csv Data
         tableToExcel(table, name){
         if (!table.nodeType) table = this.$refs.table
         var ctx = {worksheet: name || 'Worksheet', table: table.innerHTML}
@@ -216,6 +222,22 @@ export default {
             // invoice.document.write("<h1>This is Invoice Page</h1>" );
             // console.log(invoice)
         },
+        // Csv Table
+        csvExport(arrData) {
+            let csvContent = "data:text/csv;charset=utf-8,";
+            csvContent += [
+                Object.keys(arrData[0]).join(";"),
+                ...arrData.map(item => Object.values(item).join(";"))
+            ]
+                .join("\n")
+                .replace(/(^\[)|(\]$)/gm, "");
+
+            const data = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", data);
+            link.setAttribute("download", "export.csv");
+            link.click();
+    }
 
 
     },
