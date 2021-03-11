@@ -55,7 +55,7 @@
                                                     </div>
                                                 <div id="example2_processing" class="dataTables_processing panel panel-default" style="display: none;"></div></div><div class="pull-right margin-left-10 ">
                                                 <div class="dt-buttons btn-group mt-4 mr-2">              
-                                                    <button id="download" @click="CopyData" class="btn btn-default buttons-copy buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
+                                                    <button id="download" value="select table" @click="selectElementContents( document.getElementById('tableId') );" class="btn btn-default buttons-copy buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
                                                         <span>Copy</span>
                                                     </button>
                                                     <button @click="tableToExcel('table', 'Lorem Table')" class="btn btn-default buttons-excel buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
@@ -78,7 +78,7 @@
                                         </div>
                                         <div class="card-body">
                                             <div class="box-body">
-                                                <table id="example2 tabl example-table loremTables select_txt " class="table table-bordered table-striped dataTable dtr-inline printable" width="100%" role="grid" ref="table" rules="groups" frame="hsides">
+                                                <table id="example2 tabl example-table loremTables tableId" class="table table-bordered table-striped dataTable dtr-inline printable" width="100%" role="grid" ref="table" rules="groups" frame="hsides">
                                                         <thead class="bg-primary ">
                                                             <tr role="row">
                                                                     <th class="sorting" rowspan="1" colspan="1" style="width: 120px;"> Customer ID </th>
@@ -254,12 +254,24 @@ export default {
                 link.setAttribute("download", "export.csv");
                 link.click();
             },
-                CopyData () {
-                var copyText = document.getElementById("myInput");
-                copyText.select();
-                copyText.setSelectionRange(0, 99999)
-                document.execCommand("copy");
-                alert("Copied the text: " + copyText.value);
+            selectElementContents(el) {
+                    var body = document.body, range, sel;
+                    if (document.createRange && window.getSelection) {
+                        range = document.createRange();
+                        sel = window.getSelection();
+                        sel.removeAllRanges();
+                        try {
+                            range.selectNodeContents(el);
+                            sel.addRange(range);
+                        } catch (e) {
+                            range.selectNode(el);
+                            sel.addRange(range);
+                        }
+                    } else if (body.createTextRange) {
+                        range = body.createTextRange();
+                        range.moveToElementText(el);
+                        range.select();
+                    }
                 }
             
     },
