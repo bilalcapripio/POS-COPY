@@ -72,7 +72,7 @@
                                                         <tbody>
                                                             <tr role="row" v-for="index in custdata" v-bind:key="index.id">
                                                                 <td>CU00{{auto++}}</td>
-                                                                <td>{{index.customer_name}}</td>
+                                                                <td><a href="#">{{index.customer_name}}</a></td>
                                                                 <td>{{index.mobile}}</td>
                                                                 <td>{{index.email}}</td>
                                                                 <td>310,644.40</td>
