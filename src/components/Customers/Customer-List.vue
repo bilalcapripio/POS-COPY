@@ -78,7 +78,7 @@
                                         </div>
                                         <div class="card-body">
                                             <div class="box-body">
-                                                <table id="example2 tabl example-table loremTables select_txt" class="table table-bordered table-striped dataTable dtr-inline printable" width="100%" role="grid" ref="table" rules="groups" frame="hsides">
+                                                <table id="example2 tabl example-table loremTables select_txt " class="table table-bordered table-striped dataTable dtr-inline printable" width="100%" role="grid" ref="table" rules="groups" frame="hsides">
                                                         <thead class="bg-primary ">
                                                             <tr role="row">
                                                                     <th class="sorting" rowspan="1" colspan="1" style="width: 120px;"> Customer ID </th>
@@ -228,41 +228,42 @@ export default {
             var ctx = {worksheet: name || 'Worksheet', table: table.innerHTML}
             window.location.href = this.uri + this.base64(this.format(this.template, ctx))
         },
-        // Print Table
-        // printDiv() {
-        //     window.open("http://localhost:8080/Customers" ,"", "width=700,height=500");
-        //     // invoice.document.write("<h1>This is Invoice Page</h1>" );
-        //     // console.log(invoice)
-        // },
-        printable(){
-            let table = document.querySelector('.printable');
-            window.print(table);
-        },
-        // Csv Table
-        csvExport(arrData) {
-            let csvContent = "data:text/csv;charset=utf-8,";
-            csvContent += [
-                Object.keys(arrData[0]).join(";"),
-                ...arrData.map(item => Object.values(item).join(";"))
-            ]
-                .join("\n")
-                .replace(/(^\[)|(\]$)/gm, "");
+            // Print Table
+            // printDiv() {
+            //     window.open("http://localhost:8080/Customers" ,"", "width=700,height=500");
+            //     // invoice.document.write("<h1>This is Invoice Page</h1>" );
+            //     // console.log(invoice)
+            // },
+            printable(){
+                let table = document.querySelector('.printable');
+                window.print(table);
+            },
+            // Csv Table
+            csvExport(arrData) {
+                let csvContent = "data:text/csv;charset=utf-8,";
+                csvContent += [
+                    Object.keys(arrData[0]).join(";"),
+                    ...arrData.map(item => Object.values(item).join(";"))
+                ]
+                    .join("\n")
+                    .replace(/(^\[)|(\]$)/gm, "");
 
-            const data = encodeURI(csvContent);
-            const link = document.createElement("a");
-            link.setAttribute("href", data);
-            link.setAttribute("download", "export.csv");
-            link.click();
-        },
-        // Copy Table
-        copyToClipboard(containerid){
-            var range = document.createRange();
-            range.selectNode(containerid); 
-            window.getSelection().removeAllRanges();
-            window.getSelection().addRange(range);
-            document.execCommand("copy");
-            window.getSelection().removeAllRanges();
-            alert("data copied");
+                const data = encodeURI(csvContent);
+                const link = document.createElement("a");
+                link.setAttribute("href", data);
+                link.setAttribute("download", "export.csv");
+                link.click();
+            },
+            copyToClipboard(containerid){
+                var range = document.createRange();
+                range.selectNode(containerid); 
+                window.getSelection().removeAllRanges();
+                window.getSelection().addRange(range);
+                document.execCommand("copy");
+                window.getSelection().removeAllRanges();
+                alert("data copied");
+                },
+            
     },
 
     mounted(){
