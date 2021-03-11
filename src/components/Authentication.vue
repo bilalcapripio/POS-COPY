@@ -37,9 +37,11 @@
                                                 </div>
 
                                                 <div class="input-group mb-2 ">
-                                                    <input type="password" class="form-control" placeholder="admin" v-model="postss.password">
+                                                    <input :type="postss.passwordFieldType" class="form-control" placeholder="admin" v-model="postss.password">
                                                     <div class="input-group-prepend">
-                                                    <div class="input-group-text"><i class="fa fa-lock"></i></div>
+                                                    <button class="input-group-text"  @click="switchVisibility">
+                                                        <i class="fa fa-lock"></i>
+                                                        </button>
                                                     </div>
                                                 </div>
 
@@ -138,6 +140,9 @@ export default {
             postss:{
                 admin:"",
                 password:"",
+                type: 'password',
+                passwordFieldType:'password'
+
             }
         }
     },
@@ -150,6 +155,9 @@ export default {
                 alert("Please Enter Valid Detail")
             }
         },
+            switchVisibility() {
+                this.passwordFieldType = this.passwordFieldType === 'password' ? 'text' : 'password'
+    }
     }
 }
 </script>
