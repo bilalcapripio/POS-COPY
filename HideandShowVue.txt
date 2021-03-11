@@ -1,0 +1,23 @@
+
+<div id="app">
+  <input :type="passwordFieldType" v-model="password">
+  <button type="password" @click="switchVisibility">show / hide</button>
+</div>
+
+
+
+
+const vm = new Vue({
+  el: '#app',
+  data: {
+    password: '',
+    passwordFieldType: 'password'
+  },
+  methods: {
+    switchVisibility() {
+      this.passwordFieldType = this.passwordFieldType === 'password' ? 'text' : 'password'
+    }
+  }
+})
+
+
