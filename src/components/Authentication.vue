@@ -56,10 +56,8 @@
                                                 </div>
                                                     <p class="py-1"><a href="#">I Forget my password</a></p>
                                                 <button type="submit" class="btn btn-info float-right" >Sign in</button>
-                                            </form>
-                                            <br>
-
-                                            
+                                        </form>
+                                        <br>
                                     </div>
                                     <!--/card-block-->
                                 </div>
