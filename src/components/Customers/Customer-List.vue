@@ -237,10 +237,8 @@ export default {
         //     // console.log(invoice)
         // },
         printable(){
-            let printable=document.getElementsByClassName('.printable');
-            printable.addEventListener('click',function(){
-                window.print();
-            })
+            let table =document.querySelector('.printable');
+            window.print(table);
         },
         // Csv Table
         csvExport(arrData) {
