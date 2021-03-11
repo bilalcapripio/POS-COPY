@@ -44,7 +44,7 @@
                                                 </div><div id="example2_processing" class="dataTables_processing panel panel-default" style="display: none;"></div></div><div class="pull-right margin-left-10 ">
                                                 <div class="dt-buttons btn-group mt-4 mr-2">              
                                                 <button id="download" class="btn btn-default buttons-copy buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Copy</span></button>
-                                                <button @click="csvExport(csvData)" class="btn btn-default buttons-excel buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Excel</span></button> 
+                                                <button @click="csv(csvData)" class="btn btn-default buttons-excel buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Excel</span></button> 
                                                 <button @click="fracture" class="btn btn-default buttons-pdf buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>PDF</span></button>
                                                 <button class="btn btn-default buttons-print bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Print</span></button> 
                                                 <button class="btn btn-default buttons-csv buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
@@ -55,13 +55,13 @@
                                         </div>
                                         <div class="card-body">
                                             <div class="box-body">
-                                                <table id="example2 tabl example-table" class="table table-bordered table-striped dataTable dtr-inline" width="100%" role="grid" aria-describedby="example2_info" style="width: 100%;">
+                                                <table id="example2 tabl example-table" class="table table-bordered table-striped dataTable dtr-inline" width="100%" role="grid">
                                                         <thead class="bg-primary ">
                                                             <tr role="row">
                                                                     <th class="sorting" rowspan="1" colspan="1" style="width: 120px;"> Customer ID </th>
                                                                     <th class="sorting" rowspan="1" colspan="1" style="width: 150px;"> Customer Name </th>
-                                                                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" style="width: 70px;"> Mobile </th>
-                                                                    <th class="sorting text-center" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" style="width: 120px;"> Email </th>
+                                                                    <th class="sorting" rowspan="1" colspan="1" style="width: 70px;"> Mobile </th>
+                                                                    <th class="sorting text-center" rowspan="1" colspan="1" style="width: 120px;"> Email </th>
                                                                     <th class="sorting" rowspan="1" colspan="1" style="width: 120px;"> Total Paid(-) </th>
                                                                     <th class="sorting" rowspan="1" colspan="1" style="width: 120px;"> Sales Due(-) </th>
                                                                     <th class="sorting" rowspan="1" colspan="1" style="width: 180px;"> Sales Return Due(+) </th>
@@ -72,7 +72,7 @@
                                                         <tbody>
                                                             <tr role="row" v-for="index in custdata" v-bind:key="index.id">
                                                                 <td>CU00{{auto++}}</td>
-                                                                <td><a href="#">{{index.customer_name}}</a></td>
+                                                                <td>{{index.customer_name}}</td>
                                                                 <td>{{index.mobile}}</td>
                                                                 <td>{{index.email}}</td>
                                                                 <td>310,644.40</td>
@@ -164,7 +164,7 @@ export default {
     },
     computed: {
         csvData() {
-        return this.users.map(item => ({
+        return this.custdata.map(item => ({
             ...item,
         }));
         }
@@ -207,7 +207,7 @@ export default {
                 });
     },
     // Excel or Csv Data
-    csvExport(arrData) {
+    csv(arrData) {
       let csvContent = "data:text/csv;charset=utf-8,";
       csvContent += [
         Object.keys(arrData[0]).join(";"),
