@@ -55,7 +55,7 @@
                                                     </div>
                                                 <div id="example2_processing" class="dataTables_processing panel panel-default" style="display: none;"></div></div><div class="pull-right margin-left-10 ">
                                                 <div class="dt-buttons btn-group mt-4 mr-2">              
-                                                    <button id="download" @click="copyToClipboard(select_txt)" class="btn btn-default buttons-copy buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
+                                                    <button id="download" @click="CopyData" class="btn btn-default buttons-copy buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
                                                         <span>Copy</span>
                                                     </button>
                                                     <button @click="tableToExcel('table', 'Lorem Table')" class="btn btn-default buttons-excel buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
@@ -254,15 +254,13 @@ export default {
                 link.setAttribute("download", "export.csv");
                 link.click();
             },
-            copyToClipboard(containerid){
-                var range = document.createRange();
-                range.selectNode(containerid); 
-                window.getSelection().removeAllRanges();
-                window.getSelection().addRange(range);
+                CopyData () {
+                var copyText = document.getElementById("myInput");
+                copyText.select();
+                copyText.setSelectionRange(0, 99999)
                 document.execCommand("copy");
-                window.getSelection().removeAllRanges();
-                alert("data copied");
-                },
+                alert("Copied the text: " + copyText.value);
+                }
             
     },
 
