@@ -34,14 +34,25 @@
                                             </div>
                                             <hr>
                                             <div class="row">
-                                                <div class="col-sm-12"><div class="pull-left">
-                                                <div class="dataTables_length" id="example2_length">
-                                                <label>Show <select name="example2_length" aria-controls="example2" class="form-control input-sm">
-                                                <option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select></label></div></div><div class="pull-right"><div id="example2_filter" class="dataTables_filter">
-                                                <label class="mt-4">
-                                                <input type="search" class="form-control input-sm" placeholder="Search" aria-controls="example2">
-                                                </label>
-                                                </div>
+                                                <div class="col-sm-12">
+                                                    <div class="pull-left">
+                                                        <div class="dataTables_length" id="example2_length">
+                                                            <label>Show 
+                                                                <select name="example2_length" aria-controls="example2" class="form-control input-sm">
+                                                                        <option value="10">10</option>
+                                                                        <option value="25">25</option>
+                                                                        <option value="50">50</option>
+                                                                        <option value="100">100</option>
+                                                                </select>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                <div class="pull-right">
+                                                    <div id="example2_filter" class="dataTables_filter">
+                                                        <label class="mt-4">
+                                                                <input type="search" class="form-control input-sm" placeholder="Search" aria-controls="example2">
+                                                        </label>
+                                                    </div>
                                                 <div id="example2_processing" class="dataTables_processing panel panel-default" style="display: none;"></div></div><div class="pull-right margin-left-10 ">
                                                 <div class="dt-buttons btn-group mt-4 mr-2">              
                                                     <button id="download" class="btn btn-default buttons-copy buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
@@ -53,7 +64,7 @@
                                                     <button @click="printPdf" class="btn btn-default buttons-pdf buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
                                                         <span>PDF</span>
                                                     </button>
-                                                    <button @click="printDiv" class="btn btn-default buttons-print bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
+                                                    <button v-print="printObj" class="btn btn-default buttons-print bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
                                                         <span>Print</span>
                                                     </button> 
                                                     <button @click="csvExport(csvData)" class="btn btn-default buttons-csv buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
@@ -67,7 +78,7 @@
                                         </div>
                                         <div class="card-body">
                                             <div class="box-body">
-                                                <table id="example2 tabl example-table loremTables" class="table table-bordered table-striped dataTable dtr-inline" width="100%" role="grid" ref="table" rules="groups" frame="hsides">
+                                                <table id="example2 tabl example-table loremTables printMe" class="table table-bordered table-striped dataTable dtr-inline" width="100%" role="grid" ref="table" rules="groups" frame="hsides">
                                                         <thead class="bg-primary ">
                                                             <tr role="row">
                                                                     <th class="sorting" rowspan="1" colspan="1" style="width: 120px;"> Customer ID </th>
@@ -175,7 +186,14 @@ export default {
             uri :'data:application/vnd.ms-excel;base64,',
             template:'<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table>{table}</table></body></html>',
             base64: function(s){ return window.btoa(unescape(encodeURIComponent(s))) },
-            format: function(s, c) { return s.replace(/{(\w+)}/g, function(m, p) { return c[p]; }) }
+            format: function(s, c) { return s.replace(/{(\w+)}/g, function(m, p) { return c[p]; }) },
+            printObj: {
+            id: "printMe",
+            popTitle: 'good print',
+            extraCss: 'https://www.google.com,https://www.google.com',
+            extraHead: '<meta http-equiv="Content-Language"content="zh-cn"/>'
+        }
+
         }
     },
     computed: {
@@ -217,11 +235,11 @@ export default {
         window.location.href = this.uri + this.base64(this.format(this.template, ctx))
         },
         // Print Table
-        printDiv() {
-            window.open("http://localhost:8080/Customers" ,"", "width=700,height=500");
-            // invoice.document.write("<h1>This is Invoice Page</h1>" );
-            // console.log(invoice)
-        },
+        // printDiv() {
+        //     window.open("http://localhost:8080/Customers" ,"", "width=700,height=500");
+        //     // invoice.document.write("<h1>This is Invoice Page</h1>" );
+        //     // console.log(invoice)
+        // },
         // Csv Table
         csvExport(arrData) {
             let csvContent = "data:text/csv;charset=utf-8,";
@@ -238,11 +256,7 @@ export default {
             link.setAttribute("download", "export.csv");
             link.click();
     }
-
-
     },
-
-
 
     mounted(){
     axios.get("http://192.168.100.9/Project_Laravel/public/api/customer")
