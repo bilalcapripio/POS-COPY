@@ -44,7 +44,7 @@
                                                 </div><div id="example2_processing" class="dataTables_processing panel panel-default" style="display: none;"></div></div><div class="pull-right margin-left-10 ">
                                                 <div class="dt-buttons btn-group mt-4 mr-2">              
                                                 <button id="download" class="btn btn-default buttons-copy buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Copy</span></button>
-                                                <button @click="csv(csvData)" class="btn btn-default buttons-excel buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Excel</span></button> 
+                                                <button @click="csvExport(csvData)" class="btn btn-default buttons-excel buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Excel</span></button> 
                                                 <button @click="fracture" class="btn btn-default buttons-pdf buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>PDF</span></button>
                                                 <button class="btn btn-default buttons-print bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Print</span></button> 
                                                 <button class="btn btn-default buttons-csv buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
@@ -207,7 +207,7 @@ export default {
                 });
     },
     // Excel or Csv Data
-    csv(arrData) {
+    csvExport(arrData) {
       let csvContent = "data:text/csv;charset=utf-8,";
       csvContent += [
         Object.keys(arrData[0]).join(";"),
