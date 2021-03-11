@@ -1,6 +1,6 @@
 <template>
     <div>
-        <section class="p-5">
+        <section class="">
             <div class="container">
                     <div class="" >
                         <ul class="circles">
@@ -30,14 +30,14 @@
                                     <div class="card-body p-5">
                                         <form  v-on:submit="PostAuthen">
                                                 <div class="input-group mb-2">
-                                                    <input type="text" class="form-control" placeholder="" v-model="postss.admin">
+                                                    <input type="text" class="form-control" placeholder="admin" v-model="postss.admin">
                                                     <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="fa fa-user"></i></div>
                                                     </div>
                                                 </div>
 
                                                 <div class="input-group mb-2 ">
-                                                    <input type="password" class="form-control" placeholder="" v-model="postss.password">
+                                                    <input type="password" class="form-control" placeholder="admin" v-model="postss.password">
                                                     <div class="input-group-prepend">
                                                     <div class="input-group-text"><i class="fa fa-lock"></i></div>
                                                     </div>
@@ -59,7 +59,7 @@
                                     </div>
                                     <!--/card-block-->
                                 </div>
-                                <div class="card card-outline-secondary w-75 border-top border-danger">
+                                <!-- <div class="card card-outline-secondary w-75 border-top border-danger">
                                     <div class="card-body">
                                      
                                             <div class="row">
@@ -119,7 +119,7 @@
                                                 
                                             </div>
                                     </div>
-                                </div>
+                                </div> -->
                             <!-- /form card login -->
                         </div>
                     </div>
