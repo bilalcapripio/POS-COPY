@@ -1,5 +1,4 @@
 import { createWebHistory, createRouter } from "vue-router";
-import Home from '@/components/Home.vue';
 import Content from '@/components/Content.vue';
 import pos from '@/components/Main-Pos/Pos.vue';
 import Customers from '@/components/Customers/Customer-List.vue';
@@ -66,7 +65,6 @@ const routes=[
     {path:'/Authentication',name:'Authentication' ,component:Authentication},
     {path:'/NewRole',name:'NewRole' ,component:NewRole},
     {path:'/pos', name:'pos', component:pos},
-    {path:'/Home',name:'Home', component:Home}, 
     {path:'/Customers', name:'Customers', component:Customers},
     {path:'/Add_Customer', name:'Add_Customer', component:Add_Customer},
     {path:'/Expence_Category', name:'Expence_Category', component:Expence_Category},
