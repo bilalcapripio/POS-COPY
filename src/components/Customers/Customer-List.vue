@@ -236,10 +236,16 @@ export default {
         //     // invoice.document.write("<h1>This is Invoice Page</h1>" );
         //     // console.log(invoice)
         // },
-        printable(){
-            let table =document.querySelector('.printable');
-            window.print(table);
-        },
+        printContent(el) {
+                var restorepage = document.body.innerHTML; 
+                var printcontent = document.querySelector(el).innerHTML; 
+                document.body.innerHTML = printcontent; 
+                window.print(); // print commands
+                document.body.innerHTML = restorepage;
+                document.querySelector('.print').addEventListener('click', function() { 
+                })
+                },
+                
         // Csv Table
         csvExport(arrData) {
             let csvContent = "data:text/csv;charset=utf-8,";
