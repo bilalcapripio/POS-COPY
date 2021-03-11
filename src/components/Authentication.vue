@@ -33,7 +33,7 @@
                                                     <input type="text" class="form-control" placeholder="admin" v-model="postss.admin">
                                                     <div class="input-group-prepend">
                                                         <div class="input-group-text">
-                                                            <i class="fa fa-user"></i>
+                                                            <i class="fa fa-user text-primary"></i>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -41,9 +41,9 @@
                                                 <div class="input-group mb-2 ">
                                                     <input :type="postss.passwordFieldType" class="form-control" placeholder="admin" v-model="postss.password">
                                                     <div class="input-group-prepend">
-                                                    <div class="input-group-text" @click="switchVisibility">
+                                                    <div class="input-group-text text-primary" @click="switchVisibility">
                                                         <i class="fa fa-lock"></i>
-                                                        </div>
+                                                    </div>
                                                     </div>
                                                 </div>
 
