@@ -48,7 +48,7 @@ h<template>
                                                     <table class="table table-bordered table-striped table-responsive">
                                                         <thead class="bg-primary">
                                                             <tr>
-                                                                <th width="30%">Item Name</th>
+                                                                <th width="29%">Item Name</th>
                                                                 <th>Stock</th>
                                                                 <th>Quantity</th>
                                                                 <th>Price</th>
@@ -607,7 +607,7 @@ export default {
         },
 
         printDiv() {
-            window.open("http://localhost:8080/pos","","width=700,height=500");
+            window.open("http://localhost:8080/pos" ,"", "width=700,height=500");
             // invoice.document.write("<h1>This is Invoice Page</h1>" );
             // console.log(invoice)
         },
@@ -626,7 +626,7 @@ export default {
             this.searchItems = res.data
         })
     },
-     uploadItem(index){
+    uploadItem(index){
             const items = this.searchItems[index];
             // let tax_amount = Math.ceil(items.purchase_price * (items.tax_id / 100));
             // let unit_cost = tax_amount + items.purchase_price;
@@ -637,7 +637,6 @@ export default {
                     'price':items.sales_price,
                     'tax':items.tax_id,
                     'subtotal':items.sales_price,
-
                 }
             this.getData.push(sendData)
             this.query = ''

@@ -45,7 +45,7 @@
                                                 <div class="dt-buttons btn-group mt-4 mr-2">              
                                                 <button id="download" class="btn btn-default buttons-copy buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Copy</span></button>
                                                 <button class="btn btn-default buttons-excel buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Excel</span></button> 
-                                                <button @click="fracture" class="btn btn-default buttons-pdf buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>PDF</span></button>
+                                                <button @click="fracture"  class="btn btn-default buttons-pdf buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>PDF</span></button>
                                                 <button class="btn btn-default buttons-print bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Print</span></button> 
                                                 <button class="btn btn-default buttons-csv buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
                                                 <span>CSV</span></button> 
@@ -183,14 +183,14 @@ export default {
         selectItem(i) {
             this.activeItem = i;
         },
-        fracture(){
-            // let table=document.getElementById('tabl');
-            const doc = new jsPDF();
-            // table = doc
-            doc.text("Pdf", 10, 10);
-            doc.save("Customer-List.pdf");
-            // console.log(table)
-        },
+        // fracture(){
+        //     // let table=document.getElementById('tabl');
+        //     const doc = new jsPDF();
+        //     // table = doc
+        //     doc.text("Pdf", 10, 10);
+        //     doc.save("Customer-List.pdf");
+        //     // console.log(table)
+        // },
     },
     mounted(){
     axios.get("http://192.168.100.9/Project_Laravel/public/api/customer")
@@ -204,6 +204,12 @@ export default {
                     console.log(error)
                 });
     },
+    // Print Pdf
+    printDiv() {
+            window.open("http://localhost:8080/pos" ,"", "width=700,height=500");
+            // invoice.document.write("<h1>This is Invoice Page</h1>" );
+            // console.log(invoice)
+        },
     // Excel or Csv Data
 
 
