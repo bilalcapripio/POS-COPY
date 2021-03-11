@@ -44,7 +44,7 @@
                                                 </div><div id="example2_processing" class="dataTables_processing panel panel-default" style="display: none;"></div></div><div class="pull-right margin-left-10 ">
                                                 <div class="dt-buttons btn-group mt-4 mr-2">              
                                                 <button id="download" class="btn btn-default buttons-copy buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Copy</span></button>
-                                                <button @click="ExcelTable" class="btn btn-default buttons-excel buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Excel</span></button> 
+                                                <button @click="csvExport(csvData)" class="btn btn-default buttons-excel buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Excel</span></button> 
                                                 <button @click="fracture" class="btn btn-default buttons-pdf buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>PDF</span></button>
                                                 <button class="btn btn-default buttons-print bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Print</span></button> 
                                                 <button class="btn btn-default buttons-csv buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
@@ -160,7 +160,13 @@ export default {
             custdata:[],
             auto:0,
             activeItem: null
-
+        }
+    },
+    computed: {
+        csvData() {
+        return this.users.map(item => ({
+            ...item,
+        }));
         }
     },
     methods:{
@@ -184,15 +190,12 @@ export default {
             const doc = new jsPDF();
             // table = doc
             doc.text("Pdf", 10, 10);
-            doc.save("Table.pdf");
+            doc.save("Customer-List.pdf");
             // console.log(table)
         },
-        // ExcelTable(){
-        // let tableexcel = new Table2Excel();
-        // tableexcel.export(document.querySelectorAll("#example-table"));
-        // }
-    },    mounted(){
-        axios.get("http://192.168.100.9/Project_Laravel/public/api/customer")
+    },
+    mounted(){
+    axios.get("http://192.168.100.9/Project_Laravel/public/api/customer")
                 // return promise
                 .then((res)=>{
                     this.custdata=res.data;
@@ -203,6 +206,22 @@ export default {
                     console.log(error)
                 });
     },
+    // Excel or Csv Data
+    csvExport(arrData) {
+      let csvContent = "data:text/csv;charset=utf-8,";
+      csvContent += [
+        Object.keys(arrData[0]).join(";"),
+        ...arrData.map(item => Object.values(item).join(";"))
+      ]
+        .join("\n")
+        .replace(/(^\[)|(\]$)/gm, "");
+
+      const data = encodeURI(csvContent);
+      const link = document.createElement("a");
+      link.setAttribute("href", data);
+      link.setAttribute("download", "export.csv");
+      link.click();
+    }
 
 
 }
