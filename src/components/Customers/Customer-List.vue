@@ -41,21 +41,33 @@
                                                 <label class="mt-4">
                                                 <input type="search" class="form-control input-sm" placeholder="Search" aria-controls="example2">
                                                 </label>
-                                                </div><div id="example2_processing" class="dataTables_processing panel panel-default" style="display: none;"></div></div><div class="pull-right margin-left-10 ">
+                                                </div>
+                                                <div id="example2_processing" class="dataTables_processing panel panel-default" style="display: none;"></div></div><div class="pull-right margin-left-10 ">
                                                 <div class="dt-buttons btn-group mt-4 mr-2">              
-                                                <button id="download" class="btn btn-default  bg-teal  btn-flat"  type="button"><span>Copy</span></button>
-                                                <button class="btn btn-default buttons-excel buttons-html5 bg-teal color-palette btn-flat"  type="button"><span>Excel</span></button> 
-                                                <button @click="fracture"  class="btn btn-default bg-teal  btn-flat"  type="button"><span>PDF</span></button>
-                                                <button @click="printTable"  class="btn btn-default  bg-teal  btn-flat"  type="button"><span>Print</span></button> 
-                                                <button class="btn btn-default 5 bg-teal  btn-flat"  type="button">
-                                                <span>CSV</span></button> 
-                                                <!-- <button class="btn btn-default buttons-collection buttons-colvis bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button" aria-haspopup="true"><span>Columns</span></button>  -->
-                                                </div></div></div>
+                                                    <button id="download" class="btn btn-default buttons-copy buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
+                                                        <span>Copy</span>
+                                                    </button>
+                                                    <button @click="tableToExcel('table', 'Lorem Table')" class="btn btn-default buttons-excel buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
+                                                        <span>Excel</span>
+                                                    </button> 
+                                                    <button @click="printPdf" class="btn btn-default buttons-pdf buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
+                                                        <span>PDF</span>
+                                                    </button>
+                                                    <button @click="printDiv" class="btn btn-default buttons-print bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
+                                                        <span>Print</span>
+                                                    </button> 
+                                                    <button @click="csvExport(csvData)" class="btn btn-default buttons-csv buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
+                                                        <span>CSV</span>
+                                                    </button> 
+                                                    <!-- <button class="btn btn-default buttons-collection buttons-colvis bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button" aria-haspopup="true"><span>Columns</span></button>  -->
+                                                </div>
+                                                </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="card-body">
                                             <div class="box-body">
-                                                <table id="example2 tabl example-table " class="table table-bordered table-striped dataTable dtr-inline" width="100%" role="grid">
+                                                <table id="example2 tabl example-table loremTables" class="table table-bordered table-striped dataTable dtr-inline" width="100%" role="grid" ref="table" rules="groups" frame="hsides">
                                                         <thead class="bg-primary ">
                                                             <tr role="row">
                                                                     <th class="sorting" rowspan="1" colspan="1" style="width: 120px;"> Customer ID </th>
@@ -160,10 +172,13 @@ export default {
             custdata:[],
             auto:0,
             activeItem: null,
+            uri :'data:application/vnd.ms-excel;base64,',
+            template:'<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table>{table}</table></body></html>',
+            base64: function(s){ return window.btoa(unescape(encodeURIComponent(s))) },
+            format: function(s, c) { return s.replace(/{(\w+)}/g, function(m, p) { return c[p]; }) }
         }
     },
     
-
     methods:{
         // delete row data
         deleteData: function(id,index) {
@@ -180,9 +195,8 @@ export default {
         selectItem(i) {
             this.activeItem = i;
         },
-
-        // pdf Table
-        fracture(){
+        // Pdf Table
+        printPdf(){
             // let table=document.getElementById('tabl');
             const doc = new jsPDF();
             // table = doc
@@ -190,7 +204,24 @@ export default {
             doc.save("Customer-List.pdf");
             // console.log(table)
         },
+          // Excel or Csv Data
+        tableToExcel(table, name){
+        if (!table.nodeType) table = this.$refs.table
+        var ctx = {worksheet: name || 'Worksheet', table: table.innerHTML}
+        window.location.href = this.uri + this.base64(this.format(this.template, ctx))
+        },
+        // Print Table
+        printDiv() {
+            window.open("http://localhost:8080/Customers" ,"", "width=700,height=500");
+            // invoice.document.write("<h1>This is Invoice Page</h1>" );
+            // console.log(invoice)
+        },
+
+
     },
+
+
+
     mounted(){
     axios.get("http://192.168.100.9/Project_Laravel/public/api/customer")
                 // return promise
@@ -203,14 +234,6 @@ export default {
                     console.log(error)
                 });
     },
-    // Print Pdf
-    printTable() {
-            window.open("http://localhost:8080/Customers" ,"", "width=700,height=500");
-            // invoice.document.write("<h1>This is Invoice Page</h1>" );
-            // console.log(invoice)
-        },
-    // Excel or Csv Data
-
 
 }
 </script>
