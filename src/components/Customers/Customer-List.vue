@@ -169,7 +169,6 @@ import Sidebar from '../../components/Sidebar.vue'
 import Footer from  '../../components/Footer.vue'
 import axios from 'axios'
 import { jsPDF } from "jspdf";
-import VueHtmlToPaper from 'vue-html-to-paper';
 
 
 export default {
@@ -237,8 +236,6 @@ export default {
         //     // invoice.document.write("<h1>This is Invoice Page</h1>" );
         //     // console.log(invoice)
         // },
-
-
 
         // Csv Table
         csvExport(arrData) {

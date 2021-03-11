@@ -7,7 +7,6 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import Vuex from 'vuex'
 import store from './store'
-import VueHtmlToPaper from 'vue-html-to-paper';
 
 
 
@@ -15,7 +14,6 @@ createApp(App)
 .use(Vuex)
 .use(store)
 .use(router)
-.use(VueHtmlToPaper)
 .use(VueAxios, axios)
 .mount('#app')
 
