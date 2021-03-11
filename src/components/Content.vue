@@ -356,13 +356,13 @@
 
             </div>
           </div>
-         <!-----End table-->
-         <br><br>
-         <div class="row">
+        <!-----End table-->
+        <br><br>
+        <div class="row">
             <div class="col-md-12">
               <img src="img/top_item.png" alt="" class="img-fluid">
             </div>
-         </div>
+        </div>
         </div>
         <br>
         <!--/. container-fluid -->  
