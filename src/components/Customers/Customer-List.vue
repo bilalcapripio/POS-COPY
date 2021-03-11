@@ -64,7 +64,7 @@
                                                     <button @click="printPdf" class="btn btn-default buttons-pdf buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
                                                         <span>PDF</span>
                                                     </button>
-                                                    <button  class="btn btn-default buttons-print bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
+                                                    <button class="btn btn-default buttons-print bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
                                                         <span>Print</span>
                                                     </button> 
                                                     <button @click="csvExport(csvData)" class="btn btn-default buttons-csv buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
@@ -78,7 +78,7 @@
                                         </div>
                                         <div class="card-body">
                                             <div class="box-body">
-                                                <table id="example2 tabl example-table loremTables " class="table table-bordered table-striped dataTable dtr-inline" width="100%" role="grid" ref="table" rules="groups" frame="hsides">
+                                                <table id="example2 tabl example-table loremTables " class="table table-bordered table-striped dataTable dtr-inline printable" width="100%" role="grid" ref="table" rules="groups" frame="hsides">
                                                         <thead class="bg-primary ">
                                                             <tr role="row">
                                                                     <th class="sorting" rowspan="1" colspan="1" style="width: 120px;"> Customer ID </th>
@@ -270,3 +270,11 @@ export default {
 
 }
 </script>
+
+    
+<style scoped>
+@media print {
+    * {display:none;}
+    .printable, .printable > * {display:block;}
+}
+</style>
