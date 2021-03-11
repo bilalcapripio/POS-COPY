@@ -169,13 +169,9 @@ import Sidebar from '../../components/Sidebar.vue'
 import Footer from  '../../components/Footer.vue'
 import axios from 'axios'
 import { jsPDF } from "jspdf";
-import print from 'vue-print-nb'
 
 export default {
     name:'Customer-List',
-        directives: {
-        print   
-    },
     components: {
         Navbar,
         Sidebar,
