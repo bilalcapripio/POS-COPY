@@ -117,10 +117,14 @@
         </nav>   
 <!--//////////////////----End Navbar----//////////////////-->
         <main>
-            <div class="container-fluid mt-3">
+            <div class="">
                 <div class="row">
-                    <PosLeft/>
-                    <PosRight/>
+                    <div class="col-md-7">
+                        <PosLeft/>
+                    </div>
+                    <div class="col-md-5">
+                        <PosRight/>
+                    </div>
                 </div>
             </div>
         </main>
@@ -174,7 +178,7 @@ body{
 }
 main{
     position: relative;
-    left: 14%;
+    /* left: 14%; */
 }
     ::-webkit-scrollbar {
         width: 8px;
