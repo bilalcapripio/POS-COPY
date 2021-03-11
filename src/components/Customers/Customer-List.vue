@@ -222,14 +222,12 @@ export default {
             doc.save("Customer-List.pdf");
             // console.log(table)
         },
-
         // Excel or Csv Data
         tableToExcel(table, name){
             if (!table.nodeType) table = this.$refs.table
             var ctx = {worksheet: name || 'Worksheet', table: table.innerHTML}
             window.location.href = this.uri + this.base64(this.format(this.template, ctx))
         },
-
         // Print Table
         // printDiv() {
         //     window.open("http://localhost:8080/Customers" ,"", "width=700,height=500");
@@ -255,7 +253,16 @@ export default {
             link.setAttribute("href", data);
             link.setAttribute("download", "export.csv");
             link.click();
-        }
+        },
+        // Copy Table
+        copyToClipboard(containerid){
+            var range = document.createRange();
+            range.selectNode(containerid); 
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            document.execCommand("copy");
+            window.getSelection().removeAllRanges();
+            alert("data copied");
     },
 
     mounted(){
