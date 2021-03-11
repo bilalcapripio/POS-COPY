@@ -41,7 +41,7 @@
                                                 <div class="input-group mb-2 ">
                                                     <input :type="postss.passwordFieldType" class="form-control" placeholder="admin" v-model="postss.password">
                                                     <div class="input-group-prepend">
-                                                    <div class="input-group-text" @click="switchVisibility" v-bind:class="{'white': !clicked, 'blue': clicked}" v-on:click ="!clicked">
+                                                    <div class="input-group-text" @click="switchVisibility">
                                                         <i class="fa fa-lock"></i>
                                                         </div>
                                                     </div>
