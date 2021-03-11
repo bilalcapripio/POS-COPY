@@ -48,13 +48,13 @@ h<template>
                                                     <table class="table table-bordered table-striped table-responsive">
                                                         <thead class="bg-primary">
                                                             <tr>
-                                                                <th width="29%">Item Name</th>
-                                                                <th>Stock</th>
-                                                                <th>Quantity</th>
-                                                                <th>Price</th>
+                                                                <th width="40%">Item Name</th>
+                                                                <th width="20%">Stock</th>
+                                                                <th width="10%">Quantity</th>
+                                                                <th width="10%">Price</th>
                                                                 <!-- <th>Discount</th> -->
-                                                                <th>Tax</th>
-                                                                <th>Subtotal</th>
+                                                                <th width="5%">Tax</th>
+                                                                <th width="5%">Subtotal</th>
                                                                 <th ><i class="fa fa-close"></i></th>
                                                             </tr>
                                                         </thead>
