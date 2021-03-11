@@ -36,7 +36,7 @@
                                             <span class="badge badge-danger push-right">Qty:{{data.available_quantity}}</span>
                                             <div class="box-body box-profile">
                                                 <center class="pt-1">
-                                                    <img :src="'http://192.168.100.9/Project_Laravel/public/images/'+data.image" alt="Product Image" width="80" class="img-responsive border border-gray">
+                                                    <img :src="'http://192.168.100.9/Project_Laravel/public/images/'+data.image" alt="Product Image" width="70" height="50" class="img-responsive border border-gray">
                                                 </center>
                                                 <center class="py-3">
                                                     <label class="text-center" style="cursor: pointer; color:black;">{{data.item_name}}
