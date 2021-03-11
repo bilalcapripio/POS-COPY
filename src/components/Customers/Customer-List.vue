@@ -162,13 +162,7 @@ export default {
             activeItem: null
         }
     },
-    computed: {
-        csvData() {
-        return this.custdata.map(item => ({
-            ...item,
-        }));
-        }
-    },
+    
     methods:{
         // delete row data
         deleteData: function(id,index) {
@@ -207,21 +201,6 @@ export default {
                 });
     },
     // Excel or Csv Data
-    csvExport(arrData) {
-      let csvContent = "data:text/csv;charset=utf-8,";
-      csvContent += [
-        Object.keys(arrData[0]).join(";"),
-        ...arrData.map(item => Object.values(item).join(";"))
-      ]
-        .join("\n")
-        .replace(/(^\[)|(\]$)/gm, "");
-
-      const data = encodeURI(csvContent);
-      const link = document.createElement("a");
-      link.setAttribute("href", data);
-      link.setAttribute("download", "export.csv");
-      link.click();
-    }
 
 
 }
