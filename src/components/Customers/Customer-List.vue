@@ -169,6 +169,8 @@ import Sidebar from '../../components/Sidebar.vue'
 import Footer from  '../../components/Footer.vue'
 import axios from 'axios'
 import { jsPDF } from "jspdf";
+import VueHtmlToPaper from 'vue-html-to-paper';
+
 
 export default {
     name:'Customer-List',
