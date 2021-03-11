@@ -212,7 +212,6 @@ export default {
         selectItem(i) {
             this.activeItem = i;
         },
-
         // Pdf Table
         printPdf(){
             // let table=document.getElementById('tabl');
