@@ -67,6 +67,8 @@ import UpdateCategorylist from '@/components/Items/UpdateCategorylist.vue';
 import UpdateBrand from '@/components/Items/UpdateBrand.vue';
 import UpdateExpenceCategory from '@/components/Expence/UpdateExpenceCategory.vue';
 import UpdateExpence from '@/components/Expence/UpdateExpence.vue';
+import UpdateCountry from '@/components/Places/UpdateCountry.vue';
+
 
 
 // Update Pages
@@ -74,6 +76,8 @@ import UpdateExpence from '@/components/Expence/UpdateExpence.vue';
 const routes=[
     {path:'/', name:'Content', component:Content},
     {path:'/Authentication',name:'Authentication' ,component:Authentication},
+
+
     {path:'/UpdateCustomer',name:'UpdateCustomer' ,component:UpdateCustomer},
     {path:'/UpdateSupplier',name:'UpdateSupplier' ,component:UpdateSupplier},
     {path:'/UpdateSupplier',name:'UpdateSupplier' ,component:UpdateSupplier},
@@ -82,6 +86,8 @@ const routes=[
     {path:'/UpdateBrand',name:'UpdateBrand' ,component:UpdateBrand},
     {path:'/UpdateExpence',name:'UpdateExpence' ,component:UpdateExpence},
     {path:'/UpdateExpenceCategory',name:'UpdateExpenceCategory' ,component:UpdateExpenceCategory},
+    {path:'/UpdateCountry',name:'UpdateCountry' ,component:UpdateCountry},
+
 
     
 
