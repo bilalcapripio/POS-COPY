@@ -102,7 +102,6 @@
                                                         <div class="dt-buttons btn-group mt-4 mr-2">              
                                                         <button class="btn btn-default buttons-copy buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Copy</span></button> <button class="btn btn-default buttons-excel buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Excel</span></button> <button class="btn btn-default buttons-pdf buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>PDF</span></button> <button class="btn btn-default buttons-print bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Print</span></button> <button class="btn btn-default buttons-csv buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
                                                         <span>CSV</span></button> 
-                                                        <button class="btn btn-default buttons-collection buttons-colvis bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button" aria-haspopup="true"><span>Columns</span></button> 
                                                         </div></div></div>
                                                     </div>
                                                 </div>
@@ -240,7 +239,7 @@
                                                                     </tr>
                                                                 </tfoot>
                                                         </table>
-                                                        <div class="next d-flex justify-content-between align-items-center">
+                                                        <!-- <div class="next d-flex justify-content-between align-items-center">
                                                             <div role="status" aria-live="polite">Showing 1 to 10 of 22 entries</div>
                                                             <nav aria-label="Page navigation example">
                                                                 <ul class="pagination">
@@ -251,7 +250,7 @@
                                                                     <li class="page-item"><a class="page-link" href="#">Next</a></li>
                                                                 </ul>
                                                                 </nav>
-                                                        </div>                              
+                                                        </div>                               -->
                                                     </div>
                                                 </div>
                                             </div>

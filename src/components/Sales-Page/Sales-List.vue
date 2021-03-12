@@ -128,9 +128,9 @@
                                                                 <button  class="btn btn-default buttons-csv buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
                                                                         <span>CSV</span>
                                                                 </button> 
-                                                                <button class="btn btn-default buttons-collection buttons-colvis bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button" aria-haspopup="true">
+                                                                <!-- <button class="btn btn-default buttons-collection buttons-colvis bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button" aria-haspopup="true">
                                                                         <span>Columns</span>
-                                                                </button> 
+                                                                </button>  -->
                                                             </div>
                                                         </div>
                                                     </div>
@@ -168,7 +168,9 @@
                                                                         <td>0.00</td>
                                                                         <td>1,000.00</td>
                                                                         <td><span class="label label-danger" style="cursor:pointer">Unpaid</span></td>
-                                                                        <td>Admin</td>
+                                                                        <td>Admin
+
+                                                                        </td>
                                                                     <td>
                                                                         <div class="btn-group" title="View Account">
                                                                                 <a class="btn btn-primary btn-o dropdown-toggle" data-toggle="dropdown" href="#">
@@ -221,7 +223,7 @@
                                                                 </tr>
                                                             </tbody>        
                                                     </table>
-                                                    <div class="next d-flex justify-content-between align-items-center">
+                                                    <!-- <div class="next d-flex justify-content-between align-items-center">
                                                         <div   role="status" aria-live="polite">Showing 1 to 10 of 22 entries</div>
                                                         <nav aria-label="Page navigation example">
                                                             <ul class="pagination">
@@ -232,7 +234,7 @@
                                                                 <li class="page-item"><a class="page-link" href="#">Next</a></li>
                                                             </ul>
                                                         </nav>
-                                                    </div>                              
+                                                    </div>                               -->
                                                 </div>
                                             </div>
                                     </div>
