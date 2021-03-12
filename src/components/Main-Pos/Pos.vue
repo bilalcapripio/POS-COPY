@@ -100,6 +100,7 @@
                             <img src="@/assets/Img/admin.png" class="img-circle img-fluid" alt="User Image">
                             <p>Admin<small>Year 2021</small></p>
                         </li>
+
                         <!-- Menu Body -->
                         <!-- Menu Footer-->
                         <li class="user-footer">
@@ -110,6 +111,7 @@
                             <a href="/Authentication" class="btn btn-danger btn-flat">Sign out</a>
                             </div>
                         </li>
+
                         </ul>
                     </li>
                 </ul>
