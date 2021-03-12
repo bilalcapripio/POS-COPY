@@ -114,7 +114,7 @@
                                                                                     <i class="fa fa-fw fa-edit text-primary"></i>Edit
                                                                                 </a>
                                                                             </li>
-                                                                            <li>
+                                                                            <!-- <li>
                                                                                 <a  class="pointer">
                                                                                     <i class="fa fa-fw fa-money text-blue"></i>Pay Due Payments
                                                                                 </a>
@@ -123,7 +123,7 @@
                                                                                 <a class="pointer">
                                                                                     <i class="fa fa-fw fa-money text-blue"></i>Pay Return Due
                                                                                 </a>
-                                                                            </li>
+                                                                            </li> -->
                                                                             <li>
                                                                                 <a class="pointer" href="#" @click="deleteData(index.id,index.index)">
                                                                                     <i class="fa fa-fw fa-trash text-danger"></i>Delete  

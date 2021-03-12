@@ -104,10 +104,10 @@
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
-                            <a href="#" class="btn btn-primary btn-flat">Profile</a>
+                            <a href="/" class="btn btn-primary btn-flat">Profile</a>
                             </div>
                             <div class="pull-right">
-                            <a href="Logout.html" class="btn btn-danger btn-flat">Sign out</a>
+                            <a href="/Authentication" class="btn btn-danger btn-flat">Sign out</a>
                             </div>
                         </li>
                         </ul>
