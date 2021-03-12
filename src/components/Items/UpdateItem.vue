@@ -99,7 +99,7 @@
                                                 </div>
                                                 <div class="form-group col-md-4">
                                                     <label for="item_image">Select Image</label>
-                                                    <input type="file" name="item_image" id="item_image" ref="image" required>
+                                                    <input type="file" name="item_image" id="item_image" ref="image">
                                                     <span  style="display:block;" class="text-danger">Max Width/Height: 1000px * 1000px &amp; Size: 1MB </span>
                                                 </div>
                                                 </div>
@@ -166,7 +166,7 @@
                                                     <input type="text" class="form-control" v-model="posts.availableQuantity" id="new_opening_stock" name="new_opening_stock" placeholder="-/+" required>
                                                 </div>
                                                 </div>
-                                                <button class="btn btn-success" @click="Redirects()">Save</button>
+                                                <button class="btn btn-success">Save</button>
                                                 &nbsp;
                                                 <button class="btn btn-warning">Close</button>
                                                 <!-- /row -->
@@ -265,7 +265,7 @@ export default {
         this.getitemBrandData()
         this.getitemCategoryData()
         this.getTaxData()
-        this.id=this.$route.params.id;
+        this.posts.id=this.$route.params.id;
         this.editData();
     },
     methods:{
@@ -305,13 +305,32 @@ export default {
             },
 
         editData(){
-            const UpApi ='http://192.168.100.9/Project_Laravel/public/api/item/'+this.id;
+            const UpApi ='http://192.168.100.9/Project_Laravel/public/api/item/'+this.posts.id;
             axios.get(UpApi)
             // return promise
             .then((res)=>{
                 console.log(res.data);
-                // this.posts.category_name = res.data.category_name
-                // this.posts.desc = res.data.description
+                this.posts.itemName = res.data[0].item_name
+                this.posts.brand = res.data[0].item_brand_id
+                this.posts.category = res.data[0].item_category_id
+                this.posts.unit = res.data[0].unit_id
+                this.posts.sku = res.data[0].sku
+                this.posts.hsn = res.data[0].hsn
+                this.posts.alertQuantity = res.data[0].alert_quantity
+                this.posts.lotNumber = res.data[0].lot_number
+                this.posts.expire = res.data[0].expire_date
+                this.posts.barCode = res.data[0].barcode
+                this.posts.description = res.data[0].description
+                this.posts.price = res.data[0].purchase_price
+                this.posts.tax = res.data[0].tax_id
+                this.posts.taxType = res.data[0].tax_type
+                var profitset = (res.data[0].sales_price / res.data[0].purchase_price)
+                var promargin = profitset * 100 / profitset
+                this.posts.profitMargin = promargin
+                this.posts.salesPrice = res.data[0].sales_price
+                this.posts.finalPrice = res.data[0].sales_price
+                this.posts.availableQuantity = res.data[0].available_quantity
+                
             })
             // catch error
             .catch(error =>{
@@ -319,14 +338,78 @@ export default {
             });
         },
 
-            postData(e){
-                confirm('Do You Wants to Save Record ?')    
-                const UpApi ='http://192.168.100.9/Project_Laravel/public/api/item_category/'+this.id;
-                axios.put(UpApi,{
-                    category_name:this.posts.category_name,
-                    description:this.posts.desc,
-                    category_code:this.posts.category_code,
-                })
+        //     postData(e){
+        //         confirm('Do You Wants to Save Record ?')    
+        //         const UpApi ='http://192.168.100.9/Project_Laravel/public/api/item/'+this.posts.id;
+        //         const config = {
+        //             headers: {
+        //                 'content-type': 'multipart/form-data'
+        //             }
+        //         };
+        //         var files = this.$refs.image.files;
+        //         axios.put(UpApi,{
+        //             item_name:this.posts.itemName,
+        //             brand_id:this.posts.brand,
+        //             category_id:this.posts.category,
+        //             unit_id:this.posts.unit,
+        //             sku:this.posts.sku,
+        //             hsn:this.posts.hsn,
+        //             alert_quantity:this.posts.alertQuantity,
+        //             lot_number:this.posts.lotNumber,
+        //             expire_date:this.posts.expire,
+        //             barcode:this.posts.barCode,
+        //             description:this.posts.description,
+        //             tax_id:this.posts.tax,
+        //              purchase_price:this.posts.purchasePrice,
+        //             tax_type:this.posts.taxType,
+        //             sales_price:this.posts.finalPrice,
+        //             available_quantity:this.posts.availableQuantity,
+        //             image:files[0],
+        //         },config)
+        //         // return promise
+        //         .then((res)=>{
+        //             console.log(res);
+        //         })
+        //         // catch error
+        //         .catch(error =>{
+        //             console.log(error)
+        //         });
+        //         // show data [testing]
+        //         console.table(this.posts);
+        //         // submit data without page reload 
+        //         e.preventDefault();
+        // },
+
+            postData: function (e){
+                confirm('Do You Wants to Save Record ?')
+                const formdata = new FormData();
+                const UpApi ='http://192.168.100.9/Project_Laravel/public/api/item/'+this.posts.id;
+                var files = this.$refs.image.files;
+                formdata.append('item_name',this.posts.itemName),
+                formdata.append('brand_id',this.posts.brand),
+                formdata.append('category_id',this.posts.category),
+                formdata.append('unit_id',this.posts.unit),
+                formdata.append('sku',this.posts.sku),
+                formdata.append('hsn',this.posts.hsn),
+                formdata.append('alert_quantity',this.posts.alertQuantity),
+                formdata.append('lot_number',this.posts.lotNumber),
+                formdata.append('expire_date',this.posts.expire),
+                formdata.append('barcode',this.posts.barCode),
+                formdata.append('item_name',this.posts.itemName),
+                formdata.append('description',this.posts.description),
+                formdata.append('tax_id',this.posts.tax),
+                formdata.append('purchase_price',this.posts.purchasePrice),
+                formdata.append('tax_type',this.posts.taxType),
+                formdata.append('sales_price',this.posts.finalPrice),
+                formdata.append('available_quantity',this.posts.availableQuantity);
+                formdata.append('image',files[0]);
+
+                const config = {
+                    headers: {
+                        'content-type': 'multipart/form-data'
+                    }
+                };
+                axios.put(UpApi,formdata,config)
                 // return promise
                 .then((res)=>{
                     console.log(res);
@@ -339,50 +422,7 @@ export default {
                 console.table(this.posts);
                 // submit data without page reload 
                 e.preventDefault();
-        },
-
-            // postData: function (e){
-            //     confirm('Do You Wants to Save Record ?')
-            //     const formdata = new FormData();
-            //     var files = this.$refs.image.files;
-            //     formdata.append('item_name',this.posts.itemName),
-            //     formdata.append('brand_id',this.posts.brand),
-            //     formdata.append('category_id',this.posts.category),
-            //     formdata.append('unit_id',this.posts.unit),
-            //     formdata.append('sku',this.posts.sku),
-            //     formdata.append('hsn',this.posts.hsn),
-            //     formdata.append('alert_quantity',this.posts.alertQuantity),
-            //     formdata.append('lot_number',this.posts.lotNumber),
-            //     formdata.append('expire_date',this.posts.expire),
-            //     formdata.append('barcode',this.posts.barCode),
-            //     formdata.append('item_name',this.posts.itemName),
-            //     formdata.append('description',this.posts.description),
-            //     formdata.append('tax_id',this.posts.tax),
-            //     formdata.append('purchase_price',this.posts.purchasePrice),
-            //     formdata.append('tax_type',this.posts.taxType),
-            //     formdata.append('sales_price',this.posts.finalPrice),
-            //     formdata.append('available_quantity',this.posts.availableQuantity);
-            //     formdata.append('image',files[0]);
-
-            //     const config = {
-            //         headers: {
-            //             'content-type': 'multipart/form-data'
-            //         }
-            //     };
-            //     axios.post("http://192.168.100.9/Project_Laravel/public/api/item",formdata,config)
-            //     // return promise
-            //     .then((res)=>{
-            //         console.log(res);
-            //     })
-            //     // catch error
-            //     .catch(error =>{
-            //         console.log(error)
-            //     });
-            //     // show data [testing]
-            //     console.table(this.posts);
-            //     // submit data without page reload 
-            //     e.preventDefault();
-            // },
+            },
             getUnitData: function(){
                 axios.get("http://192.168.100.9/Project_Laravel/public/api/unit")
                 // return promise
