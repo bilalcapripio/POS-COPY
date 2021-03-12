@@ -59,10 +59,16 @@ import Add_User from '@/components/Users/User.vue';
 import Authentication from '@/components/Authentication';
 import NewRole from '@/components/Users/NewRole';
 
+// Start Update Pages
+import UpdateCustomer from '@/components/Customers/UpdateCustomer-List.vue';
+
+
+// End Update Pages
 
 const routes=[
     {path:'/', name:'Content', component:Content},
     {path:'/Authentication',name:'Authentication' ,component:Authentication},
+    {path:'/UpdateCustomer',name:'UpdateCustomer' ,component:UpdateCustomer},
     {path:'/NewRole',name:'NewRole' ,component:NewRole},
     {path:'/pos', name:'pos', component:pos},
     {path:'/Customers', name:'Customers', component:Customers},
