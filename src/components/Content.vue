@@ -4,7 +4,7 @@
           <Navbar/>
   
     <!-- /.content-wrapper -->
-    <div class="content-wrapper mb-5">
+    <div class="content-wrapper">
       <h1 class="lead pt-3 px-3">Dashboard <span class="text-sm">Overall Information on Single Screen</span> </h1>
       <!-- Content Header (Page header) -->
       <div class="content-header">
@@ -358,27 +358,11 @@
           </div>
         <!-----End table-->
         <br><br>
-            <div class="row">
-                <div class="col-md-12">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                </div>
+        <div class="row">
+            <div class="col-md-12">
+              <img src="../assets/Img/top_item.png" alt="" class="img-fluid">
             </div>
+        </div>
         </div>
         <br>
         <!--/. container-fluid -->  
