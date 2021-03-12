@@ -110,7 +110,7 @@
                                                                         </a>
                                                                         <ul  class="dropdown-menu dropdown-light pull-right">
                                                                             <li>
-                                                                                <a  class="pointer" href="/Add_Customer">
+                                                                                <a  class="pointer" href="/UpdateCustomer">
                                                                                     <i class="fa fa-fw fa-edit text-primary"></i>Edit
                                                                                 </a>
                                                                             </li>
