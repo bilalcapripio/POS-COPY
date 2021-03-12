@@ -106,12 +106,12 @@
                                                             </a>
                                                             <ul role="menu" class="dropdown-menu dropdown-light pull-right">
                                                                 <li>
-                                                                    <a title="Edit Record ?" href="#">
+                                                                    <a style="cursor:pointer" href="/Add_item">
                                                                         <i class="fa fa-fw fa-edit text-blue"></i>Edit
                                                                     </a>
                                                                 </li>
                                                                 <li>
-                                                                    <a style="cursor:pointer" title="Delete Record ?" href="#" @click="deleteData(data.id,index)">
+                                                                    <a style="cursor:pointer" href="#" @click="deleteData(data.id,index)">
                                                                         <i class="fa fa-fw fa-trash text-red"></i>Delete
                                                                     </a>
                                                                 </li>
