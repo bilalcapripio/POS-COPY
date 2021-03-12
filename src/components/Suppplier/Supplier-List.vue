@@ -57,16 +57,22 @@
                                                                     </div>
                                                             </div>
                                                             <div class="pull-right margin-left-10 ">
-                                                                <div class="dt-buttons btn-group mt-4 mr-2">              
-                                                                    <button class="btn btn-default buttons-copy buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
-                                                                        <span>Copy</span>
+                                                                <div class="dt-buttons btn-group mt-4 mr-2">     
+                                                                    <button @click="copyToClipboard('#texture')" class="btn btn-default buttons-copy buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
+                                                                            <span>Copy</span>
                                                                     </button>
-                                                                    <button class="btn btn-default buttons-excel buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
+                                                                    <button @click="tableToExcel('table', 'Lorem Table')" class="btn btn-default buttons-excel buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
                                                                         <span>Excel</span>
-                                                                    </button>
-                                                                    <button class="btn btn-default buttons-pdf buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>PDF</span></button> <button class="btn btn-default buttons-print bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Print</span></button> <button class="btn btn-default buttons-csv buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
-                                                                        <span>CSV</span>
                                                                     </button> 
+                                                                    <button @click="printPdf" class="btn btn-default buttons-pdf buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
+                                                                        <span>PDF</span>
+                                                                    </button>
+                                                                    <button  @click="printable" class="btn btn-default buttons-print bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
+                                                                        <span>Print</span>
+                                                                    </button> 
+                                                                    <button @click="csvExport(csvData)" class="btn btn-default buttons-csv buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
+                                                                        <span>CSV</span>
+                                                                    </button>          
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -205,6 +211,49 @@ export default {
                 console.log(error)
             });
         },     
+
+
+         // Pdf Table
+        printPdf(){
+            // let table=document.getElementById('tabl');
+            const doc = new jsPDF();
+            // table = doc
+            doc.text("Pdf", 10, 10);
+            doc.save("Customer-List.pdf");
+            // console.log(table)
+        },
+        // Excel or Csv Data
+        tableToExcel(table, name){
+            if (!table.nodeType) table = this.$refs.table
+            var ctx = {worksheet: name || 'Worksheet', table: table.innerHTML}
+            window.location.href = this.uri + this.base64(this.format(this.template, ctx))
+        },
+            // Print Table
+            // printDiv() {
+            //     window.open("http://localhost:8080/Customers" ,"", "width=700,height=500");
+            //     // invoice.document.write("<h1>This is Invoice Page</h1>" );
+            //     // console.log(invoice)
+            // },
+            printable(){
+                let table = document.querySelector('.printable');
+                window.print(table);
+            },
+            // Csv Table
+            csvExport(arrData) {
+                let csvContent = "data:text/csv;charset=utf-8,";
+                csvContent += [
+                    Object.keys(arrData[0]).join(";"),
+                    ...arrData.map(item => Object.values(item).join(";"))
+                ]
+                    .join("\n")
+                    .replace(/(^\[)|(\]$)/gm, "");
+
+                const data = encodeURI(csvContent);
+                const link = document.createElement("a");
+                link.setAttribute("href", data);
+                link.setAttribute("download", "export.csv");
+                link.click();
+            },
 
     }
 
