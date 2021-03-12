@@ -68,6 +68,8 @@ import UpdateBrand from '@/components/Items/UpdateBrand.vue';
 import UpdateExpenceCategory from '@/components/Expence/UpdateExpenceCategory.vue';
 import UpdateExpence from '@/components/Expence/UpdateExpence.vue';
 import UpdateCountry from '@/components/Places/UpdateCountry.vue';
+import UpdateState from '@/components/Places/UpdateState.vue';
+
 
 
 
@@ -87,6 +89,8 @@ const routes=[
     {path:'/UpdateExpence',name:'UpdateExpence' ,component:UpdateExpence},
     {path:'/UpdateExpenceCategory',name:'UpdateExpenceCategory' ,component:UpdateExpenceCategory},
     {path:'/UpdateCountry',name:'UpdateCountry' ,component:UpdateCountry},
+    {path:'/UpdateState',name:'UpdateState' ,component:UpdateState},
+
 
 
     
