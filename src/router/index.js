@@ -61,12 +61,18 @@ import NewRole from '@/components/Users/NewRole';
 
 // Update Pages
 import UpdateCustomer from '@/components/Customers/UpdateCustomer.vue';
+import UpdateSupplier from '@/components/Suppplier/UpdateSupplier.vue';
+import UpdateItem from '@/components/Items/UpdateItem.vue';
 // Update Pages
 
 const routes=[
     {path:'/', name:'Content', component:Content},
     {path:'/Authentication',name:'Authentication' ,component:Authentication},
     {path:'/UpdateCustomer',name:'UpdateCustomer' ,component:UpdateCustomer},
+    {path:'/UpdateSupplier',name:'UpdateSupplier' ,component:UpdateSupplier},
+    {path:'/UpdateSupplier',name:'UpdateSupplier' ,component:UpdateSupplier},
+    {path:'/UpdateItem',name:'UpdateItem' ,component:UpdateItem},
+
     {path:'/NewRole',name:'NewRole' ,component:NewRole},
     {path:'/pos', name:'pos', component:pos},
     {path:'/Customers', name:'Customers', component:Customers},

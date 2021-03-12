@@ -123,7 +123,7 @@
                                                             </a>
                                                             <ul role="menu" class="dropdown-menu dropdown-light pull-right">
                                                                 <li>
-                                                                    <a style="cursor:pointer" href="/Add_item">
+                                                                    <a style="cursor:pointer" href="/UpdateItem">
                                                                         <i class="fa fa-fw fa-edit text-blue"></i>Edit
                                                                     </a>
                                                                 </li>
