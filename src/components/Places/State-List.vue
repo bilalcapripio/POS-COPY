@@ -50,11 +50,11 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="pull-right">
-                                                                    <div id="example2_filter" class="dataTables_filter">
+                                                                    <!-- <div id="example2_filter" class="dataTables_filter">
                                                                         <label class="mt-2">
                                                                             <input type="search" class="form-control input-sm" placeholder="Search" aria-controls="example2">
                                                                         </label>
-                                                                    </div>
+                                                                    </div> -->
                                                                     <div id="example2_processing" class="dataTables_processing panel panel-default" style="display: none;"><div class="text-primary bg-primary" style="position: relative;z-index:100;overflow: visible;">Processing...</div>
                                                                     </div>
                                                                 </div>
