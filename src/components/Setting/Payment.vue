@@ -6,7 +6,7 @@
                         <div class="content-wrapper p-2 mb-5">
                                         <div class="content-header">
                                             <!---Start Third card shop-->
-                                            <h2 class="text-md ml-4"><span class="text-lg">Expence List</span>  View / <small class="text-gray text-sm"><span>Search Expence</span></small></h2>
+                                            <h2 class="text-md ml-4"><span class="text-lg">Payment Types</span>  View / <small class="text-gray text-sm"><span>Search Expence</span></small></h2>
                                             <!-- alert start -->
                                             <div class="content-header">
                                                 <div class="container-fluid">
@@ -70,7 +70,7 @@
                                                                                     Action <span class="caret"></span>
                                                                                 </a>
                                                                                 <ul role="menu" class="dropdown-menu dropdown-light"><li>
-                                                                                        <a title="Editd Record ?" href="#">
+                                                                                        <a title="Editd Record ?" href="/UpdatePayments">
                                                                                             <i class="fa fa-fw fa-edit text-blue"></i>Edit
                                                                                         </a>
                                                                                     </li><li>
