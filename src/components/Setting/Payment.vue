@@ -70,7 +70,7 @@
                                                                                     Action <span class="caret"></span>
                                                                                 </a>
                                                                                 <ul role="menu" class="dropdown-menu dropdown-light"><li>
-                                                                                        <a title="Editd Record ?" href="/UpdatePayments">
+                                                                                        <a title="Editd Record ?" :href="'/UpdatePayments/'+data.id">
                                                                                             <i class="fa fa-fw fa-edit text-blue"></i>Edit
                                                                                         </a>
                                                                                     </li><li>

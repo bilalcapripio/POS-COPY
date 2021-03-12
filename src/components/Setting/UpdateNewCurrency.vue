@@ -93,21 +93,39 @@ export default {
             }
         }
     },
+    mounted(){
+        // this.getTaxData()
+        this.id=this.$route.params.id;
+        this.editData();
+    },
     methods:{
-            postData(e){
-                confirm('Do You Wants to Save Record ?')
-                const formdata = new FormData();
-                formdata.append('currency_name',this.posts.currency_name),
-                formdata.append('currency_code',this.posts.currency_code),
-                formdata.append('currency_symbol',this.posts.currency_symbol),
+        editData(){
+            const UpApi ='http://192.168.100.9/Project_Laravel/public/api/currency/'+this.id;
+            axios.get(UpApi)
+            // return promise
+            .then((res)=>{
+                console.log(res.data);
+                this.posts.currency_name = res.data.currency_name
+                this.posts.currency_code = res.data.currency_code
+                this.posts.currency_symbol = res.data.currency_symbol
+            })
+            // catch error
+            .catch(error =>{
+                console.log(error)
+            });
+        },
 
-                axios.post("http://192.168.100.9/Project_Laravel/public/api/currency",formdata)
+            postData(e){
+                confirm('Do You Wants to Save Record ?')    
+                const UpApi ='http://192.168.100.9/Project_Laravel/public/api/currency/'+this.id;
+                axios.put(UpApi,{
+                    currency_name:this.posts.currency_name,
+                    currency_code:this.posts.currency_code,
+                    currency_symbol:this.posts.currency_symbol,
+                })
+                // return promise
                 .then((res)=>{
                     console.log(res);
-                    this.posts.currency_name='',
-                    this.posts.currency_code='',
-                    this.posts.currency_symbol=''
-
                 })
                 // catch error
                 .catch(error =>{
@@ -117,7 +135,7 @@ export default {
                 console.table(this.posts);
                 // submit data without page reload 
                 e.preventDefault();
-            },
+        },
     }
 
 }

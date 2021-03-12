@@ -87,29 +87,46 @@ export default {
         Sidebar,
         Footer
     },
+    mounted(){
+        this.id=this.$route.params.id;
+        this.editData();
+    },
     methods:{
-        postData: function(e){
-            confirm('Do You Wants to Save Record ?')
-            const formdata = new FormData();
-            formdata.append('brand_code',this.posts.brand_code),
-            formdata.append('brand_name',this.posts.brand_name),
-            formdata.append('description',this.posts.desc),
-
-            axios.post("http://192.168.100.9/Project_Laravel/public/api/item_brand",formdata)
-                // return promise
+            editData(){
+            const UpApi ='http://192.168.100.9/Project_Laravel/public/api/item_brand/'+this.id;
+            axios.get(UpApi)
+            // return promise
             .then((res)=>{
-                console.log(res);
-                this.posts.brand_name = ''
-                this.posts.desc = ''
+                console.log(res.data);
+                this.posts.brand_name = res.data.brand_name
+                this.posts.desc = res.data.description
             })
             // catch error
             .catch(error =>{
                 console.log(error)
             });
+        },
+
+            postData(e){
+                confirm('Do You Wants to Save Record ?')    
+                const UpApi ='http://192.168.100.9/Project_Laravel/public/api/item_brand/'+this.id;
+                axios.put(UpApi,{
+                    brand_name:this.posts.brand_name,
+                    description:this.posts.desc,
+                    brand_code:this.posts.brand_code,
+                })
+                // return promise
+                .then((res)=>{
+                    console.log(res);
+                })
+                // catch error
+                .catch(error =>{
+                    console.log(error)
+                });
                 // show data [testing]
-            console.table(this.posts);
+                console.table(this.posts);
                 // submit data without page reload 
-            e.preventDefault();
+                e.preventDefault();
         },
     }
 

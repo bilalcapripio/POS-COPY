@@ -23,7 +23,7 @@
                                             <div class="container-fluid">
                                             <div class="card border-top border-primary">
                                                 <div class="card-body py-5">
-                                                    <form class="form-inline" v-on:submit="PostPayment" method="post" >
+                                                    <form class="form-inline" @submit="postData" method="post" >
                                                         <div class="form-group">
                                                             <label>Payment Type Name &nbsp;<span class="text-danger">*</span></label>
                                                             <input type="text"  class="form-control mx-sm-3" style="width:400px;" required  v-model="posts.payments">  
@@ -67,25 +67,43 @@ export default {
             },
         }
     },
+    mounted(){
+        this.id=this.$route.params.id;
+        this.editData();
+    },
     methods:{
-        PostPayment(e){
-            confirm('Do You Wants to Save Record ?')
-            const formdata = new FormData();
-            formdata.append('payment_type_name',this.posts.payments),
-            // this.formdata = { headers: { 'Content-Type': 'multipart/formdata' } }
-            axios.post("http://192.168.100.9/Project_Laravel/public/api/payment_type",formdata)
+        editData(){
+            const UpApi ='http://192.168.100.9/Project_Laravel/public/api/payment_type/'+this.id;
+            axios.get(UpApi)
             // return promise
             .then((res)=>{
-                console.log(res);
+                console.log(res.data);
+                this.posts.payments = res.data.payment_type_name
             })
             // catch error
             .catch(error =>{
                 console.log(error)
             });
-            // show data [testing]
-            console.table(this.posts);
-            // submit data without page reload 
-            e.preventDefault();
+        },
+
+            postData(e){
+                confirm('Do You Wants to Save Record ?')    
+                const UpApi ='http://192.168.100.9/Project_Laravel/public/api/payment_type/'+this.id;
+                axios.put(UpApi,{
+                    payment_type_name:this.posts.payments,
+                })
+                // return promise
+                .then((res)=>{
+                    console.log(res);
+                })
+                // catch error
+                .catch(error =>{
+                    console.log(error)
+                });
+                // show data [testing]
+                console.table(this.posts);
+                // submit data without page reload 
+                e.preventDefault();
         },
         Redirect(){
             setTimeout("window.location='/Payment'",3000);

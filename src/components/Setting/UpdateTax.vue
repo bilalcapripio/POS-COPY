@@ -20,10 +20,11 @@
                                                     </div>                  
                                                     <!-- alert end -->
                                                     <div class="card container-fluid">
+                                                        <form @submit.prevent="postData">
                                                         <div class="card-body ">
                                                             <div class="row">
                                                                 <div class="col-md-7">
-                                                                    <form>
+                                                                  
                                                                         <div class="form-group">
                                                                             <label for="exampleInputEmail1"> Tax Name <span class="text-danger">*</span></label>
                                                                             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" v-model="tax_name">
@@ -32,16 +33,17 @@
                                                                             <label for="exampleInputPassword1">Tax Percentage <span class="text-danger">*</span></label>
                                                                             <input type="text" class="form-control" id="exampleInputPassword1" placeholder="" v-model="tax_percent">
                                                                         </div>
-                                                                    </form>
+                                                                   
                                                                 </div>
                                                                 <div class="col-md-5"></div>
                                                             </div>
                                                         </div>
                                                         <div class="card-footer">
-                                                                    <button type="button" class="btn btn-danger">Save</button>
+                                                                    <button type="submit" class="btn btn-danger">Save</button>
                                                                     &nbsp;
-                                                                    <button type="button" class="btn btn-warning">Close</button>
+                                                                    <button type="submit" class="btn btn-warning">Close</button>
                                                         </div>
+                                                         </form>
                                                     </div>
                                     </div>
                             <Footer/>
@@ -62,7 +64,9 @@ export default {
     name:'',
     data(){
         return{
-            taxData:[]
+            taxData:[],
+            tax_name:'',
+            tax_percent:''
         }
     },
     components: {
@@ -71,7 +75,7 @@ export default {
         Footer
     },
     mounted(){
-        this.getTaxData()
+        // this.getTaxData()
         this.id=this.$route.params.id;
         this.editData();
     },
@@ -82,8 +86,8 @@ export default {
             // return promise
             .then((res)=>{
                 console.log(res.data);
-                this.posts.unit_name = res.data.unit_name
-                this.posts.desc = res.data.description
+                this.tax_name = res.data.tax_name
+                this.tax_percent = res.data.tax
             })
             // catch error
             .catch(error =>{
@@ -95,8 +99,8 @@ export default {
                 confirm('Do You Wants to Save Record ?')    
                 const UpApi ='http://192.168.100.9/Project_Laravel/public/api/tax/'+this.id;
                 axios.put(UpApi,{
-                    unit_name:this.posts.unit_name,
-                    description:this.posts.desc,
+                    tax_name:this.tax_name,
+                    tax:this.tax_percent,
                 })
                 // return promise
                 .then((res)=>{

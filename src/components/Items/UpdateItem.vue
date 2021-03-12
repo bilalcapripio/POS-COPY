@@ -249,7 +249,8 @@ export default {
                 profitMargin:'',
                 salesPrice:'',
                 finalPrice:'',
-                availableQuantity:''
+                availableQuantity:'',
+                id:'',                
             }
         }
     },
@@ -264,6 +265,8 @@ export default {
         this.getitemBrandData()
         this.getitemCategoryData()
         this.getTaxData()
+        this.id=this.$route.params.id;
+        this.editData();
     },
     methods:{
             calcuPurchasePrice: function(){
@@ -300,35 +303,30 @@ export default {
                 }
                 return parseFloat(total)
             },
-            postData: function (e){
-                confirm('Do You Wants to Save Record ?')
-                const formdata = new FormData();
-                var files = this.$refs.image.files;
-                formdata.append('item_name',this.posts.itemName),
-                formdata.append('brand_id',this.posts.brand),
-                formdata.append('category_id',this.posts.category),
-                formdata.append('unit_id',this.posts.unit),
-                formdata.append('sku',this.posts.sku),
-                formdata.append('hsn',this.posts.hsn),
-                formdata.append('alert_quantity',this.posts.alertQuantity),
-                formdata.append('lot_number',this.posts.lotNumber),
-                formdata.append('expire_date',this.posts.expire),
-                formdata.append('barcode',this.posts.barCode),
-                formdata.append('item_name',this.posts.itemName),
-                formdata.append('description',this.posts.description),
-                formdata.append('tax_id',this.posts.tax),
-                formdata.append('purchase_price',this.posts.purchasePrice),
-                formdata.append('tax_type',this.posts.taxType),
-                formdata.append('sales_price',this.posts.finalPrice),
-                formdata.append('available_quantity',this.posts.availableQuantity);
-                formdata.append('image',files[0]);
 
-                const config = {
-                    headers: {
-                        'content-type': 'multipart/form-data'
-                    }
-                };
-                axios.post("http://192.168.100.9/Project_Laravel/public/api/item",formdata,config)
+        editData(){
+            const UpApi ='http://192.168.100.9/Project_Laravel/public/api/item/'+this.id;
+            axios.get(UpApi)
+            // return promise
+            .then((res)=>{
+                console.log(res.data);
+                // this.posts.category_name = res.data.category_name
+                // this.posts.desc = res.data.description
+            })
+            // catch error
+            .catch(error =>{
+                console.log(error)
+            });
+        },
+
+            postData(e){
+                confirm('Do You Wants to Save Record ?')    
+                const UpApi ='http://192.168.100.9/Project_Laravel/public/api/item_category/'+this.id;
+                axios.put(UpApi,{
+                    category_name:this.posts.category_name,
+                    description:this.posts.desc,
+                    category_code:this.posts.category_code,
+                })
                 // return promise
                 .then((res)=>{
                     console.log(res);
@@ -341,13 +339,56 @@ export default {
                 console.table(this.posts);
                 // submit data without page reload 
                 e.preventDefault();
-            },
+        },
+
+            // postData: function (e){
+            //     confirm('Do You Wants to Save Record ?')
+            //     const formdata = new FormData();
+            //     var files = this.$refs.image.files;
+            //     formdata.append('item_name',this.posts.itemName),
+            //     formdata.append('brand_id',this.posts.brand),
+            //     formdata.append('category_id',this.posts.category),
+            //     formdata.append('unit_id',this.posts.unit),
+            //     formdata.append('sku',this.posts.sku),
+            //     formdata.append('hsn',this.posts.hsn),
+            //     formdata.append('alert_quantity',this.posts.alertQuantity),
+            //     formdata.append('lot_number',this.posts.lotNumber),
+            //     formdata.append('expire_date',this.posts.expire),
+            //     formdata.append('barcode',this.posts.barCode),
+            //     formdata.append('item_name',this.posts.itemName),
+            //     formdata.append('description',this.posts.description),
+            //     formdata.append('tax_id',this.posts.tax),
+            //     formdata.append('purchase_price',this.posts.purchasePrice),
+            //     formdata.append('tax_type',this.posts.taxType),
+            //     formdata.append('sales_price',this.posts.finalPrice),
+            //     formdata.append('available_quantity',this.posts.availableQuantity);
+            //     formdata.append('image',files[0]);
+
+            //     const config = {
+            //         headers: {
+            //             'content-type': 'multipart/form-data'
+            //         }
+            //     };
+            //     axios.post("http://192.168.100.9/Project_Laravel/public/api/item",formdata,config)
+            //     // return promise
+            //     .then((res)=>{
+            //         console.log(res);
+            //     })
+            //     // catch error
+            //     .catch(error =>{
+            //         console.log(error)
+            //     });
+            //     // show data [testing]
+            //     console.table(this.posts);
+            //     // submit data without page reload 
+            //     e.preventDefault();
+            // },
             getUnitData: function(){
                 axios.get("http://192.168.100.9/Project_Laravel/public/api/unit")
                 // return promise
                 .then((res)=>{
                     this.unitData=res.data;
-                    console.log(res.data);
+                    // console.log(res.data);
                 })
                 // catch error
                 .catch(error =>{
@@ -359,7 +400,7 @@ export default {
                 // return promise
                 .then((res)=>{
                     this.itemBrandData=res.data;
-                    console.log(res.data);
+                    // console.log(res.data);
                 })
                 // catch error
                 .catch(error =>{
@@ -371,7 +412,7 @@ export default {
                 // return promise
                 .then((res)=>{
                     this.itemCategoryData=res.data;
-                    console.log(res.data);
+                    // console.log(res.data);
                 })
                 // catch error
                 .catch(error =>{
@@ -383,7 +424,7 @@ export default {
                 // return promise
                 .then((res)=>{
                     this.taxData=res.data;
-                    console.log(res.data);
+                    // console.log(res.data);
                 })
                 // catch error
                 .catch(error =>{
