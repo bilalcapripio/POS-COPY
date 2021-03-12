@@ -83,7 +83,7 @@
                                                                                     </a>
                                                                                     <ul role="menu" class="dropdown-menu dropdown-light pull-right">
                                                                                         <li>
-                                                                                            <a href="/UpdateState" @click="editData">
+                                                                                            <a :href="'/UpdateState/'+data.id">
                                                                                                 <i class="fa fa-fw fa-edit text-blue"></i>Edit
                                                                                             </a>
                                                                                         </li>

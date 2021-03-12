@@ -3,62 +3,106 @@
             <div>
                 <Navbar/>
                     <!-- /.content-wrapper -->
-                        <div class="content-wrapper p-2">
-                                <div class="content-header ">
-                                            <!---Start Third card shop-->
-                                            <h2 class="text-md ml-4"><span class="text-lg">Update Expense Category</span>  Add / <small class="text-gray text-sm"><span>Update Expense Category</span></small></h2>
-                                            <!-- alert start -->
-                                            <div class="content-header">
-                                                <div class="container-fluid">
-                                                   <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                                    <strong>Ultimate Inventory with POS new Version 1.7.7 released , Faster and Customizable Application Software. If you have any queries please message here. [Some features are disabled in demo and it will be reset after each hour.]</strong> 
-                                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                    <span aria-hidden="true" class="text-white">&times;</span>
-                                                    </button>
-                                                </div>
-                                                </div>
-                                            </div>                  
-                                            <!-- alert end -->
-                                            <!---Start Porduct Table>-->
-                                            <div class="container-fluid">
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                            <div class="card">
-                                                                <h5 class="card-header display-5">Please Enter Valid Data</h5>
-                                                                <div class="card-body">
-                                                                <form @submit.prevent="postData" method="post">
-                                                                    <div class="box-body">
-                                                                        <div class="form-group">
-                                                                            <label for="category" class="col-sm-2 control-label">Category Name<label class="text-danger">*</label></label>
-                                                                    <div class="col-sm-4">
-                                                                        <input type="text" class="form-control input-sm" id="category" name="category" placeholder="Category Name" v-model="posts.category_name">
-                                                                                <span id="category_msg" style="display:none" class="text-danger"></span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                            <label for="description" class="col-sm-2 control-label">Description</label>
-                                                                            <div class="col-sm-4">
-                                                                                <textarea type="text" class="form-control" id="description" name="description" placeholder="Description" v-model="posts.desc"></textarea>
-                                                                                <span id="description_msg" style="display:none" class="text-danger"></span>
-                                                                            </div>
-                                                                            </div>   
-                                                                    </div>
-                                                                    <div class="">
-                                                                        <button class="btn btn-success">Save</button>
-                                                                        <button class="btn btn-warning">Close</button>
-                                                                    </div>
-                                                                </form>
+                        <div class="content-wrapper p-2 mb-5">
+                            
+                                <!---Start Third card shop-->
+                                <h2 class="text-md ml-4 pt-3"><span class="text-lg"> Expence</span>   Add/ <small class="text-gray text-sm"><span>Update Expence</span></small></h2>
+                                <!-- alert start -->
+                                <div class="content-header">
+                                    <div class="container-fluid">
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        <strong>Ultimate Inventory with POS new Version 1.7.7 released , Faster and Customizable Application Software. If you have any queries please message here. [Some features are disabled in demo and it will be reset after each hour.]</strong> 
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true" class="text-white">&times;</span>
+                                        </button>
+                                    </div>
+                                    </div>
+                                </div>                  
+                                <!-- alert end -->
+                                <!---Start  Print Card -->
+                                <div class="container-fluid">
+                                    <div class="card">
+                                        <form @submit.prevent="postData">
+                                        <div class="card-header display-5">
+                                            Please Enter Valid Data
+                                        </div>
+                                        <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-7 p-4">
+                                                    <div class="form-group row">
+                                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Expense Date*</label>
+                                                    <div class="col-sm-10">
+                                                            <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                                                            <div class="input-group mb-2">
+                                                            <div class="input-group-prepend">
+                                                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                                            </div>
+                                                            <input type="date" class="form-control pull-right datepicker" id="expense_date" name="expense_date" v-model="posts.date">                                     
+                                                            </div>  
+                                                    </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="inputEmail3" class="col-sm-2 col-form-label">Category*</label>
+                                                        <div class="col-sm-10">
+                                                                <select v-model="posts.category" class="form-control select2 select2-hidden-accessible" id="category_id" name="category_id" style="width: 100%;">
+                                                                    <option value="">-Select-</option>
+                                                                    <option :value="data.id" v-for="data in categoryData" v-bind:key="data.id">
+                                                                        {{data.category_name}}
+                                                                    </option>
+                                                                </select>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                    <div class="form-group row">
+                                                        <label for="inputEmail3" class="col-sm-2 col-form-label">Expense for*</label>
+                                                        <div class="col-sm-10">
+                                                        <input type="text" class="form-control" v-model="posts.expence_for" id="inputEmail3">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="inputEmail3" class="col-sm-2 col-form-label">Amount*</label>
+                                                        <div class="col-sm-10">
+                                                        <input type="text" class="form-control" v-model="posts.amount" id="inputEmail3">
+                                                        </div>
+                                                    </div>
+                                                    
                                             </div>
-                                            <!--End Product Table-->
+                                            <div class="col-md-5 p-4">
+                                           
+                                                    <div class="form-group row">
+                                                        <label for="inputEmail3" class="col-sm-2 col-form-label">Refrence No</label>
+                                                        <div class="col-sm-10">
+                                                            <input type="text" class="form-control" v-model="posts.refNo" id="inputEmail3">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="inputEmail3" class="col-sm-2 col-form-label">Note</label>
+                                                        <div class="col-sm-10">
+                                                            <textarea class="form-control" id="exampleFormControlTextarea1" v-model="posts.note" rows="3"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    
+                                            </div>
                                         </div>
-                                </div> 
-                            <Footer/>
-                            <Sidebar/>
-                        </div> 
+                                        </div>
+                                        <div class="card-footer">
+                                            <div class="group d-flex justify-content-center align-items-center mx-auto">
+                                                <button class="btn btn-success w-25">Save</button>
+                                                &nbsp;
+                                                <button class="btn btn-warning w-25">Close</button>
+                                            </div>
+                                        </div>
+                                        </form>
+                                    </div>
+                                    
+                                </div>
+
+                                <!--End  Print Card-->
+                        
+                        </div>
                     <!-- /.content-wrapper -->
+                        <Footer/>
+                        <Sidebar/>
+
             </div>
         </body>
 </template>
@@ -71,32 +115,81 @@ import axios from 'axios'
 
 export default {
     name:'',
+    data(){
+        return{
+            categoryData:[],
+            posts:{
+                date:'',
+                category:'',
+                expence_for:'',
+                amount:'',
+                refNo:'',
+                note:'',
+                created_by:'admin',
+            },
+            id:''
+        }
+    },
     components: {
         Navbar,
         Sidebar,
         Footer
     },
-    data(){
-        return{
-            posts:{
-                category_name:'',
-                desc:''
-            }
-        }
+    mounted(){
+        this.getcategoryData()
+        this.id=this.$route.params.id;
+        this.editData();
     },
     methods:{
+            getcategoryData: function(){
+            axios.get("http://192.168.100.9/Project_Laravel/public/api/expence_category")
+                // return promise
+            .then((res)=>{
+                this.categoryData=res.data;
+                console.log(res.data);
+            })
+                // catch error
+            .catch(error =>{
+                console.log(error)
+            });
+        },
+
+        editData(){
+            const UpApi ='http://192.168.100.9/Project_Laravel/public/api/expence/'+this.id;
+            axios.get(UpApi)
+            // return promise
+            .then((res)=>{
+                console.log(res.data);
+                this.posts.date = res.data[0].date
+                this.posts.category = res.data[0].expence_id
+                this.posts.expence_for = res.data[0].expense_for
+                this.posts.amount = res.data[0].amount
+                this.posts.refNo = res.data[0].reference_no
+                this.posts.note = res.data[0].description
+                this.posts.created_by = res.data[0].created_by
+            })
+            // catch error
+            .catch(error =>{
+                console.log(error)
+            });
+        },
+
             postData(e){
-                confirm('Do You Wants to Save Record ?')
-                const formdata = new FormData();
-                formdata.append('category_name',this.posts.category_name),
-                formdata.append('description',this.posts.desc),
-                // this.formdata = { headers: { 'Content-Type': 'multipart/formdata' } }
-                axios.post("http://192.168.100.9/Project_Laravel/public/api/expence_category",formdata)
+                confirm('Do You Wants to Save Record ?')    
+                const UpApi ='http://192.168.100.9/Project_Laravel/public/api/expence/'+this.id;
+                axios.put(UpApi,{
+                    category:this.posts.category,
+                    date:this.posts.date,
+                    expense_for:this.posts.expence_for,
+                    amount:this.posts.amount,
+                    reference_no:this.posts.refNo,
+                    description:this.posts.note,
+                    created_by:this.posts.created_by,
+                    // date:this.posts.date,
+                })
                 // return promise
                 .then((res)=>{
                     console.log(res);
-                    this.posts.category_name='',
-                    this.posts.desc=''
                 })
                 // catch error
                 .catch(error =>{
@@ -106,8 +199,35 @@ export default {
                 console.table(this.posts);
                 // submit data without page reload 
                 e.preventDefault();
-            },
-    }
+        },
+        // postData: function(e){
+        //     confirm('Do You Wants to Save Record ?')
+        //     const formdata = new FormData();
+        //     formdata.append('date',this.posts.date),
+        //     formdata.append('category',this.posts.category),
+        //     formdata.append('expense_for',this.posts.expence_for),
+        //     formdata.append('amount',this.posts.amount),
+        //     formdata.append('reference_no',this.posts.refNo),
+        //     formdata.append('description',this.posts.note),
+        //     formdata.append('created_by',this.posts.created_by),
+        //         // this.formdata = { headers: { 'Content-Type': 'multipart/formdata' } }
+        //     axios.post("http://192.168.100.9/Project_Laravel/public/api/expence",formdata)
+        //         // return promise
+        //     .then((res)=>{
+        //         console.log(res);
+        //     })
+        //     // catch error
+        //     .catch(error =>{
+        //         console.log(error)
+        //     });
+        //         // show data [testing]
+        //     console.table(this.posts);
+        //         // submit data without page reload 
+        //     e.preventDefault();
+        // },
+    },
+
+    
 
 }
 </script>

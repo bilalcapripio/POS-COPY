@@ -80,23 +80,43 @@ export default {
         return{
             posts:{
                 category_name:'',
-                desc:''
+                desc:'',
+                id:''
             }
         }
     },
+    mounted()
+    {
+        this.id=this.$route.params.id;
+        this.editData();
+        // console.log(this.$route.params.id);
+    },
     methods:{
+        editData(){
+            const UpApi ='http://192.168.100.9/Project_Laravel/public/api/expence_category/'+this.id;
+            axios.get(UpApi)
+            // return promise
+            .then((res)=>{
+                console.log(res.data);
+                this.posts.category_name = res.data.category_name
+                this.posts.desc = res.data.description
+            })
+            // catch error
+            .catch(error =>{
+                console.log(error)
+            });
+        },
+
             postData(e){
-                confirm('Do You Wants to Save Record ?')
-                const formdata = new FormData();
-                formdata.append('category_name',this.posts.category_name),
-                formdata.append('description',this.posts.desc),
-                // this.formdata = { headers: { 'Content-Type': 'multipart/formdata' } }
-                axios.post("http://192.168.100.9/Project_Laravel/public/api/expence_category",formdata)
+                confirm('Do You Wants to Save Record ?')    
+                const UpApi ='http://192.168.100.9/Project_Laravel/public/api/expence_category/'+this.id;
+                axios.put(UpApi,{
+                    category_name:this.posts.category_name,
+                    description:this.posts.desc,
+                })
                 // return promise
                 .then((res)=>{
                     console.log(res);
-                    this.posts.category_name='',
-                    this.posts.desc=''
                 })
                 // catch error
                 .catch(error =>{
@@ -106,7 +126,29 @@ export default {
                 console.table(this.posts);
                 // submit data without page reload 
                 e.preventDefault();
-            },
+        },
+            // postData(e){
+            //     confirm('Do You Wants to Save Record ?')
+            //     const formdata = new FormData();
+            //     formdata.append('category_name',this.posts.category_name),
+            //     formdata.append('description',this.posts.desc),
+            //     // this.formdata = { headers: { 'Content-Type': 'multipart/formdata' } }
+            //     axios.post("http://192.168.100.9/Project_Laravel/public/api/expence_category",formdata)
+            //     // return promise
+            //     .then((res)=>{
+            //         console.log(res);
+            //         this.posts.category_name='',
+            //         this.posts.desc=''
+            //     })
+            //     // catch error
+            //     .catch(error =>{
+            //         console.log(error)
+            //     });
+            //     // show data [testing]
+            //     console.table(this.posts);
+            //     // submit data without page reload 
+            //     e.preventDefault();
+            // },
     }
 
 }

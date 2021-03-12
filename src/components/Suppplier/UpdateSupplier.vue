@@ -119,7 +119,7 @@
                                                     </div>
                                                     <hr style="height:2px;border-width:0;color:gray;background-color:gray">
                                                     <div class="box-body mt-5 d-flex mx-auto justify-content-center align-items-center">                        
-                                                        <input type="submit" class="btn btn-danger btn-lg px-5" value="Save" @click="Redirect()">
+                                                        <input type="submit" class="btn btn-danger btn-lg px-5" value="Save">
                                                         &nbsp;
                                                         <input type="button" class="btn btn-warning btn-lg px-5" value="Close">
                                                         <!-- /row -->
@@ -202,8 +202,11 @@ export default {
         Footer
     },
     mounted(){
-        this.getCountryData();
-        this.getStateData();
+        this.id=this.$route.params.id;
+        this.getStateData()
+        this.getCountryData()
+        this.editData();
+        // console.log(this.$route.params.id);
     },
     methods:{
         getCountryData: function(){
@@ -230,23 +233,52 @@ export default {
                 console.log(error)
             });
         },
+        editData(){
+            const UpApi ='http://192.168.100.9/Project_Laravel/public/api/supplier/'+this.id;
+            axios.get(UpApi)
+            // return promise
+            .then((res)=>{
+                this.custdata=res.data;
+                console.log(res.data);
+                // console.log(res.data[0].city)
+                this.posts.address = res.data[0].address
+                this.posts.city = res.data[0].city
+                this.posts.state_id = res.data[0].state_id
+                this.posts.country_id = res.data[0].country_id
+                this.posts.state = res.data[0].state_id
+                this.posts.country = res.data[0].country_id
+                this.posts.supplier_name = res.data[0].supplier_name
+                this.posts.phone = res.data[0].phone
+                this.posts.mobile = res.data[0].mobile
+                this.posts.email = res.data[0].email
+                this.posts.gstNumber = res.data[0].gst_number
+                this.posts.taxNumber = res.data[0].mitn_number
+                this.posts.openingBalance = res.data[0].opening_balance
+                this.posts.postCode = res.data[0].post_code
+            })
+            // catch error
+            .catch(error =>{
+                console.log(error)
+            });
+        },
+
             PostData(e){
-                confirm('Do You Wants to Save Record ?')
-                const formdata = new FormData();
-                formdata.append('country_id',this.posts.country),
-                formdata.append('state_id',this.posts.state),
-                formdata.append('supplier_name',this.posts.supplier_name),
-                formdata.append('mobile',this.posts.mobile),
-                formdata.append('email',this.posts.email),
-                formdata.append('phone',this.posts.phone),
-                formdata.append('gst_number',this.posts.gstNumber),
-                formdata.append('tax_number',this.posts.taxNumber),
-                formdata.append('opening_balance',this.posts.openingBalance),
-                formdata.append('city',this.posts.city),
-                formdata.append('post_code',this.posts.postCode),
-                formdata.append('address',this.posts.address),
-                // this.formdata = { headers: { 'Content-Type': 'multipart/formdata' } }
-                axios.post("http://192.168.100.9/Project_Laravel/public/api/supplier",formdata)
+                confirm('Do You Wants to Save Record ?')    
+                const UpApi ='http://192.168.100.9/Project_Laravel/public/api/supplier/'+this.id;
+                axios.put(UpApi,{
+                    address:this.posts.address,
+                    city:this.posts.city,
+                    state_id:this.posts.state,
+                    country_id:this.posts.country,
+                    supplier_name:this.posts.supplier_name,
+                    phone:this.posts.phone,
+                    mobile:this.posts.mobile,
+                    email:this.posts.email,
+                    gst_number:this.posts.gstNumber,
+                    tax_number:this.posts.taxNumber,
+                    opening_balance:this.posts.openingBalance,
+                    post_code:this.posts.postCode,
+                })
                 // return promise
                 .then((res)=>{
                     console.log(res);
@@ -259,8 +291,8 @@ export default {
                 console.table(this.posts);
                 // submit data without page reload 
                 e.preventDefault();
-            },
-             Redirect(){
+        },
+            Redirect(){
             setTimeout("window.location='/Suppliers'",3000);
             },
 

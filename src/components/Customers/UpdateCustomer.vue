@@ -175,8 +175,8 @@ export default {
             // return promise
             .then((res)=>{
                 this.custdata=res.data;
-                console.log(res.data);
-                console.log(res.data[0].city)
+                // console.log(res.data);
+                // console.log(res.data[0].city)
                 this.posts.addresss = res.data[0].address
                 this.posts.city = res.data[0].city
                 this.posts.state_id = res.data[0].state_id
@@ -198,25 +198,23 @@ export default {
             });
         },
 
-
         PostData(e){
             confirm('Do You Wants to Save Record ?')    
-            const formdata = new FormData();
             const UpApi ='http://192.168.100.9/Project_Laravel/public/api/customer/'+this.id;
-            formdata.append('address',this.posts.addresss),
-            formdata.append('city',this.posts.city),
-            formdata.append('state_id',this.posts.state),
-            formdata.append('country_id',this.posts.country),
-            formdata.append('customer_name',this.posts.customer),
-            formdata.append('phone',this.posts.phone),
-            formdata.append('mobile',this.posts.mobile),
-            formdata.append('email',this.posts.email),
-            formdata.append('gst_number',this.posts.gst),
-            formdata.append('tax_number',this.posts.tax),
-            formdata.append('opening_balance',this.posts.balance),
-            formdata.append('postcode',this.posts.postcode),
-            // this.formdata = { headers: { 'Content-Type': 'multipart/formdata' } }
-            axios.patch(UpApi,formdata)
+            axios.put(UpApi,{
+                address:this.posts.addresss,
+                city:this.posts.city,
+                state_id:this.posts.state,
+                country_id:this.posts.country,
+                customer_name:this.posts.customer,
+                phone:this.posts.phone,
+                mobile:this.posts.mobile,
+                email:this.posts.email,
+                gst_number:this.posts.gst,
+                tax_number:this.posts.tax,
+                balance:this.posts.balance,
+                postcode:this.posts.postcode,
+            })
             // return promise
             .then((res)=>{
                 console.log(res);
@@ -230,6 +228,7 @@ export default {
             // submit data without page reload 
             e.preventDefault();
         },
+
         Redirect(){
             setTimeout("window.location='/Customers'",3000);
             }

@@ -26,11 +26,11 @@
                                                                     <form>
                                                                         <div class="form-group">
                                                                             <label for="exampleInputEmail1"> Tax Name <span class="text-danger">*</span></label>
-                                                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                                                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" v-model="tax_name">
                                                                         </div>
                                                                         <div class="form-group">
                                                                             <label for="exampleInputPassword1">Tax Percentage <span class="text-danger">*</span></label>
-                                                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                                                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="" v-model="tax_percent">
                                                                         </div>
                                                                     </form>
                                                                 </div>
@@ -72,30 +72,44 @@ export default {
     },
     mounted(){
         this.getTaxData()
+        this.id=this.$route.params.id;
+        this.editData();
     },
     methods:{
-        getTaxData: function(){
-            axios.get("http://192.168.100.9/Project_Laravel/public/api/tax")
-                // return promise
+        editData(){
+            const UpApi ='http://192.168.100.9/Project_Laravel/public/api/tax/'+this.id;
+            axios.get(UpApi)
+            // return promise
             .then((res)=>{
-                this.taxData=res.data;
-                    console.log(res.data);
-            })
-                // catch error
-            .catch(error =>{
-                console.log(error)
-            });
-        },
-        deleteData: function(id,index) {
-            this.taxData.splice(index,1)
-            axios.delete('http://192.168.100.9/Project_Laravel/public/api/tax/' + id)
-            .then((res)=>{
-                console.log(res);
+                console.log(res.data);
+                this.posts.unit_name = res.data.unit_name
+                this.posts.desc = res.data.description
             })
             // catch error
             .catch(error =>{
                 console.log(error)
             });
+        },
+
+            postData(e){
+                confirm('Do You Wants to Save Record ?')    
+                const UpApi ='http://192.168.100.9/Project_Laravel/public/api/tax/'+this.id;
+                axios.put(UpApi,{
+                    unit_name:this.posts.unit_name,
+                    description:this.posts.desc,
+                })
+                // return promise
+                .then((res)=>{
+                    console.log(res);
+                })
+                // catch error
+                .catch(error =>{
+                    console.log(error)
+                });
+                // show data [testing]
+                console.table(this.posts);
+                // submit data without page reload 
+                e.preventDefault();
         },
     }
 

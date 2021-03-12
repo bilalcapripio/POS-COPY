@@ -26,7 +26,7 @@
                                                                 <div class="card">
                                                                     <h5 class="card-header display-5">Please Enter Valid Data</h5>
                                                                     <div class="card-body">
-                                                                    <form v-on:submit="countryPost" method="post">
+                                                                    <form @submit="postData" method="post">
                                                                         <div class="box-body">
                                                                             <div class="form-group">
                                                                                     <label  class="col-sm-2 control-label">Country Name<label class="text-danger">*</label></label>
@@ -74,26 +74,45 @@ data(){
             },
         }
     },
+    mounted(){
+        this.id=this.$route.params.id;
+        this.editData();
+    },
     methods:{
-        countryPost(e){
-            const formdata = new FormData();
-            formdata.append('country_name',this.posts.country_name)
-            axios.post("http://192.168.100.9/Project_Laravel/public/api/country",formdata)
+           editData(){
+            const UpApi ='http://192.168.100.9/Project_Laravel/public/api/country/'+this.id;
+            axios.get(UpApi)
             // return promise
             .then((res)=>{
-                console.log(res);
-                this.posts.country_name = '';
+                console.log(res.data);
+                this.posts.country_name = res.data.country_name
             })
             // catch error
             .catch(error =>{
                 console.log(error)
             });
-            // show data [testing]
-            console.table(this.posts);
-            // submit data without page reload 
-            e.preventDefault();
-            
-        }
+        },
+
+            postData(e){
+                confirm('Do You Wants to Save Record ?')    
+                const UpApi ='http://192.168.100.9/Project_Laravel/public/api/country/'+this.id;
+                axios.put(UpApi,{
+                    country_name:this.posts.country_name,
+
+                })
+                // return promise
+                .then((res)=>{
+                    console.log(res);
+                })
+                // catch error
+                .catch(error =>{
+                    console.log(error)
+                });
+                // show data [testing]
+                console.table(this.posts);
+                // submit data without page reload 
+                e.preventDefault();
+        },
 
     }
 

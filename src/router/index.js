@@ -85,23 +85,21 @@ import UpdatePayments from '@/components/Setting/UpdatePayments.vue';
 const routes=[
     {path:'/', name:'Content', component:Content},
     {path:'/Authentication',name:'Authentication' ,component:Authentication},
-
-
     {path:'/UpdateCustomer/:id',name:'UpdateCustomer' ,component:UpdateCustomer},
-    {path:'/UpdateSupplier',name:'UpdateSupplier' ,component:UpdateSupplier},
-    {path:'/UpdateSupplier',name:'UpdateSupplier' ,component:UpdateSupplier},
-    {path:'/UpdateCategorylist',name:'UpdateCategorylist' ,component:UpdateCategorylist},
-    {path:'/UpdateItem',name:'UpdateItem' ,component:UpdateItem},
-    {path:'/UpdateBrand',name:'UpdateBrand' ,component:UpdateBrand},
-    {path:'/UpdateExpence',name:'UpdateExpence' ,component:UpdateExpence},
-    {path:'/UpdateExpenceCategory',name:'UpdateExpenceCategory' ,component:UpdateExpenceCategory},
-    {path:'/UpdateCountry',name:'UpdateCountry' ,component:UpdateCountry},
-    {path:'/UpdateState',name:'UpdateState' ,component:UpdateState},
-    {path:'/UpdateRole',name:'UpdateRole' ,component:UpdateRole},
-    {path:'/UpdateTax',name:'UpdateTax' ,component:UpdateTax},
-    {path:'/UpdateUnit',name:'UpdateUnit' ,component:UpdateUnit},
-    {path:'/UpdateNewCurrency',name:'UpdateNewCurrency' ,component:UpdateNewCurrency},
-    {path:'/UpdatePayments',name:'UpdatePayments' ,component:UpdatePayments},
+    {path:'/UpdateSupplier/:id',name:'UpdateSupplier' ,component:UpdateSupplier},
+    {path:'/UpdateSupplier/:id',name:'UpdateSupplier' ,component:UpdateSupplier},
+    {path:'/UpdateCategorylist/:id',name:'UpdateCategorylist' ,component:UpdateCategorylist},
+    {path:'/UpdateItem/:id',name:'UpdateItem' ,component:UpdateItem},
+    {path:'/UpdateBrand/:id',name:'UpdateBrand' ,component:UpdateBrand},
+    {path:'/UpdateExpence/:id',name:'UpdateExpence' ,component:UpdateExpence},
+    {path:'/UpdateExpenceCategory/:id',name:'UpdateExpenceCategory' ,component:UpdateExpenceCategory},
+    {path:'/UpdateCountry/:id',name:'UpdateCountry' ,component:UpdateCountry},
+    {path:'/UpdateState/:id',name:'UpdateState' ,component:UpdateState},
+    {path:'/UpdateRole/:id',name:'UpdateRole' ,component:UpdateRole},
+    {path:'/UpdateTax/:id',name:'UpdateTax' ,component:UpdateTax},
+    {path:'/UpdateUnit/:id',name:'UpdateUnit' ,component:UpdateUnit},
+    {path:'/UpdateNewCurrency/:id',name:'UpdateNewCurrency' ,component:UpdateNewCurrency},
+    {path:'/UpdatePayments/:id',name:'UpdatePayments' ,component:UpdatePayments},
 
 
 
