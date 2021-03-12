@@ -80,7 +80,7 @@
                                                 </div>
                                                 <div class="card-body">
                                                     <div class="box-body">
-                                                        <table id="example2" class="table table-bordered table-striped dataTable dtr-inline" width="100%" role="grid" aria-describedby="example2_info" style="width: 100%;">
+                                                <table id="example2" class="table table-bordered table-striped dataTable dtr-inline" width="100%" role="grid" aria-describedby="example2_info" style="width: 100%;">
                                                             <thead class="bg-primary ">
                                                                 <tr role="row">                                                                  
                                                                     <th class="sorting" rowspan="1" colspan="1">Supplier ID</th>
@@ -133,8 +133,8 @@
                                                                         </div>
                                                                     </td>
                                                                 </tr>
-                                                    </tbody>         
-                                                        </table>
+                                                            </tbody>         
+                                                </table>
                                                         <!-- <div class="next d-flex justify-content-between align-items-center">
                                                             <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">Showing 1 to 10 of 22 entries</div><div class="dataTables_paginate paging_simple_numbers" id="example2_paginate"></div>
                                                             <nav aria-label="Page navigation example">
@@ -168,20 +168,32 @@ import Navbar from  '../../components/Navbar.vue'
 import Sidebar from '../../components/Sidebar.vue'
 import Footer from  '../../components/Footer.vue'
 import axios from 'axios'
+import { jsPDF } from "jspdf";
 
 export default {
     name:'',
-    data(){
-        return{
-            supplierData:[],
-            auto:1
-        }
-    },
-    components: {
+        components: {
         Navbar,
         Sidebar,
         Footer
     },
+    data(){
+        return{
+            supplierData:[],
+            auto:1,
+            uri :'data:application/vnd.ms-excel;base64,',
+            template:'<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table>{table}</table></body></html>',
+            base64: function(s){ return window.btoa(unescape(encodeURIComponent(s))) },
+            format: function(s, c) { return s.replace(/{(\w+)}/g, function(m, p) { return c[p]; }) }
+        }
+    },
+    computed: {
+        csvData() {
+        return this.custdata.map(item => ({
+            ...item,
+        }));
+        }
+    }, 
     mounted(){
         this.getSupplierData();
     },
