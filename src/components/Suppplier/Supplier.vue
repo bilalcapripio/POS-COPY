@@ -119,9 +119,9 @@
                                                     </div>
                                                     <hr style="height:2px;border-width:0;color:gray;background-color:gray">
                                                     <div class="box-body mt-5 d-flex mx-auto justify-content-center align-items-center">                        
-                                                        <button class="btn btn-success w-25">Save</button>
+                                                        <input type="submit" class="btn btn-danger btn-lg px-5" value="Save" @click="Redirect()">
                                                         &nbsp;
-                                                        <button class="btn btn-warning w-25">Close</button>
+                                                        <input type="button" class="btn btn-warning btn-lg px-5" value="Close">
                                                         <!-- /row -->
                                                     </div>
                                                 <!----End From ---->
@@ -259,6 +259,9 @@ export default {
                 console.table(this.posts);
                 // submit data without page reload 
                 e.preventDefault();
+            },
+             Redirect(){
+            setTimeout("window.location='/Suppliers'",3000);
             },
 
     },

@@ -189,7 +189,7 @@ export default {
     },
     computed: {
         csvData() {
-        return this.custdata.map(item => ({
+        return this.supplierData.map(item => ({
             ...item,
         }));
         }
@@ -223,6 +223,9 @@ export default {
                 console.log(error)
             });
         },     
+            Redirect(){
+            setTimeout("window.location='/Suppliers'",3000);
+            },
 
 
          // Pdf Table
@@ -272,3 +275,9 @@ export default {
 
 }
 </script>
+<style scoped>
+@media print {
+    * {display:none;}
+    .printable, .printable > * {display:block;}
+}
+</style>
