@@ -84,7 +84,7 @@
                                                                                     <i class="fa fa-fw fa-edit text-blue"></i>Edit
                                                                                 </a>
                                                                                 </li>
-                                                                                <li>
+                                                                                <!-- <li>
                                                                                     <a title="Pay Opening Balance &amp; Purchase Due Payments" class="pointer" onclick="pay_now(7)">
                                                                                         <i class="fa fa-fw fa-money text-blue"></i>Pay Due Payments
                                                                                     </a>
@@ -93,7 +93,7 @@
                                                                                     <a title="Pay Return Due" class="pointer" onclick="pay_return_due(7)">
                                                                                         <i class="fa fa-fw fa-money text-blue"></i>Pay Return Due
                                                                                     </a>
-                                                                                </li>
+                                                                                </li> -->
                                                                                 <li>
                                                                                     <a style="cursor:pointer" title="Delete Record ?" href="#" @click="deleteData(data.id,data.index)">
                                                                                         <i class="fa fa-fw fa-trash text-red"></i>Delete
@@ -105,7 +105,7 @@
                                                                 </tr>
                                                     </tbody>         
                                                         </table>
-                                                        <div class="next d-flex justify-content-between align-items-center">
+                                                        <!-- <div class="next d-flex justify-content-between align-items-center">
                                                             <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">Showing 1 to 10 of 22 entries</div><div class="dataTables_paginate paging_simple_numbers" id="example2_paginate"></div>
                                                             <nav aria-label="Page navigation example">
                                                                 <ul class="pagination">
@@ -116,7 +116,7 @@
                                                                 <li class="page-item"><a class="page-link" href="#">Next</a></li>
                                                                 </ul>
                                                             </nav>
-                                                        </div>                              
+                                                        </div>                               -->
                                                 </div>
                                             </div>
                                         </div>
