@@ -6,7 +6,7 @@
                         <div class="content-wrapper p-2">
                                 <div class="content-header">
                                         <!---Start Third card shop-->
-                                        <h2 class="text-md ml-4"><span class="text-lg lead">Update Category</span></h2>
+                                        <h2 class="text-md ml-4"><span class="text-lg lead">Update Brand </span></h2>
                                         <!-- alert start -->
                                         <div class="content-header">
                                             <div class="container-fluid">
@@ -24,29 +24,30 @@
                                             <div class="row">
                                                 <div class="col-md-12">
                                                         <div class="card">
-                                                            <h5 class="card-header">Featured</h5>
-                                                            <h5 class="card-header display-4">Please Enter Valid Data</h5>
+                                                            <h5 class="card-header display-5">Please Enter Valid Data</h5>
                                                             <div class="card-body">
                                                             <form @submit.prevent="postData">
                                                                 <div class="box-body">
                                                                     <div class="form-group">
-                                                                        <label for="category" class="col-sm-2 control-label">Category Name<label class="text-danger">*</label></label>
+                                                                        <label for="category" class="col-sm-2 control-label">Brands Name<label class="text-danger">*</label></label>
                                                                 <div class="col-sm-4">
-                                                                    <input type="text" class="form-control input-sm" id="category" name="category" placeholder="Category Name" v-model="posts.category_name">
-                                                                            <span id="category_msg" style="display:none" class="text-danger"></span>
+                                                                    <input type="text" class="form-control input-sm" id="category" name="category" v-model="posts.brand_name" placeholder="Brand Name">
+                                                                    <span id="category_msg" style="display:none" class="text-danger"></span>
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group">
                                                                         <label for="description" class="col-sm-2 control-label">Description</label>
                                                                         <div class="col-sm-4">
-                                                                            <textarea type="text" class="form-control" id="description" name="description" placeholder="Description" v-model="posts.desc"></textarea>
+                                                                            <textarea type="text" class="form-control" id="description" name="description"  v-model="posts.desc" placeholder="Description"></textarea>
                                                                             <span id="description_msg" style="display:none" class="text-danger"></span>
                                                                         </div>
                                                                         </div>   
                                                                 </div>
-                                                                <button class="btn btn-success">Save</button>
-                                                                &nbsp;
-                                                                <button class="btn btn-warning">Close</button>
+                                                                <div class="">
+                                                                    <button class="btn btn-success">Save</button>
+                                                                    &nbsp;
+                                                                    <button class="btn btn-warning">Close</button>
+                                                                </div>
                                                             </form>
                                                     </div>
                                                 </div>
@@ -55,10 +56,10 @@
 
                                         <!--End Product Table-->
                                     </div>
-                                </div> 
+                                    </div> 
                             <Footer/>
                             <Sidebar/>
-                        </div> 
+                    </div> 
                     <!-- /.content-wrapper -->
             </div>
         </body>
@@ -75,8 +76,8 @@ export default {
     data(){
         return{
             posts:{
-                category_code:'101',
-                category_name:'',
+                brand_code:'102',
+                brand_name:'',
                 desc:'',
             }
         }
@@ -90,15 +91,15 @@ export default {
         postData: function(e){
             confirm('Do You Wants to Save Record ?')
             const formdata = new FormData();
-            formdata.append('category_code',this.posts.category_code),
-            formdata.append('category_name',this.posts.category_name),
+            formdata.append('brand_code',this.posts.brand_code),
+            formdata.append('brand_name',this.posts.brand_name),
             formdata.append('description',this.posts.desc),
 
-            axios.post("http://192.168.100.9/Project_Laravel/public/api/item_category",formdata)
+            axios.post("http://192.168.100.9/Project_Laravel/public/api/item_brand",formdata)
                 // return promise
             .then((res)=>{
                 console.log(res);
-                this.posts.category_name = ''
+                this.posts.brand_name = ''
                 this.posts.desc = ''
             })
             // catch error
