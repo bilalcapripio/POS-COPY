@@ -155,13 +155,50 @@ export default {
                 balance:"",
                 city:"",
                 postcode:"",
+                id:""
             },
         }
     },
+    mounted()
+    {
+        this.id=this.$route.params.id;
+        this.editData();
+        // console.log(this.$route.params.id);
+    },
     methods:{
+
+        editData(){
+            const UpApi ='http://192.168.100.9/Project_Laravel/public/api/customer/'+this.id;
+            axios.get(UpApi)
+            // return promise
+            .then((res)=>{
+                this.custdata=res.data;
+                console.log(res.data);
+                // console.log(res.data.city)
+            this.posts.address = res.data.address
+            this.posts.city = res.data.city
+            this.posts.state = res.data.state
+            this.posts.country = res.data.country
+            this.posts.customer = res.data.customer_name
+            this.posts.phone = res.data.phone
+            this.posts.mobile = res.data.mobile
+            this.posts.email = res.data.email
+            this.posts.gst = res.data.gst_number
+            this.posts.tax = res.data.tax_number
+            this.posts.balance = res.data.opening_balance
+            this.posts.postcode = res.data.postcode
+            })
+            // catch error
+            .catch(error =>{
+                console.log(error)
+            });
+        },
+
+
         PostData(e){
             confirm('Do You Wants to Save Record ?')
             const formdata = new FormData();
+            const UpApi ='http://192.168.100.9/Project_Laravel/public/api/customer/'+this.id;
             formdata.append('address',this.posts.addresss),
             formdata.append('city',this.posts.city),
             formdata.append('state_id',this.posts.state),
@@ -175,7 +212,7 @@ export default {
             formdata.append('opening_balance',this.posts.balance),
             formdata.append('postcode',this.posts.postcode),
             // this.formdata = { headers: { 'Content-Type': 'multipart/formdata' } }
-            axios.post("http://192.168.100.9/Project_Laravel/public/api/customer",formdata)
+            axios.post(UpApi,formdata)
             // return promise
             .then((res)=>{
                 console.log(res);

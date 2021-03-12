@@ -87,7 +87,7 @@ const routes=[
     {path:'/Authentication',name:'Authentication' ,component:Authentication},
 
 
-    {path:'/UpdateCustomer',name:'UpdateCustomer' ,component:UpdateCustomer},
+    {path:'/UpdateCustomer/:id',name:'UpdateCustomer' ,component:UpdateCustomer},
     {path:'/UpdateSupplier',name:'UpdateSupplier' ,component:UpdateSupplier},
     {path:'/UpdateSupplier',name:'UpdateSupplier' ,component:UpdateSupplier},
     {path:'/UpdateCategorylist',name:'UpdateCategorylist' ,component:UpdateCategorylist},
