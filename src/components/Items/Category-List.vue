@@ -104,7 +104,7 @@
                                                                                 </tr>
                                                                             </tbody>    
                                                                         </table>
-                                                                        <div class="next d-flex justify-content-between align-items-center">
+                                                                        <!-- <div class="next d-flex justify-content-between align-items-center">
                                                                             <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">Showing 1 to 10 of 22 entries</div><div class="dataTables_paginate paging_simple_numbers" id="example2_paginate"></div>
                                                                             <nav aria-label="Page navigation example">
                                                                                 <ul class="pagination">
@@ -115,7 +115,7 @@
                                                                                 <li class="page-item"><a class="page-link" href="#">Next</a></li>
                                                                                 </ul>
                                                                             </nav>
-                                                                        </div>                              
+                                                                        </div>                               -->
                                                                 </div>
                                                             </div>
                                                         </div>

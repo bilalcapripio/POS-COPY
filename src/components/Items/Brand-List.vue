@@ -35,16 +35,32 @@
                                                             </div>
                                                             <hr>
                                                             <div class="row">
-                                                                <div class="col-sm-12"><div class="pull-left">
-                                                                <div class="dataTables_length" id="example2_length">
-                                                                <label>Show <select name="example2_length" aria-controls="example2" class="form-control input-sm">
-                                                                <option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select></label></div></div><div class="pull-right"><div id="example2_filter" class="dataTables_filter">
-                                                                <label>Search:<input type="search" class="form-control input-sm" placeholder="" aria-controls="example2"></label></div><div id="example2_processing" class="dataTables_processing panel panel-default" style="display: none;"><div class="text-primary bg-primary" style="position: relative;z-index:100;overflow: visible;">Processing...</div></div></div><div class="pull-right margin-left-10 ">
+                                                                <div class="col-sm-12">
+                                                                    <div class="pull-left">
+                                                                        <div class="dataTables_length" id="example2_length">
+                                                                            <label>Show
+                                                                                <select name="example2_length" aria-controls="example2" class="form-control input-sm">
+                                                                                    <option value="10">10</option>
+                                                                                    <option value="25">25</option>
+                                                                                    <option value="50">50</option>
+                                                                                    <option value="100">100</option>
+                                                                                </select>
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                <div class="pull-right">
+                                                                    <!-- <div id="example2_filter" class="dataTables_filter">
+                                                                        <label>Search:
+                                                                            <input type="search" class="form-control input-sm" placeholder="" aria-controls="example2">
+                                                                        </label>
+                                                                    </div> -->
+                                                                    <div id="example2_processing" class="dataTables_processing panel panel-default" style="display: none;"><div class="text-primary bg-primary" style="position: relative;z-index:100;overflow: visible;">Processing...</div></div></div><div class="pull-right margin-left-10 ">
                                                                 <div class="dt-buttons btn-group mt-4 mr-2">              
                                                                 <button class="btn btn-default buttons-copy buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Copy</span></button> <button class="btn btn-default buttons-excel buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Excel</span></button> <button class="btn btn-default buttons-pdf buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>PDF</span></button> <button class="btn btn-default buttons-print bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Print</span></button> <button class="btn btn-default buttons-csv buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
                                                                 <span>CSV</span></button> 
-                                                                <button class="btn btn-default buttons-collection buttons-colvis bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button" aria-haspopup="true"><span>Columns</span></button> 
-                                                                </div></div></div>
+                                                                </div>
+                                                                </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div class="card-body">
