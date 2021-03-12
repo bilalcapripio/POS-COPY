@@ -72,6 +72,8 @@ import UpdateState from '@/components/Places/UpdateState.vue';
 import UpdateRole from '@/components/Users/UpdateRole.vue';
 import UpdateTax from '@/components/Setting/UpdateTax.vue';
 import UpdateUnit from '@/components/Setting/UpdateUnit.vue';
+import UpdateNewCurrency from '@/components/Setting/UpdateNewCurrency.vue';
+
 
 
 
@@ -96,6 +98,8 @@ const routes=[
     {path:'/UpdateRole',name:'UpdateRole' ,component:UpdateRole},
     {path:'/UpdateTax',name:'UpdateTax' ,component:UpdateTax},
     {path:'/UpdateUnit',name:'UpdateUnit' ,component:UpdateUnit},
+    {path:'/UpdateNewCurrency',name:'UpdateNewCurrency' ,component:UpdateNewCurrency},
+
 
 
 
