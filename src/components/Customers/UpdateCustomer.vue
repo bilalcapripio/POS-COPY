@@ -82,7 +82,7 @@
                                                         <br>
                                                         <div class="col-md-4 col-md-offset-2 d-flex justify-content-center mx-auto">
                                                             <div class="input-group">
-                                                                <input type="submit" class="btn btn-danger btn-lg px-5" value="Save" @click="Redirect()">
+                                                                <input type="submit" class="btn btn-danger btn-lg px-5" value="Update">
                                                                 &nbsp;
                                                                 <button type="button" class="offset-md-1 btn btn-secondary btn-lg px-5 ">  <a href="/" class="text-light">Close</a> </button>
                                                             </div>
@@ -154,6 +154,8 @@ export default {
                 tax:"",
                 balance:"",
                 city:"",
+                state_id:"",
+                country_id:"",
                 postcode:"",
                 id:""
             },
@@ -174,19 +176,21 @@ export default {
             .then((res)=>{
                 this.custdata=res.data;
                 console.log(res.data);
-                // console.log(res.data.city)
-            this.posts.address = res.data.address
-            this.posts.city = res.data.city
-            this.posts.state = res.data.state
-            this.posts.country = res.data.country
-            this.posts.customer = res.data.customer_name
-            this.posts.phone = res.data.phone
-            this.posts.mobile = res.data.mobile
-            this.posts.email = res.data.email
-            this.posts.gst = res.data.gst_number
-            this.posts.tax = res.data.tax_number
-            this.posts.balance = res.data.opening_balance
-            this.posts.postcode = res.data.postcode
+                console.log(res.data[0].city)
+                this.posts.addresss = res.data[0].address
+                this.posts.city = res.data[0].city
+                this.posts.state_id = res.data[0].state_id
+                this.posts.country_id = res.data[0].country_id
+                this.posts.state = res.data[0].state_id
+                this.posts.country = res.data[0].country_id
+                this.posts.customer = res.data[0].customer_name
+                this.posts.phone = res.data[0].phone
+                this.posts.mobile = res.data[0].mobile
+                this.posts.email = res.data[0].email
+                this.posts.gst = res.data[0].gst_number
+                this.posts.tax = res.data[0].tax_number
+                this.posts.balance = res.data[0].opening_balance
+                this.posts.postcode = res.data[0].postcode
             })
             // catch error
             .catch(error =>{
@@ -196,7 +200,7 @@ export default {
 
 
         PostData(e){
-            confirm('Do You Wants to Save Record ?')
+            confirm('Do You Wants to Save Record ?')    
             const formdata = new FormData();
             const UpApi ='http://192.168.100.9/Project_Laravel/public/api/customer/'+this.id;
             formdata.append('address',this.posts.addresss),
@@ -212,7 +216,7 @@ export default {
             formdata.append('opening_balance',this.posts.balance),
             formdata.append('postcode',this.posts.postcode),
             // this.formdata = { headers: { 'Content-Type': 'multipart/formdata' } }
-            axios.post(UpApi,formdata)
+            axios.patch(UpApi,formdata)
             // return promise
             .then((res)=>{
                 console.log(res);
