@@ -81,7 +81,7 @@
                                                                                 Action <span class="caret"></span>
                                                                             </a>
                                                                             <ul role="menu" class="dropdown-menu dropdown-light pull-right"><li>
-                                                                                    <a title="Edit Record ?" href="#">
+                                                                                    <a title="Edit Record ?" href="/UpdateUnit">
                                                                                         <i class="fa fa-fw fa-edit text-blue"></i>Edit
                                                                                     </a>
                                                                                 </li>

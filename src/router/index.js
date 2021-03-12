@@ -71,6 +71,8 @@ import UpdateCountry from '@/components/Places/UpdateCountry.vue';
 import UpdateState from '@/components/Places/UpdateState.vue';
 import UpdateRole from '@/components/Users/UpdateRole.vue';
 import UpdateTax from '@/components/Setting/UpdateTax.vue';
+import UpdateUnit from '@/components/Setting/UpdateUnit.vue';
+
 
 
 
@@ -93,6 +95,7 @@ const routes=[
     {path:'/UpdateState',name:'UpdateState' ,component:UpdateState},
     {path:'/UpdateRole',name:'UpdateRole' ,component:UpdateRole},
     {path:'/UpdateTax',name:'UpdateTax' ,component:UpdateTax},
+    {path:'/UpdateUnit',name:'UpdateUnit' ,component:UpdateUnit},
 
 
 
