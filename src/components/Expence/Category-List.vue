@@ -60,9 +60,9 @@
                                                         </div>
                                                         <div class="pull-right margin-left-10 ">
                                                             <div class="dt-buttons btn-group mt-4 mr-2">              
-                                                                <button class="btn btn-default bg-red color-palette btn-flat hidden delete_btn pull-left" tabindex="0" aria-controls="example2" type="button">
+                                                                <!-- <button class="btn btn-default bg-red color-palette btn-flat hidden delete_btn pull-left" tabindex="0" aria-controls="example2" type="button">
                                                                     <span>Delete</span>
-                                                                </button>
+                                                                </button> -->
                                                                 <button class="btn btn-default buttons-copy buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
                                                                     <span>Copy</span>
                                                                 </button>
@@ -78,9 +78,9 @@
                                                                 <button class="btn btn-default buttons-csv buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
                                                                     <span>CSV</span>
                                                                 </button> 
-                                                                <button class="btn btn-default buttons-collection buttons-colvis bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button" aria-haspopup="true">
+                                                                <!-- <button class="btn btn-default buttons-collection buttons-colvis bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button" aria-haspopup="true">
                                                                     <span>Columns</span>
-                                                                </button> 
+                                                                </button>  -->
                                                             </div>
                                                         </div>
                                                     </div>
@@ -130,7 +130,7 @@
                                                                 </tr>
                                                         </tbody>          
                                                     </table>
-                                                    <div class="next d-flex justify-content-between align-items-center">
+                                                    <!-- <div class="next d-flex justify-content-between align-items-center">
                                                         <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">Showing 1 to 10 of 22 entries</div><div class="dataTables_paginate paging_simple_numbers" id="example2_paginate"></div>
                                                         <nav aria-label="Page navigation example">
                                                             <ul class="pagination">
@@ -141,7 +141,7 @@
                                                             <li class="page-item"><a class="page-link" href="#">Next</a></li>
                                                             </ul>
                                                         </nav>
-                                                    </div>                              
+                                                    </div>                               -->
                                             </div>
                                         </div>
                                     </div>
