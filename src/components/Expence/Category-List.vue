@@ -109,7 +109,7 @@
                                                                             </a>
                                                                             <ul role="menu" class="dropdown-menu dropdown-light pull-right">
                                                                                 <li>
-                                                                                    <a title="Edit Record ?" @click="editData(data.id)" href="expense_update/37">
+                                                                                    <a title="Edit Record ?" @click="editData(data.id)" href="/UpdateExpenceCategory">
                                                                                         <i class="fa fa-fw fa-edit text-blue"></i>Edit
                                                                                     </a>
                                                                                 </li>
