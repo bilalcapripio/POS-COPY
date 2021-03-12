@@ -176,12 +176,7 @@
                                                                                             <a title="Purchase Return" href="#">
                                                                                                 <i class="fa fa-fw fa-undo text-blue"></i>Purchase Return
                                                                                             </a>
-                                                                                        </li><li>
-                                                                                            <a style="cursor:pointer" title="Delete Record ?" >
-                                                                                                <i class="fa fa-fw fa-trash text-red"></i>Delete
-                                                                                            </a>
-                                                                                        </li>
-                                                                                        
+                                                                                        </li>                                                                                       
                                                                                     </ul>
                                                                             </div>
                                                                         </td>
