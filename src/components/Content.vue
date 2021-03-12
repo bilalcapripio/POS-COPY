@@ -4,7 +4,7 @@
           <Navbar/>
   
     <!-- /.content-wrapper -->
-    <div class="content-wrapper">
+    <div class="content-wrapper mb-5">
       <h1 class="lead pt-3 px-3">Dashboard <span class="text-sm">Overall Information on Single Screen</span> </h1>
       <!-- Content Header (Page header) -->
       <div class="content-header">
@@ -358,11 +358,27 @@
           </div>
         <!-----End table-->
         <br><br>
-        <div class="row">
-            <div class="col-md-12">
-              <img src="img/top_item.png" alt="" class="img-fluid">
+            <div class="row">
+                <div class="col-md-12">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
             </div>
-        </div>
         </div>
         <br>
         <!--/. container-fluid -->  
@@ -382,7 +398,6 @@
 <script>
 import Navbar from './Navbar.vue'
 import Sidebar from './Sidebar.vue'
-// // import Content from './components/Content.vue'
 import Footer from './Footer.vue'
 export default {
   name: 'Content',
