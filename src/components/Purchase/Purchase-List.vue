@@ -98,8 +98,7 @@
                                                 </label>
                                                 </div><div id="example2_processing" class="dataTables_processing panel panel-default" style="display: none;"></div></div><div class="pull-right margin-left-10 ">
                                                 <div class="dt-buttons btn-group mt-4 mr-2">              
-                                                <button class="btn btn-default bg-red color-palette btn-flat hidden delete_btn pull-left" tabindex="0" aria-controls="example2" type="button">
-                                                <span>Delete</span></button> <button class="btn btn-default buttons-copy buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Copy</span></button> <button class="btn btn-default buttons-excel buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Excel</span></button> <button class="btn btn-default buttons-pdf buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>PDF</span></button> <button class="btn btn-default buttons-print bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Print</span></button> <button class="btn btn-default buttons-csv buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
+                                                <button class="btn btn-default buttons-copy buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Copy</span></button> <button class="btn btn-default buttons-excel buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Excel</span></button> <button class="btn btn-default buttons-pdf buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>PDF</span></button> <button class="btn btn-default buttons-print bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Print</span></button> <button class="btn btn-default buttons-csv buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
                                                 <span>CSV</span></button> 
                                                 <button class="btn btn-default buttons-collection buttons-colvis bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button" aria-haspopup="true"><span>Columns</span></button> 
                                                 </div></div></div>
@@ -176,7 +175,13 @@
                                                                                             <a title="Purchase Return" href="#">
                                                                                                 <i class="fa fa-fw fa-undo text-blue"></i>Purchase Return
                                                                                             </a>
-                                                                                        </li>                                                                                       
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <a style="cursor:pointer" title="Delete Record ?" >
+                                                                                                <i class="fa fa-fw fa-trash text-red"></i>Delete
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        
                                                                                     </ul>
                                                                             </div>
                                                                         </td>
@@ -486,7 +491,8 @@
                                                                                             <a title="Purchase Return" href="#">
                                                                                                 <i class="fa fa-fw fa-undo text-blue"></i>Purchase Return
                                                                                             </a>
-                                                                                        </li><li>
+                                                                                        </li>
+                                                                                        <li>
                                                                                             <a style="cursor:pointer" title="Delete Record ?" >
                                                                                                 <i class="fa fa-fw fa-trash text-red"></i>Delete
                                                                                             </a>
