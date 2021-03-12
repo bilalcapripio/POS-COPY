@@ -65,6 +65,8 @@ import UpdateSupplier from '@/components/Suppplier/UpdateSupplier.vue';
 import UpdateItem from '@/components/Items/UpdateItem.vue';
 import UpdateCategorylist from '@/components/Items/UpdateCategorylist.vue';
 import UpdateBrand from '@/components/Items/UpdateBrand.vue';
+import UpdateExpenceCategory from '@/components/Expence/UpdateExpenceCategory.vue';
+import UpdateExpence from '@/components/Expence/UpdateExpence.vue';
 
 
 // Update Pages
@@ -78,6 +80,10 @@ const routes=[
     {path:'/UpdateCategorylist',name:'UpdateCategorylist' ,component:UpdateCategorylist},
     {path:'/UpdateItem',name:'UpdateItem' ,component:UpdateItem},
     {path:'/UpdateBrand',name:'UpdateBrand' ,component:UpdateBrand},
+    {path:'/UpdateExpence',name:'UpdateExpence' ,component:UpdateExpence},
+    {path:'/UpdateExpenceCategory',name:'UpdateExpenceCategory' ,component:UpdateExpenceCategory},
+
+    
 
 
     {path:'/NewRole',name:'NewRole' ,component:NewRole},
