@@ -177,7 +177,7 @@ export default {
     },
     computed: {
         csvData() {
-        return this.custdata.map(item => ({
+        return this.categoryData.map(item => ({
             ...item,
         }));
         }
@@ -264,3 +264,10 @@ export default {
 
 }
 </script>
+
+<style scoped>
+@media print {
+    * {display:none;}
+    .printable, .printable > * {display:block;}
+}
+</style>

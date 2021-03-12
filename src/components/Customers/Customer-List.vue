@@ -255,18 +255,18 @@ export default {
             },
     },
 
-    mounted(){
-    axios.get("http://192.168.100.9/Project_Laravel/public/api/customer")
-                // return promise
-                .then((res)=>{
-                    this.custdata=res.data;
-                    console.log(res.data);
-                })
-                // catch error
-                .catch(error =>{
-                    console.log(error)
-                });
-    },
+            mounted(){
+            axios.get("http://192.168.100.9/Project_Laravel/public/api/customer")
+                        // return promise
+                        .then((res)=>{
+                            this.custdata=res.data;
+                            console.log(res.data);
+                        })
+                        // catch error
+                        .catch(error =>{
+                            console.log(error)
+                        });
+            },
 
 }
 </script>
