@@ -6,7 +6,7 @@
                         <div class="content-wrapper p-2">
                                 <div class="content-header">
                                         <!---Start Third card shop-->
-                                        <h2 class="text-md ml-4"><span class="text-lg lead">New Category</span></h2>
+                                        <h2 class="text-md ml-4"><span class="text-lg lead">Update Category</span></h2>
                                         <!-- alert start -->
                                         <div class="content-header">
                                             <div class="container-fluid">

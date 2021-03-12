@@ -63,6 +63,8 @@ import NewRole from '@/components/Users/NewRole';
 import UpdateCustomer from '@/components/Customers/UpdateCustomer.vue';
 import UpdateSupplier from '@/components/Suppplier/UpdateSupplier.vue';
 import UpdateItem from '@/components/Items/UpdateItem.vue';
+import UpdateCategorylist from '@/components/Items/UpdateCategorylist.vue';
+
 // Update Pages
 
 const routes=[
@@ -71,6 +73,7 @@ const routes=[
     {path:'/UpdateCustomer',name:'UpdateCustomer' ,component:UpdateCustomer},
     {path:'/UpdateSupplier',name:'UpdateSupplier' ,component:UpdateSupplier},
     {path:'/UpdateSupplier',name:'UpdateSupplier' ,component:UpdateSupplier},
+    {path:'/UpdateCategorylist',name:'UpdateCategorylist' ,component:UpdateCategorylist},
     {path:'/UpdateItem',name:'UpdateItem' ,component:UpdateItem},
 
     {path:'/NewRole',name:'NewRole' ,component:NewRole},
