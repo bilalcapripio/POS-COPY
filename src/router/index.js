@@ -64,6 +64,8 @@ import UpdateCustomer from '@/components/Customers/UpdateCustomer.vue';
 import UpdateSupplier from '@/components/Suppplier/UpdateSupplier.vue';
 import UpdateItem from '@/components/Items/UpdateItem.vue';
 import UpdateCategorylist from '@/components/Items/UpdateCategorylist.vue';
+import UpdateBrand from '@/components/Items/UpdateBrand.vue';
+
 
 // Update Pages
 
@@ -75,6 +77,8 @@ const routes=[
     {path:'/UpdateSupplier',name:'UpdateSupplier' ,component:UpdateSupplier},
     {path:'/UpdateCategorylist',name:'UpdateCategorylist' ,component:UpdateCategorylist},
     {path:'/UpdateItem',name:'UpdateItem' ,component:UpdateItem},
+    {path:'/UpdateBrand',name:'UpdateBrand' ,component:UpdateBrand},
+
 
     {path:'/NewRole',name:'NewRole' ,component:NewRole},
     {path:'/pos', name:'pos', component:pos},
