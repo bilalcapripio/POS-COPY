@@ -25,11 +25,11 @@
                                                                 <div class="col-md-7">
                                                                     <form>
                                                                         <div class="form-group">
-                                                                            <label for="exampleInputEmail1"> Tax Name <span class="text-danger">*</span></label>
+                                                                            <label for="exampleInputEmail1"> Unit Name <span class="text-danger">*</span></label>
                                                                             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                                                                         </div>
                                                                         <div class="form-group">
-                                                                            <label for="exampleInputPassword1">Tax Percentage <span class="text-danger">*</span></label>
+                                                                            <label for="exampleInputPassword1">Unit Percentage <span class="text-danger">*</span></label>
                                                                             <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                                                                         </div>
                                                                     </form>
