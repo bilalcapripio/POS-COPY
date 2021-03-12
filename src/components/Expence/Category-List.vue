@@ -53,31 +53,25 @@
                                                                 </label>
                                                             </div> -->
                                                             <div id="example2_processing" class="dataTables_processing panel panel-default" style="display: none;">
-                                                                <div class="text-primary bg-primary" style="position: relative;z-index:100;overflow: visible;">
-                                                                    Processing...
-                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div class="pull-right margin-left-10 ">
                                                             <div class="dt-buttons btn-group mt-4 mr-2">              
-                                                                <!-- <button class="btn btn-default bg-red color-palette btn-flat hidden delete_btn pull-left" tabindex="0" aria-controls="example2" type="button">
-                                                                    <span>Delete</span>
-                                                                </button> -->
-                                                                <button class="btn btn-default buttons-copy buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
-                                                                    <span>Copy</span>
-                                                                </button>
-                                                                <button class="btn btn-default buttons-excel buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
-                                                                    <span>Excel</span>
-                                                                </button>
-                                                                <button class="btn btn-default buttons-pdf buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
-                                                                    <span>PDF</span>
-                                                                </button>
-                                                                <button class="btn btn-default buttons-print bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
-                                                                    <span>Print</span>
-                                                                </button>
-                                                                <button class="btn btn-default buttons-csv buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
-                                                                    <span>CSV</span>
-                                                                </button> 
+                                                                    <button @click="copyToClipboard('#texture')" class="btn btn-default buttons-copy buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
+                                                                        <span>Copy</span>
+                                                                    </button>
+                                                                    <button @click="tableToExcel('table', 'Lorem Table')" class="btn btn-default buttons-excel buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
+                                                                        <span>Excel</span>
+                                                                    </button> 
+                                                                    <button @click="printPdf" class="btn btn-default buttons-pdf buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
+                                                                        <span>PDF</span>
+                                                                    </button>
+                                                                    <button  @click="printable" class="btn btn-default buttons-print bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
+                                                                        <span>Print</span>
+                                                                    </button> 
+                                                                    <button @click="csvExport(csvData)" class="btn btn-default buttons-csv buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
+                                                                        <span>CSV</span>
+                                                                    </button> 
                                                                 <!-- <button class="btn btn-default buttons-collection buttons-colvis bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button" aria-haspopup="true">
                                                                     <span>Columns</span>
                                                                 </button>  -->
@@ -88,7 +82,7 @@
                                             </div>
                                             <div class="card-body">
                                                 <div class="box-body">
-                                                    <table id="example2" class="table table-bordered table-striped dataTable no-footer dtr-inline" width="100%" role="grid" aria-describedby="example2_info" style="width: 100%;">
+                                                    <table id="example2 tabl example-table loremTables texture" class="table table-bordered table-striped dataTable no-footer dtr-inline printable" width="100%" role="grid" aria-describedby="example2_info" style="width: 100%;">
                                                         <thead class="bg-primary ">
                                                             <tr role="row"><th class="text-center sorting_disabled" rowspan="1" colspan="1" style="width: 88px;" aria-label="">
                                                                 <div class="icheckbox_square-orange" aria-checked="false" aria-disabled="false" style="position: relative;"><input type="checkbox" class="group_check checkbox" style="position: absolute; top: -10%; left: -10%; display: block; width: 120%; height: 120%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: -10%; left: -10%; display: block; width: 120%; height: 120%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
@@ -162,12 +156,18 @@ import Navbar from  '../../components/Navbar.vue'
 import Sidebar from '../../components/Sidebar.vue'
 import Footer from  '../../components/Footer.vue'
 import axios from 'axios'
+import { jsPDF } from "jspdf";
+
 
 export default {
     name:'',
     data(){
         return{
-            categoryData:[]
+            categoryData:[],
+            uri :'data:application/vnd.ms-excel;base64,',
+            template:'<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table>{table}</table></body></html>',
+            base64: function(s){ return window.btoa(unescape(encodeURIComponent(s))) },
+            format: function(s, c) { return s.replace(/{(\w+)}/g, function(m, p) { return c[p]; }) }
         }
     },
     components: {
@@ -175,6 +175,13 @@ export default {
         Sidebar,
         Footer
     },
+    computed: {
+        csvData() {
+        return this.custdata.map(item => ({
+            ...item,
+        }));
+        }
+    }, 
     mounted(){
         this.getcategoryData()
     },
@@ -212,6 +219,47 @@ export default {
                 console.log(error)
             });
         },
+               // Pdf Table
+        printPdf(){
+            // let table=document.getElementById('tabl');
+            const doc = new jsPDF();
+            // table = doc
+            doc.text("Pdf", 10, 10);
+            doc.save("Customer-List.pdf");
+            // console.log(table)
+        },
+        // Excel or Csv Data
+        tableToExcel(table, name){
+            if (!table.nodeType) table = this.$refs.table
+            var ctx = {worksheet: name || 'Worksheet', table: table.innerHTML}
+            window.location.href = this.uri + this.base64(this.format(this.template, ctx))
+        },
+            // Print Table
+            // printDiv() {
+            //     window.open("http://localhost:8080/Customers" ,"", "width=700,height=500");
+            //     // invoice.document.write("<h1>This is Invoice Page</h1>" );
+            //     // console.log(invoice)
+            // },
+            printable(){
+                let table = document.querySelector('.printable');
+                window.print(table);
+            },
+            // Csv Table
+            csvExport(arrData) {
+                let csvContent = "data:text/csv;charset=utf-8,";
+                csvContent += [
+                    Object.keys(arrData[0]).join(";"),
+                    ...arrData.map(item => Object.values(item).join(";"))
+                ]
+                    .join("\n")
+                    .replace(/(^\[)|(\]$)/gm, "");
+
+                const data = encodeURI(csvContent);
+                const link = document.createElement("a");
+                link.setAttribute("href", data);
+                link.setAttribute("download", "export.csv");
+                link.click();
+            },
     }
 
 }

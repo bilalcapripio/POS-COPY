@@ -89,7 +89,7 @@
                                             </div>
                                             <div class="card-body">
                                                 <div class="box-body">
-                                                    <table id="example2" class="table table-bordered table-striped dataTable no-footer dtr-inline" width="100%" role="grid" aria-describedby="example2_info" style="width: 100%;" >
+                                                    <table id="example2" class="table table-bordered table-striped dataTable no-footer dtr-inline printable" width="100%" role="grid" aria-describedby="example2_info" style="width: 100%;" >
                                                     <thead class="bg-primary ">
                                                     <tr role="row">
                                                         <th rowspan="1" colspan="1">Product</th>
@@ -268,3 +268,9 @@ export default {
     }
 }
 </script>
+<style scoped>
+@media print {
+    * {display:none;}
+    .printable, .printable > * {display:block;}
+}
+</style>
