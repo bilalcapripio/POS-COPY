@@ -254,7 +254,6 @@ export default {
                 link.click();
             },
     },
-
             mounted(){
             axios.get("http://192.168.100.9/Project_Laravel/public/api/customer")
                         // return promise
