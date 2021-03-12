@@ -35,11 +35,23 @@
                                                     <hr>
                                                     <div class="row">
                                                         <div class="col-sm-12"><div class="pull-left">
-                                                        <div class="dataTables_length" id="example2_length">
-                                                        <label>Show <select name="example2_length" aria-controls="example2" class="form-control input-sm">
-                                                        <option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select></label></div></div><div class="pull-right"><div id="example2_filter" class="dataTables_filter">
-                                                        <label class="mt-2">
-                                                        <input type="search" class="form-control input-sm" placeholder="Search" aria-controls="example2"></label></div>
+                                                            <div class="dataTables_length" id="example2_length">
+                                                                <label>Show 
+                                                                    <select name="example2_length" aria-controls="example2" class="form-control input-sm">
+                                                                        <option value="10">10</option>
+                                                                        <option value="25">25</option>
+                                                                        <option value="50">50</option>
+                                                                        <option value="100">100</option>
+                                                                    </select>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="pull-right">
+                                                            <!-- <div id="example2_filter" class="dataTables_filter">
+                                                                <label class="mt-2">
+                                                                    <input type="search" class="form-control input-sm" placeholder="Search" aria-controls="example2">
+                                                                </label>
+                                                            </div> -->
                                                         <div id="example2_processing" class="dataTables_processing panel panel-default" style="display: none;"><div class="text-primary bg-primary" style="position: relative;z-index:100;overflow: visible;">Processing...</div></div></div><div class="pull-right margin-left-10 ">
                                                         <div class="dt-buttons btn-group mt-4 mr-2">              
                                                         </div></div></div>
