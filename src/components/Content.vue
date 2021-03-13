@@ -189,11 +189,11 @@
                           <div class="row">
                             <div class="col-md-8 mt-4">
                               <div class="card border-top border-success">
-                                <div class="card-head">
-                                  <h4 class="px-5 py-2 ">PURCHASE & SALES BAR CHART</h4>
+                                <div class="card-header">
+                                  <h4 class="px-2 font-weight-light">PURCHASE & SALES BAR CHART</h4>
                                 </div>
                                 <div class="card-body">
-                                  <column-chart :data="[['Sun', 32], ['Mon', 46], ['Tue', 28],['Wed',20],['Thu',10],['Fri',2],['Sat',21]]"></column-chart>
+                                  <column-chart :data="[['January', 32], ['February', 46], ['March', 28],['April',20],['May',10],['June',2],['Sat',21]]"></column-chart>
                                 </div>
                               </div>
                             </div>
