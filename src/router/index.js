@@ -38,6 +38,7 @@ import Sales_Return_Report from '@/components/Report/Sales-Return-Report.vue';
 import Stock_Report from '@/components/Report/Stock-Report.vue';
 import Add_Sale from '@/components/Sales-Page/New-Sales.vue';
 import Sales from '@/components/Sales-Page/Sales-List.vue';
+import UpdateSale from '@/components/Sales-Page/updateSale.vue';
 import Add_Sale_Return from '@/components/Sales-Page/Sales-Return.vue';
 import Sale_Returns from '@/components/Sales-Page/Sales-RL.vue';
 import Currency from '@/components/Setting/Currency.vue';
@@ -86,6 +87,7 @@ const routes=[
     {path:'/', name:'Content', component:Content},
     {path:'/Authentication',name:'Authentication' ,component:Authentication},
     {path:'/UpdateCustomer/:id',name:'UpdateCustomer' ,component:UpdateCustomer},
+    {path:'/UpdateSale/:id',name:'UpdateSale' ,component:UpdateSale},
     {path:'/UpdateSupplier/:id',name:'UpdateSupplier' ,component:UpdateSupplier},
     {path:'/UpdateSupplier/:id',name:'UpdateSupplier' ,component:UpdateSupplier},
     {path:'/UpdateCategorylist/:id',name:'UpdateCategorylist' ,component:UpdateCategorylist},

@@ -186,8 +186,8 @@
                           <!---End Third card shop-->
 
                           <!-----Start Graph------->
-                          <div class="row">
-                            <div class="col-md-8 mt-4">
+                          <div class="row my-2">
+                            <div class="col-md-8">
                               <div class="card border-top border-success">
                                 <div class="card-header">
                                   <h4 class="px-2 font-weight-light">PURCHASE & SALES BAR CHART</h4>

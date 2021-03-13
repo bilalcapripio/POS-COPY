@@ -161,7 +161,7 @@
                                                                                                 </a>
                                                                                             </li>
                                                                                             <li>
-                                                                                                <a title="Update Record ?" href="#">
+                                                                                                <a title="Update Record ?" :href="'/UpdateSale/'+data.id">
                                                                                                     <i class="fa fa-fw fa-edit text-blue"></i>Edit
                                                                                                 </a>
                                                                                             </li>
