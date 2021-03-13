@@ -70,6 +70,12 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <tr v-for="(data,index) in holdList" v-bind:key="index">
+                                                <td>1</td>
+                                                <td>{{date}}</td>
+                                                <td>{{data}}</td>
+                                                <td><a href="#" @click="showHoldData(index)" data-dismiss="modal"> Edit</a> <a class="fa fa-fw fa-trash-o text-red" style="cursor: pointer;font-size: 20px;"></a></td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -94,24 +100,22 @@
                         <span class="hidden-xs text-light">Admin</span>
                         </a>
 
-                        <ul class="dropdown-menu bg-gradient-navy rounded" style="margin-left:-12rem;margin-top:2rem;">
+                        <ul class="dropdown-menu bg-gradient-navy rounded">
                         <!-- User image -->
                         <li class="user-header">
                             <img src="@/assets/Img/admin.png" class="img-circle img-fluid" alt="User Image">
                             <p>Admin<small>Year 2021</small></p>
                         </li>
-
                         <!-- Menu Body -->
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
-                            <a href="/" class="btn btn-primary btn-flat">Profile</a>
+                            <a href="#" class="btn btn-primary btn-flat">Profile</a>
                             </div>
                             <div class="pull-right">
-                            <a href="/Authentication" class="btn btn-danger btn-flat">Sign out</a>
+                            <a href="Logout.html" class="btn btn-danger btn-flat">Sign out</a>
                             </div>
                         </li>
-
                         </ul>
                     </li>
                 </ul>
@@ -121,10 +125,10 @@
         <main>
             <div class="">
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-7">
                         <PosLeft/>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-5">
                         <PosRight/>
                     </div>
                 </div>
@@ -138,8 +142,7 @@
 // import axios from 'axios'
 import PosLeft from '../../components/Main-Pos/PosLeft';
 import PosRight from '../../components/Main-Pos/PosRight';
-
-
+import moment from 'moment'
 
 export default {
     components:{
@@ -149,26 +152,27 @@ export default {
         },
     data(){
         return{
-         
             itemDataArr:[],
-            // counter:0,
-            // incre:0,
-            // quantity:0,
+            date:moment(new Date()).format('DD-MM-YYYY'),
             Price:2000,
             res:[]
         }
     },
-    mounted(){
-        // this.getitemsData();
+    computed:{
+        holdList(){
+            return this.$store.state.holdListRefNo
+        },
+        holdListData(){
+            return this.$store.state.holdListData
+        }
     },
-    // computed:{
-    //     product(){
-    //         return this.$store.state.alldata
-    //         }
-    //     },
     methods:{
-       
-        
+        showHoldData: function(index){
+            console.log(this.holdListData[index])
+            var editData = this.holdListData[index]
+            console.log(editData)
+            // this.$store.state.selectedData = editData;
+        }
     }
         
 }
@@ -180,7 +184,7 @@ body{
 }
 main{
     position: relative;
-    /* left: 14%; */
+    /* left: 14 %; */
 }
     ::-webkit-scrollbar {
         width: 8px;
