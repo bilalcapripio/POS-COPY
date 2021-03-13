@@ -36,7 +36,7 @@
                                             <span class="badge badge-danger push-right">Qty:{{data.available_quantity}}</span>
                                             <div class="box-body box-profile">
                                                 <center class="pt-1">
-                                                    <img :src="'http://192.168.100.9/Project_Laravel/public/images/'+data.image" alt="Product Image" width="70" height="50" class="img-responsive border border-gray">
+                                                    <img :src="'http://192.168.100.9/Project_Laravel/public/images/'+data.image" alt="Product Image" width="80" class="img-responsive border border-gray">
                                                 </center>
                                                 <center class="py-3">
                                                     <label class="text-center" style="cursor: pointer; color:black;">{{data.item_name}}
@@ -85,10 +85,14 @@ export default {
             },
             addTableRow: function(index){
                 let spData = this.itemData[index]
+                let tax_amount = spData.price * (spData.tax / 100);
                 let sendData = { 
                     'item_name': spData.item_name,
+                    'item_id': spData.id,
                     'stock':spData.available_quantity,
                     'qty':1,
+                    'discount':0,
+                    'tax_amount': tax_amount,
                     'price':spData.sales_price,
                     'tax':spData.tax_id,
                     'subtotal':spData.sales_price,

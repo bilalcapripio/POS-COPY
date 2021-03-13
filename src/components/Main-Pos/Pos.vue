@@ -39,11 +39,11 @@
                 <ul class="navbar-nav ml-auto">         
                     <!--Start  Modal -->
                         <!-- Button trigger modal -->
-                        <!-- <a class="btn btn-primary text-light" data-toggle="modal" data-target="#exampleModal">
+                        <a class="btn btn-primary text-light" data-toggle="modal" data-target="#exampleModal">
                             <i class="fa fa-laptop"></i>
                             Hold List
-                            <span class="badge badge-danger">0</span>
-                        </a> -->
+                            <span class="badge badge-danger">{{Holdcount()}}</span>
+                        </a>
                         <a class="btn btn-primary text-light" data-toggle="modal" data-target="#exampleModal">
                             <i class="fa fa-laptop"></i>
                             <!-- Home -->
@@ -167,6 +167,16 @@ export default {
         }
     },
     methods:{
+        Holdcount(){
+            let sum=0;
+            if(this.holdList != ""){
+                let cunt =this.holdList.length;
+                sum = cunt
+                
+             
+            }
+            return sum;
+        }, 
         showHoldData: function(index){
             console.log(this.holdListData[index])
             var editData = this.holdListData[index]

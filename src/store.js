@@ -3,6 +3,8 @@ import Vuex from 'vuex';
 const store = new Vuex.Store({  
     state:{
         selectedData:[],
+        holdListData:[],
+        holdListRefNo:[],
         // alldata:{
     
         //     // Close getitemsData

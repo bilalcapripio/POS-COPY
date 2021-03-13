@@ -16,14 +16,11 @@ h<template>
                                                 <div class="input-group-prepend">
                                                     <i class="fa fa-user input-group-text"></i>
                                                 </div>
-                                                <select name="" id="" class="form-control">
-                                                    <option value="1">Walk-in-Customer</option>
-                                                    <option value="2">John p</option>
-                                                    <option value="3">Chris Moris</option>   
-                                                    <option value="4">Joe Root</option>
-                                                    <option value="5">John p</option>
-                                                    <option value="5">Chris Moris</option>   
-                                                    <option value="6">Joe Root</option>
+                                                <select v-model="customer" class="form-control">
+                                                    <option value="">Walk-in-Customer</option>
+                                                    <option :value="data.id" v-for="data in custdata" v-bind:key="data.id">
+                                                        {{data.customer_name}}
+                                                    </option>
                                                 </select>
                                                 <div class="input-group-prepend">
                                                     <i class="fa fa-user-plus text-primary input-group-text"></i>
@@ -49,13 +46,13 @@ h<template>
                                                         <thead class="bg-primary">
                                                             <tr>
                                                                 <th width="20%">Item Name</th>
-                                                                <th width="20%">Stock</th>
-                                                                <th width="20%">Quantity</th>
-                                                                <th width="10%">Price</th>
+                                                                <th width="10%">Stock</th>
+                                                                <th width="25%">Quantity</th>
+                                                                <th width="15%">Price</th>
                                                                 <!-- <th>Discount</th> -->
-                                                                <th width="10%">Tax</th>
-                                                                <th width="5%">Subtotal</th>
-                                                                <th width="5%"><i class="fa fa-close"></i></th>
+                                                                <th width="15%">Tax</th>
+                                                                <th width="15%">Subtotal</th>
+                                                                <th ><i class="fa fa-close"></i></th>
                                                             </tr>
                                                         </thead>
                                                         <tbody style="font-size: 16px;font-weight: bold;overflow: scroll;">
@@ -136,17 +133,18 @@ h<template>
                                                                         </div>
                                                                     </div>
                                                                 </td>
-                                                                <td>{{content.qty}}</td>
+                                                                <td>{{content.stock}}</td>
                                                                 <td>
                                                                     <div class="input-group input-group-sm">
                                                                         <span class="input-group-btn">
-                                                                            <button  type="button" class="btn btn-default btn-flat" @click="ProRem(index)">
+                                                                            <button type="button" class="btn btn-default btn-flat" @click="ProRem(index)">
                                                                             <i class="fa fa-minus text-danger"></i>
                                                                             </button>
                                                                         </span>
                                                                         <!-- start count result -->
                                                                         <!-- <input type="" class="form-control"> -->
-                                                                        <input type="text" value="1"  class="form-control no-padding text-center" style="padding:18px">
+                                                                          <input type="number" min="1" v-model="getData[index].qty" @input="getQuantity(index)"  class="form-control no-padding text-center" style="padding:17.5px">
+                                                                        <!-- <input type="text" value="1"  class="form-control no-padding text-center" style="padding:18px"> -->
                                                                         <!--end count result -->
                                                                         <span class="input-group-btn">
                                                                             <button type="button" class="btn btn-default btn-flat" @click="ProAdd(index)">
@@ -159,10 +157,10 @@ h<template>
                                                                     <input  type="text" class="form-control no-padding" :value="content.price">
                                                                 </td>
                                                                 <td>
-                                                                    <input  title="" type="text" class="form-control no-padding pointer" :value="content.tax">
+                                                                    <input title="" type="number" disabled class="form-control no-padding pointer" :value="content.tax_amount">
                                                                 </td>
                                                                 <td  class="text-right">
-                                                                    <input type="text" class="form-control no-padding pointer" :value="content.price">
+                                                                    <input type="text" class="form-control no-padding pointer" :value="content.subtotal">
                                                                 </td>
                                                                 <td @click='deleteTableRow(index)' >
                                                                     <a class="fa fa-fw fa-trash-o text-red" style="cursor: pointer;font-size: 20px;"></a>
@@ -186,7 +184,7 @@ h<template>
                                             <label for="#check">Other Charges*</label>
                                         </div>
                                         <div class="col-md-2 col-6">
-                                            <input type="text" name="" placeholder="0.00" class="text-right form-control" id="check">
+                                            <input type="text" v-model="other_charges" placeholder="0.00" class="text-right form-control" id="check">
                                         </div>
                                     </div>
                                     <div class="mt-4 bg-light p-2 cost">
@@ -213,6 +211,7 @@ h<template>
                                             </div>
                                         </div>
                                         <div class="row">
+
                                             <!-- Start First Modal Hold -->
                                             <div class="col-md-3" style="cursor: pointer;">
                                                 <button class="btn btn-danger btn-block btn-flat btn-lg"  data-toggle="modal" data-target=".bds-example-modal-lg"> 
@@ -235,17 +234,19 @@ h<template>
                                                                         </div>   
                                                                         <form class="p-2">
                                                                             <div class="form-group">
-                                                                                <input type="text" class="form-control" placeholder="Please Enter Reference Number!">
+                                                                                <input type="text" class="form-control" v-model="hold_ref_no" placeholder="Please Enter Reference Number!">
                                                                             </div>
                                                                         </form>
                                                                     </div>
                                                                     
                                                                 </div>        
                                                             </div>
+                                                            <!-- <form @submit.prevent="holdItems()"> -->
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                                                <button type="button" class="btn btn-danger"  data-dismiss="modal"> OK</button>
+                                                                <button type="submit" @click="holdItems()" data-dismiss="modal" class="btn btn-danger"> OK</button>
                                                             </div>
+                                                            <!-- </form> -->
                                                         </div>
                                                     </div>
                                                 </div>
@@ -273,10 +274,10 @@ h<template>
                                                                     <form class="bg-gray p-2">
                                                                             <div class="form-group">
                                                                                 <label> Amount</label>
-                                                                                <input type="number" class="form-control">
+                                                                                <input type="number" v-model="payingAmount" class="form-control">
                                                                             </div>
                                                                             <div class="form-group">
-                                                                                <select class="form-control">
+                                                                                <select v-model="payment_type" class="form-control">
                                                                                         <option value="Cash">Cash</option>
                                                                                         <option value="Card">Card</option>
                                                                                         <option value="Paytm">Paytm</option>
@@ -322,21 +323,21 @@ h<template>
                                                                             <div class="row border-top">
                                                                                 <div class="col-md-12 bg-primary text-center p-2 rounded">
                                                                                     <span class="col-md-6 text-bold">Total Paying:</span>
-                                                                                    <span class="col-md-6 text-bold">0.00</span>
+                                                                                    <span class="col-md-6 text-bold">{{totalPaying()}}</span>
                                                                                 </div>
                                                                             </div>
 
                                                                             <div class="row border-top">
                                                                                 <div class="col-md-12 bg-primary text-center p-2 rounded">
                                                                                     <span class="col-md-6 text-bold">Balance :</span>
-                                                                                    <span class="col-md-6 text-bold">{{totalAmount()}}</span>
+                                                                                    <span class="col-md-6 text-bold">{{balance()}}</span>
                                                                                 </div>
                                                                             </div>
 
                                                                             <div class="row border-top">
                                                                                 <div class="col-md-12 bg-warning text-center p-3 rounded">
                                                                                     <span class="col-md-6 text-bold">Changer Return:</span>
-                                                                                    <span class="col-md-6 text-bold">0.00</span>
+                                                                                    <span class="col-md-6 text-bold">{{changeReturn()}}</span>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -344,10 +345,12 @@ h<template>
                                                                 </div>
                                                             </div>        
                                                         </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                            <button type="button" class="btn btn-danger" @click="Savesure">  <i class="fa fa-save"></i> Save</button>
-                                                        </div>
+                                                        <form @submit.prevent="postData">
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                <button type="submit" class="btn btn-danger" ><i class="fa fa-save"></i> Save</button>
+                                                            </div>
+                                                        </form>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -375,7 +378,7 @@ h<template>
                                                                     <form class="bg-gray p-2">
                                                                         <div class="form-group">
                                                                             <label> Amount</label>
-                                                                            <input type="number" class="form-control">
+                                                                            <input type="number" v-model="payingAmount" class="form-control">
                                                                         </div>
                                                                         <div class="form-group">
                                                                             <label>Payment Note</label>
@@ -417,21 +420,21 @@ h<template>
                                                                             <div class="row border-top">
                                                                                 <div class="col-md-12 bg-primary text-center p-2 rounded">
                                                                                     <span class="col-md-6 text-bold">Total Paying:</span>
-                                                                                    <span class="col-md-6 text-bold">0.00</span>
+                                                                                    <span class="col-md-6 text-bold">{{totalPaying()}}</span>
                                                                                 </div>
                                                                             </div>
 
                                                                             <div class="row border-top">
                                                                                 <div class="col-md-12 bg-primary text-center p-2 rounded">
                                                                                     <span class="col-md-6 text-bold">Balance :</span>
-                                                                                    <span class="col-md-6 text-bold">{{totalAmount()}}</span>
+                                                                                    <span class="col-md-6 text-bold">{{balance()}}</span>
                                                                                 </div>
                                                                             </div>
 
                                                                             <div class="row border-top">
                                                                                 <div class="col-md-12 bg-warning text-center p-3 rounded">
                                                                                     <span class="col-md-6 text-bold">Changer Return:</span>
-                                                                                    <span class="col-md-6 text-bold">0.00</span>
+                                                                                    <span class="col-md-6 text-bold">{{changeReturn()}}</span>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -439,10 +442,12 @@ h<template>
                                                                 </div>
                                                             </div>        
                                                         </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                            <button type="button" class="btn btn-danger" @click="Savesure">  <i class="fa fa-save"></i> Save</button>
-                                                        </div>
+                                                        <form @submit.prevent="postData">
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                <button type="submit" class="btn btn-danger">  <i class="fa fa-save"></i> Save</button>
+                                                            </div>
+                                                        </form>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -450,9 +455,11 @@ h<template>
                                             <!-- End Third Modal Cash -->
                                             <!-- Start Fourth Modal PayAll -->
                                             <div class="col-md-3" style="cursor: pointer;">
-                                                <button class="btn btn-info btn-block btn-flat btn-lg"  @click="printDiv"> 
-                                                    <i class="fa fa-money"></i> PayAll
-                                                </button>
+                                                <form @submit.prevent="postData">
+                                                    <button class="btn btn-info btn-block btn-flat btn-lg" type="submit" @click="printDiv"> 
+                                                        <i class="fa fa-money"></i> PayAll
+                                                    </button>
+                                                </form>
                                                 <!-- Modal -->
                                                 <!-- <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
                                                     <div class="modal-dialog modal-lg">
@@ -553,25 +560,41 @@ h<template>
 </template>
 <script>
 import axios from 'axios'
+import moment from 'moment'
+
 export default {
     name:'PosRight',
     data() {
         return {
+            custdata:[],
             insertedData:[],
             searchItems:[],
+            other_charges:'',
+            hold_ref_no:'',
+            customer:'',
+            payingAmount:'',
+            sales_date: moment(new Date()).format('DD-MM-YYYY'),
+            sales_status:'recieved',
+            payment_type:'cash',
+            reference_no:'',
+            holdList:[],
+            holdList_ref:[],
+            total:'',
+            due:0,
             counter:0,
             incre:0,
             quantity:0,
             query:''
         }
     },
-
     computed:{
         getData(){
             return this.$store.state.selectedData
         }
     },
-
+    mounted(){
+        this.getCustomerData()
+    },
     updated(){
         if (this.query != '') {
             this.search();            
@@ -582,11 +605,106 @@ export default {
     },
     
     methods:{
+        holdItems: function(){
+            // var checkArr = {
+            //     'data': this.getData,
+            //     'ref':this.hold_ref_no
+            // }
+            console.log(this.getData);
+            this.$store.state.holdListData.push(this.getData)
+            this.$store.state.holdListRefNo.push(this.hold_ref_no);
+            var len = this.getData.length
+            this.getData.splice(0,len)
+            this.hold_ref_no = ''
+        },
+        getCustomerData: function(){
+            axios.get("http://192.168.100.9/Project_Laravel/public/api/customer")
+                // return promise
+            .then((res)=>{
+                this.custdata=res.data;
+                    console.log(res.data);
+                })
+                // catch error
+            .catch(error =>{
+                console.log(error)
+            });
+        },
+
+        postData: function(e)
+        {
+            confirm('Do You Wants to Save Record ?')
+            var amountPay = this.payingAmount == '' ? this.totalAmount() : this.payingAmount;
+            // if (this.payingAmount != '') {
+            //     this.amountPay = this.payingAmount;
+            // }else{
+            //     amountPay = this.totalAmount();
+            // }
+            // moment(new Date()).format('DD-MM-YYYY')
+            axios({
+                method: 'post',
+                url: 'http://192.168.100.9/Project_Laravel/public/api/sale',
+                data: {
+                    customer:this.customer,
+                    sales_date: this.sales_date,
+                    reference_no:this.reference_no,
+                    total:this.totalAmount(),
+                    sales_status:this.sales_status,
+                    payment_type:this.payment_type,
+                    paid_payment:amountPay,
+                    due:this.due,
+                    created_by:'admin',
+                    items_array: this.getData,
+                }
+            })
+            .then((res)=>{
+                console.log(res);
+                this.getData = '';
+            })
+            // catch error
+            .catch(error =>{
+                console.log(error)
+            });
+            // show data [testing]
+            console.table(this.posts);
+            console.log(this.uploadItems);
+
+            // submit data without page reload 
+            e.preventDefault();
+        },
+        totalPaying: function(){
+            var sum = this.payingAmount;
+            return sum;
+        },
+        changeReturn: function(){
+            var sum = 0;
+            if (this.totalAmount() < this.payingAmount) {
+                sum = this.payingAmount-this.totalAmount();
+            }
+            return sum;
+        },
+        balance: function(){
+            var sum = 0;
+            if (this.totalAmount() > this.payingAmount) {
+                sum = this.totalAmount()-this.payingAmount;
+            }
+            this.due = sum;
+            return sum;
+        },
         deleteTableRow: function(index){
             this.counter--;
             this.getData.splice(index,1)
             this.quantity--;
 
+        },
+        getQuantity: function(index){
+            // if(this.getData != ''){
+                if (this.getData[index].qty > 0) {
+                    var tax_amount = Math.ceil(this.getData[index].price * ( this.getData[index].tax / 100));
+                    var total_amount = this.getData[index].qty * this.getData[index].price 
+                    this.getData[index].tax_amount = this.getData[index].qty * tax_amount
+                    this.getData[index].subtotal = total_amount
+                }
+            // }
         },
         totat_quantity: function(){
             var sum = 0;
@@ -596,23 +714,20 @@ export default {
             return sum
         },
         totalAmount(){
-                var sum = 0;
-                this.getData.forEach(value => {
-                    sum += Math.ceil(value.price)
-                    // console.log(sum);
-                })
-                console.log(sum);
-                return sum;
+            var sum = 0;
+            this.getData.forEach(value => {
+                if (this.other_charges) {
+                    sum += Math.ceil(value.subtotal)+parseFloat(this.other_charges)    
+                }else{
+                    sum += Math.ceil(value.subtotal)    
+                }
+            })
+            this.total = sum
+            return sum;
         },
 
         printDiv() {
             window.open("http://localhost:8080/pos" ,"", "width=700,height=500");
-            // invoice.document.write("<h1>This is Invoice Page</h1>" );
-            // console.log(invoice)
-        },
-
-        ProAdd(index){
-            this.itemDataArr[index][3]++;
         },
 
         ProRem(index){
@@ -627,19 +742,18 @@ export default {
     },
     uploadItem(index){
             const items = this.searchItems[index];
-            // let tax_amount = Math.ceil(items.purchase_price * (items.tax_id / 100));
-            // let unit_cost = tax_amount + items.purchase_price;
                 let sendData = { 
                     'item_name': items.item_name,
+                    'item_id': items.item_id,
                     'stock':items.available_quantity,
                     'qty':1,
+                    'discount':0,
                     'price':items.sales_price,
                     'tax':items.tax_id,
                     'subtotal':items.sales_price,
                 }
             this.getData.push(sendData)
             this.query = ''
-            // console.log(selected_items); 
         },
 }
     
