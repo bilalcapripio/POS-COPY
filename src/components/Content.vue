@@ -202,7 +202,16 @@
                         <span class="text-sm"><strong>SALES</strong></span>
                       </div>    
                       <!-- /.info-box-content -->
+                      <div class="view">
+                          <div class="row border">
+                                <div class="col-md-12">
+                                  <h1>View more</h1>
+                                </div>
+                          </div>
+                      </div>
+                        
                     </div>
+                  
                     <!-- /.info-box -->
                   </div>
 
