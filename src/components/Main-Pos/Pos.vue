@@ -74,7 +74,10 @@
                                                 <td>1</td>
                                                 <td>{{date}}</td>
                                                 <td>{{data}}</td>
-                                                <td><a href="#" @click="showHoldData(index)" data-dismiss="modal"> Edit</a> <a class="fa fa-fw fa-trash-o text-red" style="cursor: pointer;font-size: 20px;"></a></td>
+                                                <td>
+                                                <a href="#" @click="showHoldData(index)" data-dismiss="modal"> Edit</a> 
+                                                <a @click="deletehold(index)" class="fa fa-fw fa-trash-o text-red" style="cursor: pointer;font-size: 20px;"></a>
+                                                </td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -172,8 +175,6 @@ export default {
             if(this.holdList != ""){
                 let cunt =this.holdList.length;
                 sum = cunt
-                
-             
             }
             return sum;
         }, 
@@ -182,8 +183,12 @@ export default {
             var editData = this.holdListData[index]
             console.log(editData)
             // this.$store.state.selectedData = editData;
-        }
+        },
+          deletehold(index){
+        this.holdList.splice(index,1)
+    },
     }
+  
         
 }
 </script>
