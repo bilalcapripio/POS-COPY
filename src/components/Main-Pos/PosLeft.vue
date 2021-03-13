@@ -456,7 +456,8 @@ h<template>
                                             <!-- Start Fourth Modal PayAll -->
                                             <div class="col-md-3" style="cursor: pointer;">
                                                 <form @submit.prevent="postData">
-                                                    <button class="btn btn-info btn-block btn-flat btn-lg" type="submit" @click="printDiv"> 
+                                                    <button class="btn btn-info btn-block btn-flat btn-lg" type="submit"> 
+                                                        <!-- @click="printDiv" -->
                                                         <i class="fa fa-money"></i> PayAll
                                                     </button>
                                                 </form>
