@@ -216,19 +216,33 @@
                                     <td>2</td>
                                     <td>iPhone 11</td>
                                     <td>₦  115,500.00</td>
-                                  </tr><tr>
+                                  </tr>
+                                  <tr>
                                     <td>3</td>
                                     <td>Redmi Pro 7 Mobile</td>
                                     <td>₦  11,000.00</td>
-                                  </tr><tr>
+                                  </tr>
+                                  <tr>
                                     <td>4</td>
                                     <td>Lifebuoy</td>
                                     <td>₦  55.00</td>
-                                  </tr><tr>
+                                  </tr>
+                                  <tr>
                                     <td>5</td>
                                     <td>Mysore Sandal Soap</td>
                                     <td>₦  132.00</td>
-                                  </tr></tbody>
+                                  </tr>
+                                   <tr>
+                                    <td>6</td>
+                                    <td>Mysore Sandal Soap</td>
+                                    <td>₦  132.00</td>
+                                  </tr>
+                                   <tr>
+                                    <td>7</td>
+                                    <td>Mysore Sandal Soap</td>
+                                    <td>₦  132.00</td>
+                                  </tr>
+                                  </tbody>
                                 <tfoot>
                                 <tr>
                                   <td colspan="3" class="text-center"><a href="#" class="uppercase">View All</a></td>

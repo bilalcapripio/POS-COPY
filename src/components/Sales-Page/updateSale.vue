@@ -84,7 +84,7 @@
                                                     <tr class="bg-primary">
                                                         <th rowspan="2" style="width:15%">Item Name</th>
                                                         <th rowspan="2" style="width:15%;">Quantity</th>
-                                                        <th rowspan="2" style="width:10%">Purchase price</th> 
+                                                        <th rowspan="2" style="width:10%">Purchase Price</th> 
                                                         <th rowspan="2" style="width:10%">Tax%</th>
                                                         <th rowspan="2" style="width:10%">Tax Amount</th>
                                                         <th rowspan="2" style="width:10%">Discount(%)</th>
@@ -106,10 +106,10 @@
 
                                                         </td>
                                                         <td>
-                                                             <input type="text" :value="data.price" disabled  class="form-control no-padding text-center" style="padding:17px; background-color:white;">
+                                                             <input type="text" :value="data.purchase_price" disabled  class="form-control no-padding text-center" style="padding:17px; background-color:white;">
                                                         </td>
                                                         <td>
-                                                            <input type="text" disabled  class="form-control no-padding text-center" style="padding:17px;background-color:white; color:blue">
+                                                            <input type="text" :value="'Tax '+data.tax_id+'%'" disabled  class="form-control no-padding text-center" style="padding:17px;background-color:white; color:blue">
                                                         </td>
                                                         <td>
                                                             <input type="text" :value="tax_amount(index)" disabled  class="form-control no-padding text-center" style="padding:17px;">
@@ -117,7 +117,7 @@
                                                         <td>
                                                             <input type="number" v-model="uploadItems[index].discount" @input="getDiscount(index)" class="form-control no-padding text-center" style="padding:17px">
                                                         </td>
-                                                        <td><input type="text" :value="data.price" disabled  class="form-control no-padding text-center" style="padding:17px;"></td>
+                                                        <td><input type="text" :value="unit_cost(index)" disabled  class="form-control no-padding text-center" style="padding:17px;"></td>
                                                         <td><input type="text" :value="total_amount(index)" disabled  class="form-control no-padding text-center" style="padding:17px;"></td>
                                                         <td>
                                                             <a href="#" @click="removeRow(index)" class="fa fa-fw fa-minus-square text-red" style="cursor: pointer;font-size: 34px;"></a>
@@ -326,6 +326,7 @@ export default {
                 payment_type:'',
                 payment_note:'',
             },
+            total_Amount:[],
             customerData:[],
             uploadItems:[],
             searchItems:[],
@@ -373,33 +374,11 @@ export default {
                 console.log(error)
             });
         },
-              editData(){
+         editData(){
             const UpApi ='http://192.168.100.9/Project_Laravel/public/api/sale/'+this.posts.id;
             axios.get(UpApi)
             // return promise
             .then((res)=>{
-                /*     posts:{
-                customer:'',
-                sale_status:'',
-                sale_date:'',
-                reference_no:'',
-                amount:'',
-                payment_type:'',
-                payment_note:'',
-            },
-            customerData:[],
-            uploadItems:[],
-            searchItems:[],
-            taxData:[],
-            query:'',
-            discount:'',
-            total:'',
-            due:'',
-            other_charges_tax:'',
-            grand_total_amount:'',
-            other_charges:'',
-            discount_on_all:'',price
-            select_discount_type:''*/
                 console.log(res.data);
                 this.posts.customer = res.data.sale_data[0].cus_id
                 this.posts.sale_status = res.data.sale_data[0].sales_status
@@ -408,27 +387,45 @@ export default {
                 this.posts.amount = res.data.sale_data[0].paid_payment
                 this.posts.payment_type = res.data.sale_data[0].payment_type
                 this.uploadItems =  res.data.sale_items
-                // this.total = res.data.sale_data[0].total
-                // this.grand_total_amount = res.data.sale_data[0].total
-                // this.grand_total() =  
-                // this.posts.expire = res.sale_data[0].cus_id.expire_date
-                // this.posts.barCode = res.sale_data[0].cus_id.barcode
-                // this.posts.description = res.sale_data[0].cus_id.description
-                // this.posts.price = res.sale_data[0].cus_id.purchase_price
-                // this.posts.tax = res.sale_data[0].cus_id.tax_id
-                // this.posts.taxType = res.sale_data[0].cus_id.tax_type
-                // var profitset = (res.sale_data[0].cus_id.sales_price / res.sale_data[0].cus_id.purchase_price)
-                // var promargin = profitset * 100 / profitset
-                // this.posts.profitMargin = promargin
-                // this.posts.salesPrice = res.data[0].sales_price
-                // this.posts.finalPrice = res.data[0].sales_price
-                // this.posts.availableQuantity = res.data[0].available_quantity
-                
+
+                res.data.sale_items.forEach(val =>{
+                    console.log(val.item_name)
+                })
+
             })
             // catch error
             .catch(error =>{
                 console.log(error)
             });
+        },
+
+        tax_amount: function(index){
+            var sum = 0;
+            if(this.uploadItems != ''){
+                sum = this.uploadItems[index].purchase_price * (this.uploadItems[index].tax_id / 100)
+                // sum =  parseFloat(this.uploadItems[index].purchase_price)+ parseFloat(plus)
+            }
+            return sum
+        },
+
+        unit_cost: function(index){
+            var sum = 0;
+            if(this.uploadItems != ''){
+                var plus = this.uploadItems[index].purchase_price * (this.uploadItems[index].tax_id / 100)
+                sum = parseFloat(this.uploadItems[index].purchase_price)+plus;
+            }
+            return sum
+        },
+
+        total_amount: function(index){
+              var sum = 0;
+            if(this.uploadItems != ''){
+                var plus = this.uploadItems[index].purchase_price * (this.uploadItems[index].tax_id / 100)
+                var multi = parseFloat(this.uploadItems[index].purchase_price)+plus;
+                sum += multi*this.uploadItems[index].qty 
+                // this.total_Amount.push(sum)
+            }
+            return sum
         },
 
             postData(e){
@@ -473,45 +470,6 @@ export default {
                 e.preventDefault();
         },
 
-        // postData: function(e)
-        // {
-        //     confirm('Do You Wants to Save Record ?')
-        //     var sum = 0;
-        //     if (this.grand_total() != '') {
-        //         sum = this.grand_total()-this.posts.amount;
-        //         console.log(sum)
-        //     }
-        //     axios({
-        //         method: 'post',
-        //         url: 'http://192.168.100.9/Project_Laravel/public/api/sale',
-        //         data: {
-        //             customer:this.posts.customer,
-        //             sales_status:this.posts.sale_status,
-        //             sales_date:this.posts.sale_date,
-        //             reference_no:this.posts.reference_no,
-        //             paid_payment:this.posts.amount,
-        //             total:this.grand_total_amount,
-        //             due:sum,
-        //             payment_type:this.posts.payment_type,
-        //             // payment_note:this.posts.payment_note,
-        //             created_by:'admin',
-        //             items_array: this.uploadItems,
-        //         }
-        //     })
-        //     .then((res)=>{
-        //         console.log(res);
-        //     })
-        //     // catch error
-        //     .catch(error =>{
-        //         console.log(error)
-        //     });
-        //     // show data [testing]
-        //     console.table(this.posts);
-        //     console.log(this.uploadItems);
-
-        //     // submit data without page reload 
-        //     e.preventDefault();
-        // },
 
          getTaxData: function(){
             axios.get("http://192.168.100.9/Project_Laravel/public/api/tax")
@@ -526,27 +484,23 @@ export default {
             });
         },
 
-        tax_amount: function(index){
-            var sum = 0;
-            if(this.uploadItems[index].tax){
-                sum += this.uploadItems[index].tax
-            }
-            return sum
+        increase: function(index){
+            this.uploadItems[index].qty++
+            this.uploadItems[index].tax_amount = this.uploadItems[index].tax_amount * this.uploadItems[index].qty;
+            this.uploadItems[index].total_amount = this.uploadItems[index].total_amount * this.uploadItems[index].qty;
         },
 
-        total_amount: function(index){
-            var sum = 0
-            if(this.uploadItems[index]){
-                sum = this.uploadItems[index].qty * this.uploadItems[0].price
+        decrease: function(index){
+            if (this.uploadItems[index].qty > 1) {
+                this.uploadItems[index].qty--
             }
-            return sum
         },
 
         subtotal: function(){
             var sum = 0.00;
-            this.uploadItems.forEach(value=>{
-                sum += value.total_amount
-            })
+            // this.total_Amount.forEach(value=>{
+            //     sum += value
+            // })
               
             return sum
         },
