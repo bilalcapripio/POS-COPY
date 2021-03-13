@@ -340,11 +340,22 @@
                 </div>
               <!-----End table-->
               <br><br>
-                  <div class="row">
-                      <div class="col-md-12">
-                        <img src="../assets/Img/top_item.png" alt="" class="img-fluid">
-                      </div>
-                  </div>
+
+              
+            <section class="container-fluid">
+              <div class="card border-top border-primary">
+                <div class="card-head py-3">
+                  <h3 class="text-center">Top 10 Trending Items %</h3>
+                </div>
+                <div class="card-bod py-2">
+                    <pie-chart :data="[['Blueberry', 44], ['Strawberry', 23],['Mango', 33],['Banana', 53],['Avocado', 63],['Kiwi', 23]]"></pie-chart>
+                    <!-- <column-chart :data="[['Sun', 32], ['Mon', 46], ['Tue', 28],['Wed',20],['Thu',10],['Fri',2],['Sat',21]]"></column-chart> -->
+                  <!-- <line-chart :data="chartData"></line-chart> -->
+                </div>
+              </div>
+            </section>
+                  
+
               </div>
               <br>
               <!--/. container-fluid -->  
