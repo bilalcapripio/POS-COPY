@@ -148,75 +148,14 @@
 
 
               <!---Start Third card shop-->
-                <div class="row">
-                  <div class="col-12 col-sm-6 col-md-3 ">
-                    <div class=" mb-3 p-5 bg-danger">
-                      <a href="/Customers">
-                      <span class="float-right"><i class="fa fa-users fa-4x"></i></span>
-                      </a>
-                      <div class="info-box-content">
-                        <span class=" text-xl"> &nbsp;6</span>
-                        <br>
-                        <span class="text-sm"><strong>Customer</strong></span>
-                      </div>    
-                      <!-- /.info-box-content -->
-                    </div>
-                    <!-- /.info-box -->
-                  </div>
+                 <div class="card">
+                   <div class="">
 
-                  <div class="col-12 col-sm-6 col-md-3 ">
-                    <div class=" mb-3 p-5 bg-warning">
-                      <a href="/Suppliers">
-                      <span class="float-right"><i class="fa fa-users fa-4x"></i></span>
-                      </a>
-                      <div class="info-box-content">
-                        <span class=" text-xl"> &nbsp;8</span><br>
-                        <span class="text-sm"><strong>SUPPLIERS</strong></span>
-                      </div>    
-                      <!-- /.info-box-content -->
-                    </div>
-                    <!-- /.info-box -->
-                  </div>
+                   <div class="col-md-7">
 
-                  <div class="col-12 col-sm-6 col-md-3 ">
-                    <div class=" mb-3 p-5 bg-primary">
-                      <a href="/Purchases">
-                      <span class="float-right"><i class="fa fa-users fa-4x"></i></span>
-                      </a>
-                      <div class="info-box-content">
-                        <span class=" text-xl"> &nbsp;10</span><br>
-                        <span class="text-sm"><strong>Purchase</strong></span>
-                      </div>    
-                      <!-- /.info-box-content -->
-                    </div>
-                    <!-- /.info-box -->
-                  </div>
-
-                  <div class="col-12 col-sm-6 col-md-3 ">
-                    <div class=" mb-3 p-5 bg-success">
-                      <a href="/Sales">
-                      <span class="float-right"><i class="fa fa-users fa-4x"></i></span>
-                      </a>
-                      <div class="info-box-content">
-                        <span class=" text-xl"> &nbsp;37</span><br>
-                        <span class="text-sm"><strong>SALES</strong></span>
-                      </div>    
-                      <!-- /.info-box-content -->
-                      <div class="view">
-                          <div class="row border">
-                                <div class="col-md-12">
-                                  <h1>View more</h1>
-                                </div>
-                          </div>
-                      </div>
-                        
-                    </div>
-                  
-                    <!-- /.info-box -->
-                  </div>
-
-                  <!-- /.col -->
-                </div>
+                   </div>
+                   </div>
+                 </div>
                 <!-- /.row -->
                 <!---End Third card shop-->
 
