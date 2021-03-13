@@ -193,7 +193,7 @@
                                   <h4 class="px-2 font-weight-light">PURCHASE & SALES BAR CHART</h4>
                                 </div>
                                 <div class="card-body">
-                                  <column-chart :data="[['January', 32], ['February', 46], ['March', 28],['April',20],['May',10],['June',2],['July',21]]"></column-chart>
+                                  <column-chart :data="[['January', 32], ['February', 46], ['March', 28],['April',20],['May',10],['June',2],['July',21],['August',21],['September',21]]"></column-chart>
                                 </div>
                               </div>
                             </div>
