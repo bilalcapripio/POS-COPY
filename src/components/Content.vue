@@ -147,14 +147,40 @@
                 <!---end Second card shop-->
                       <!---Start Third card shop-->
                       <div class="card-group p-2">
-                        <div class="card m-2">
+                        <div class="card m-2 bg-danger">
                           <img class="card-img-top" src="../assets/Img/cus.png" alt="Card image cap">
                           <div class="card-body">
-                            <p class="text-bold lead"> <span class="font-bold">6</span> CUSTOMERS</p>
+                            <p class="text-bold lead"> <span class="border px-2 rounded">6</span> CUSTOMERS</p>
                             <p class="card-text">This is a  card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <a href="/Customer"><button class="btn btn-danger">View more</button></a>
+                            <a href="/Customers"><button class="btn btn-danger border">View more</button></a>
                           </div>
-                        </div>                        
+                        </div>
+                        <div class="card m-2 bg-info">
+                          <img class="card-img-top" src="../assets/Img/cus2.png" alt="Card image cap">
+                          <div class="card-body">
+                            <p class="text-bold lead"> <span class="border px-2 rounded">8</span> SUPPLIERS</p>
+                            <p class="card-text">This is a  card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <a href="/Suppliers"><button class="btn btn-info border">View more</button></a>
+                          </div>
+                        </div>
+                        <div class="card m-2 bg-primary">
+                          <img class="card-img-top" src="../assets/Img/cus3.png" alt="Card image cap">
+                          <div class="card-body">
+                            <p class="text-bold lead"> <span class="border px-2 rounded">10</span> PURCHASE INVOICE</p>
+                            <p class="card-text">This is a  card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <a href="/Purchases"><button class="btn btn-primary border">View more</button></a>
+                          </div>
+                        </div>
+                        <div class="card m-2 bg-success">
+                          <img class="card-img-top" src="../assets/Img/cus4.png" alt="Card image cap">
+                          <div class="card-body">
+                            <p class="text-bold lead"> <span class="border px-2 rounded">35</span> SALES INVOICE</p>
+                            <p class="card-text">This is a  card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <a href="/Sales "><button class="btn btn-success border">View more</button></a>
+                          </div>
+                        </div>
+                      
+                        
                       </div>
                           <!-- /.row -->
                           <!---End Third card shop-->
