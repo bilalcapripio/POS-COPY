@@ -145,64 +145,89 @@
                 </div>
                 <!-- /.row -->
                 <!---end Second card shop-->
+                      <!---Start Third card shop-->
+                      <div class="card-group p-2">
+                        <div class="card m-2">
+                          <img class="card-img-top" src="../assets/Img/cus.png" alt="Card image cap">
+                          <div class="card-body">
+                            <p class="py-2" style="font-size:2rem;"> <span class="font-bold">6</span> CUSTOMERS</p>
+                            <p class="card-text">This is a  card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <a href="/Customer"><button class="btn btn-danger">View more</button></a>
+                          </div>
+                        </div>
+                        <div class="card m-2">
+                          <img class="card-img-top" src="../assets/Img/cus.png" alt="Card image cap">
+                          <div class="card-body">
+                            <h5 class="card-title">Customer</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <a href="/Customer"><button class="btn btn-danger">View more</button></a>
+                          </div>
+                        </div>
+                        <div class="card m-2">
+                          <img class="card-img-top" src="../assets/Img/cus.png" alt="Card image cap">
+                          <div class="card-body">
+                            <h5 class="card-title">Customer</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <a href="/Customer"><button class="btn btn-danger">View more</button></a>
+                          </div>
+                        </div>
+                        <div class="card m-2">
+                          <img class="card-img-top" src="../assets/Img/cus.png" alt="Card image cap">
+                          <div class="card-body">
+                            <h5 class="card-title">Customer</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <a href="/Customer"><button class="btn btn-danger">View more</button></a>
+                          </div>
+                        </div>
+                        
+                      </div>
+                          <!-- /.row -->
+                          <!---End Third card shop-->
 
-
-              <!---Start Third card shop-->
-                 <div class="card">
-                   <div class="">
-
-                   <div class="col-md-7">
-
-                   </div>
-                   </div>
-                 </div>
-                <!-- /.row -->
-                <!---End Third card shop-->
-
-                <!-----Start Graph------->
-                <div class="row">
-                  <div class="col-md-8 mt-4">
-                    <img src="../assets/Img/bar.png" alt="" class="img-fluid">
-                  </div>
-                    <!-- /.card -->
-                  <div class="col-md-4">
-                    <div class="box-body table-responsive">   
-                      <table class="table table-bordered table-responsive">
-                        <tbody><tr class="bg-blue">
-                          <td>Sl.No</td>
-                          <td>Item Name</td>
-                          <td>Item Sales Price</td>
-                        </tr>
-                        </tbody><tbody>
-                        <tr>
-                          <td>1</td>
-                          <td>Apple Earpods</td>
-                          <td>₦  13,200.00</td>
-                        </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>iPhone 11</td>
-                          <td>₦  115,500.00</td>
-                        </tr><tr>
-                          <td>3</td>
-                          <td>Redmi Pro 7 Mobile</td>
-                          <td>₦  11,000.00</td>
-                        </tr><tr>
-                          <td>4</td>
-                          <td>Lifebuoy</td>
-                          <td>₦  55.00</td>
-                        </tr><tr>
-                          <td>5</td>
-                          <td>Mysore Sandal Soap</td>
-                          <td>₦  132.00</td>
-                        </tr></tbody>
-                      <tfoot>
-                      <tr>
-                        <td colspan="3" class="text-center"><a href="#" class="uppercase">View All</a></td>
-                      </tr>
-                    </tfoot>
-              </table>
-            </div>
+                          <!-----Start Graph------->
+                          <div class="row">
+                            <div class="col-md-8 mt-4">
+                              <img src="../assets/Img/bar.png" alt="" class="img-fluid">
+                            </div>
+                              <!-- /.card -->
+                            <div class="col-md-4">
+                              <div class="box-body table-responsive">   
+                                <table class="table table-bordered table-responsive">
+                                  <tbody><tr class="bg-blue">
+                                    <td>Sl.No</td>
+                                    <td>Item Name</td>
+                                    <td>Item Sales Price</td>
+                                  </tr>
+                                  </tbody><tbody>
+                                  <tr>
+                                    <td>1</td>
+                                    <td>Apple Earpods</td>
+                                    <td>₦  13,200.00</td>
+                                  </tr>
+                                  <tr>
+                                    <td>2</td>
+                                    <td>iPhone 11</td>
+                                    <td>₦  115,500.00</td>
+                                  </tr><tr>
+                                    <td>3</td>
+                                    <td>Redmi Pro 7 Mobile</td>
+                                    <td>₦  11,000.00</td>
+                                  </tr><tr>
+                                    <td>4</td>
+                                    <td>Lifebuoy</td>
+                                    <td>₦  55.00</td>
+                                  </tr><tr>
+                                    <td>5</td>
+                                    <td>Mysore Sandal Soap</td>
+                                    <td>₦  132.00</td>
+                                  </tr></tbody>
+                                <tfoot>
+                                <tr>
+                                  <td colspan="3" class="text-center"><a href="#" class="uppercase">View All</a></td>
+                                </tr>
+                              </tfoot>
+                        </table>
+                      </div>
                     <!-- /.card -->
                   </div>
                   <!-- /.col -->
