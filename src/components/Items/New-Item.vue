@@ -166,7 +166,7 @@
                                                     <input type="text" class="form-control" v-model="posts.availableQuantity" id="new_opening_stock" name="new_opening_stock" placeholder="-/+" required>
                                                 </div>
                                                 </div>
-                                                <button class="btn btn-success" @click="Redirects()">Save</button>
+                                                <button class="btn btn-success">Save</button>
                                                 &nbsp;
                                                 <button class="btn btn-warning">Close</button>
                                                 <!-- /row -->
@@ -320,9 +320,9 @@ export default {
                 formdata.append('purchase_price',this.posts.purchasePrice),
                 formdata.append('tax_type',this.posts.taxType),
                 formdata.append('sales_price',this.posts.finalPrice),
-                formdata.append('available_quantity',this.posts.availableQuantity);
-                formdata.append('image',files[0]);
-
+                formdata.append('available_quantity',this.posts.availableQuantity),
+                formdata.append('image',files[0])
+                console.log(files[0]);
                 const config = {
                     headers: {
                         'content-type': 'multipart/form-data'

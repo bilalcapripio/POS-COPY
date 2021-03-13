@@ -24,7 +24,7 @@
                                         <div class="container-fluid bg-light px-3 bg-gray-light">
                                             <hr style="height:2px;border-width:0;color:dodgerblue;background-color:dodgerblue">
                                             <div class="box-body">
-                                                <form action="" @submit="postData" method="post" enctype="multipart/form-data">
+                                                <form @submit.prevent="postData" method="post" enctype="multipart/form-data">
 
                                                 <div class="row">
                                                 <div class="form-group col-md-4">
@@ -99,7 +99,7 @@
                                                 </div>
                                                 <div class="form-group col-md-4">
                                                     <label for="item_image">Select Image</label>
-                                                    <input type="file" name="item_image" id="item_image" ref="image">
+                                                    <input type="file" name="image" id="image" accept="image" v-on:change="onImageChange">
                                                     <span  style="display:block;" class="text-danger">Max Width/Height: 1000px * 1000px &amp; Size: 1MB </span>
                                                 </div>
                                                 </div>
@@ -269,7 +269,11 @@ export default {
         this.editData();
     },
     methods:{
-            calcuPurchasePrice: function(){
+        onImageChange: function(e){
+            console.log(e.target.files[0]);
+            this.image = e.target.files[0];
+        },
+        calcuPurchasePrice: function(){
                 var total ='';
                 if (this.posts.taxType == 'exclusive') {
                     var taxval = this.posts.tax == '' ? 0 : this.posts.tax 
@@ -338,78 +342,34 @@ export default {
             });
         },
 
-        //     postData(e){
-        //         confirm('Do You Wants to Save Record ?')    
-        //         const UpApi ='http://192.168.100.9/Project_Laravel/public/api/item/'+this.posts.id;
-        //         const config = {
-        //             headers: {
-        //                 'content-type': 'multipart/form-data'
-        //             }
-        //         };
-        //         var files = this.$refs.image.files;
-        //         axios.put(UpApi,{
-        //             item_name:this.posts.itemName,
-        //             brand_id:this.posts.brand,
-        //             category_id:this.posts.category,
-        //             unit_id:this.posts.unit,
-        //             sku:this.posts.sku,
-        //             hsn:this.posts.hsn,
-        //             alert_quantity:this.posts.alertQuantity,
-        //             lot_number:this.posts.lotNumber,
-        //             expire_date:this.posts.expire,
-        //             barcode:this.posts.barCode,
-        //             description:this.posts.description,
-        //             tax_id:this.posts.tax,
-        //              purchase_price:this.posts.purchasePrice,
-        //             tax_type:this.posts.taxType,
-        //             sales_price:this.posts.finalPrice,
-        //             available_quantity:this.posts.availableQuantity,
-        //             image:files[0],
-        //         },config)
-        //         // return promise
-        //         .then((res)=>{
-        //             console.log(res);
-        //         })
-        //         // catch error
-        //         .catch(error =>{
-        //             console.log(error)
-        //         });
-        //         // show data [testing]
-        //         console.table(this.posts);
-        //         // submit data without page reload 
-        //         e.preventDefault();
-        // },
-
-            postData: function (e){
-                confirm('Do You Wants to Save Record ?')
-                const formdata = new FormData();
+            postData(e){
+                confirm('Do You Wants to Save Record ?')    
                 const UpApi ='http://192.168.100.9/Project_Laravel/public/api/item/'+this.posts.id;
-                var files = this.$refs.image.files;
-                formdata.append('item_name',this.posts.itemName),
-                formdata.append('brand_id',this.posts.brand),
-                formdata.append('category_id',this.posts.category),
-                formdata.append('unit_id',this.posts.unit),
-                formdata.append('sku',this.posts.sku),
-                formdata.append('hsn',this.posts.hsn),
-                formdata.append('alert_quantity',this.posts.alertQuantity),
-                formdata.append('lot_number',this.posts.lotNumber),
-                formdata.append('expire_date',this.posts.expire),
-                formdata.append('barcode',this.posts.barCode),
-                formdata.append('item_name',this.posts.itemName),
-                formdata.append('description',this.posts.description),
-                formdata.append('tax_id',this.posts.tax),
-                formdata.append('purchase_price',this.posts.purchasePrice),
-                formdata.append('tax_type',this.posts.taxType),
-                formdata.append('sales_price',this.posts.finalPrice),
-                formdata.append('available_quantity',this.posts.availableQuantity);
-                formdata.append('image',files[0]);
-
-                const config = {
-                    headers: {
-                        'content-type': 'multipart/form-data'
-                    }
-                };
-                axios.put(UpApi,formdata,config)
+                // const config = {
+                //     headers: {
+                //         'content-type': 'multipart/form-data'
+                //     }
+                // };
+                // var files = this.$refsupd.image.files;
+                axios.put(UpApi,{
+                    item_name:this.posts.itemName,
+                    brand_id:this.posts.brand,
+                    category_id:this.posts.category,
+                    unit_id:this.posts.unit,
+                    sku:this.posts.sku,
+                    hsn:this.posts.hsn,
+                    alert_quantity:this.posts.alertQuantity,
+                    lot_number:this.posts.lotNumber,
+                    expire_date:this.posts.expire,
+                    barcode:this.posts.barCode,
+                    description:this.posts.description,
+                    tax_id:this.posts.tax,
+                    purchase_price:this.posts.purchasePrice,
+                    tax_type:this.posts.taxType,
+                    sales_price:this.posts.finalPrice,
+                    available_quantity:this.posts.availableQuantity,
+                    updimage:this.image.name,
+                })
                 // return promise
                 .then((res)=>{
                     console.log(res);
@@ -422,7 +382,52 @@ export default {
                 console.table(this.posts);
                 // submit data without page reload 
                 e.preventDefault();
-            },
+        },
+
+            // postData: function (e){
+            //     confirm('Do You Wants to Save Record ?')
+            //     const formdata = new FormData();
+            //     const UpApi ='http://192.168.100.9/Project_Laravel/public/api/item/'+this.posts.id;
+            //     // var files = this.$refs.updimage.files;
+            //     // console.log(files);
+            //     formdata.append('item_name',this.posts.itemName),
+            //     formdata.append('brand_id',this.posts.brand),
+            //     formdata.append('category_id',this.posts.category),
+            //     formdata.append('unit_id',this.posts.unit),
+            //     formdata.append('sku',this.posts.sku),
+            //     formdata.append('hsn',this.posts.hsn),
+            //     formdata.append('alert_quantity',this.posts.alertQuantity),
+            //     formdata.append('lot_number',this.posts.lotNumber),
+            //     formdata.append('expire_date',this.posts.expire),
+            //     formdata.append('barcode',this.posts.barCode),
+            //     formdata.append('item_name',this.posts.itemName),
+            //     formdata.append('description',this.posts.description),
+            //     formdata.append('tax_id',this.posts.tax),
+            //     formdata.append('purchase_price',this.posts.purchasePrice),
+            //     formdata.append('tax_type',this.posts.taxType),
+            //     formdata.append('sales_price',this.posts.finalPrice),
+            //     formdata.append('available_quantity',this.posts.availableQuantity),
+            //     formdata.append('updimage',this.image),
+            //     console.log(this.image.name)
+            //     const config = {
+            //         headers: {
+            //             'content-type': 'multipart/form-data'
+            //         }
+            //     };
+            //     axios.put(UpApi,formdata,config)
+            //     // return promise
+            //     .then((res)=>{
+            //         console.log(res);
+            //     })
+            //     // catch error
+            //     .catch(error =>{
+            //         console.log(error)
+            //     });
+            //     // show data [testing]
+            //     console.table(UpApi);
+            //     // submit data without page reload 
+            //     e.preventDefault();
+            // },
             getUnitData: function(){
                 axios.get("http://192.168.100.9/Project_Laravel/public/api/unit")
                 // return promise

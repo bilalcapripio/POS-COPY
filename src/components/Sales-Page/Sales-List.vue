@@ -90,55 +90,25 @@
                                                 </div>
                                                 <hr>
                                                 <div class="row">
-                                                    <div class="col-sm-12">
-                                                        <div class="pull-left">
-                                                            <div class="dataTables_length" id="example2_length">
-                                                                <label>Show
-                                                                    <select name="example2_length" aria-controls="example2" class="form-control input-sm">
-                                                                        <option value="10">10</option>
-                                                                        <option value="25">25</option>
-                                                                        <option value="50">50</option>
-                                                                        <option value="100">100</option>
-                                                                    </select>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="pull-right">
-                                                                <div id="example2_filter" class="dataTables_filter">
-                                                            <label class="mt-4">
-                                                                <input type="search" class="form-control input-sm" placeholder="Search" aria-controls="example2">
-                                                            </label>
-                                                            </div>
-                                                            <div id="example2_processing" class="dataTables_processing panel panel-default" style="display: none;"></div>
-                                                        </div>
-                                                        <div class="pull-right margin-left-10 ">
-                                                            <div class="dt-buttons btn-group mt-4 mr-2">              
-                                                                <button  class="btn btn-default buttons-copy buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
-                                                                        <span>Copy</span>
-                                                                </button> 
-                                                                <button class="btn btn-default buttons-excel buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
-                                                                    <span>Excel</span>
-                                                                </button>
-                                                                <button class="btn btn-default buttons-pdf buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
-                                                                        <span>PDF</span>
-                                                                </button> 
-                                                                <button class="btn btn-default buttons-print bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
-                                                                        <span>Print</span>
-                                                                </button>
-                                                                <button  class="btn btn-default buttons-csv buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
-                                                                        <span>CSV</span>
-                                                                </button> 
-                                                                <!-- <button class="btn btn-default buttons-collection buttons-colvis bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button" aria-haspopup="true">
-                                                                        <span>Columns</span>
-                                                                </button>  -->
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    <div class="col-sm-12"><div class="pull-left">
+                                                    <div class="dataTables_length" id="example2_length">
+                                                    <label>Show <select name="example2_length" aria-controls="example2" class="form-control input-sm">
+                                                    <option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select></label></div></div><div class="pull-right"><div id="example2_filter" class="dataTables_filter">
+                                                    <label class="mt-4">
+                                                    <input type="search" class="form-control input-sm" placeholder="Search" aria-controls="example2">
+                                                    </label>
+                                                    </div><div id="example2_processing" class="dataTables_processing panel panel-default" style="display: none;"></div></div><div class="pull-right margin-left-10 ">
+                                                    <div class="dt-buttons btn-group mt-4 mr-2">              
+                                                    <button class="btn btn-default bg-red color-palette btn-flat hidden delete_btn pull-left" tabindex="0" aria-controls="example2" type="button">
+                                                    <span>Delete</span></button> <button class="btn btn-default buttons-copy buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Copy</span></button> <button class="btn btn-default buttons-excel buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Excel</span></button> <button class="btn btn-default buttons-pdf buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>PDF</span></button> <button class="btn btn-default buttons-print bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button"><span>Print</span></button> <button class="btn btn-default buttons-csv buttons-html5 bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button">
+                                                    <span>CSV</span></button> 
+                                                    <button class="btn btn-default buttons-collection buttons-colvis bg-teal color-palette btn-flat" tabindex="0" aria-controls="example2" type="button" aria-haspopup="true"><span>Columns</span></button> 
+                                                    </div></div></div>
                                                 </div>
                                             </div>
                                             <div class="card-body">
                                                 <div class="box-body">
-                                                    <table id="example2"  class="table table-bordered table-striped dataTable dtr-inline" width="100%" role="grid"  style="width: 100%;">
+                                                    <table id="example2" class="table table-bordered table-striped dataTable dtr-inline" width="100%" role="grid" aria-describedby="example2_info" style="width: 100%;">
                                                             <thead class="bg-primary ">
                                                                 <tr role="row">
                                                                         <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" style="width: 70px;" aria-label="Purchase Date: activate to sort column ascending">Purchase Date</th>
@@ -154,76 +124,82 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                                <tr role="row" >
-                                                                    <td>11-02-2021</td>
-                                                                        <td>PU0018
-                                                                            <span class="label label-danger" style="cursor:pointer">
-                                                                                <i class="fa fa-fw fa-undo"></i>Return Raised
-                                                                            </span>
-                                                                        </td>
-                                                                        <td>Received</td>
-                                                                        <td></td>
-                                                                        <td>Glenn M</td>
-                                                                        <td>1,000.00</td>
-                                                                        <td>0.00</td>
-                                                                        <td>1,000.00</td>
-                                                                        <td><span class="label label-danger" style="cursor:pointer">Unpaid</span></td>
-                                                                        <td>Admin
 
-                                                                        </td>
-                                                                    <td>
-                                                                        <div class="btn-group" title="View Account">
-                                                                                <a class="btn btn-primary btn-o dropdown-toggle" data-toggle="dropdown" href="#">
-                                                                                    Action <span class="caret"></span>
-                                                                                </a>
-                                                                                <ul role="menu" class="dropdown-menu dropdown-light pull-right">
-                                                                                    <li>
-                                                                                        <a  href="#"><i class="fa fa-fw fa-eye text-blue"></i>View Purchase
+                                                                <tr role="row" v-for="data in saleData" v-bind:key="data.id">
+                                                                        <td>{{data.sales_date}}</td>
+                                                                            <td>{{data.sales_code}}
+                                                                                <span class="label label-danger" style="cursor:pointer">
+                                                                                    <i class="fa fa-fw fa-undo"></i>Return Raised
+                                                                                </span>
+                                                                            </td>
+                                                                            <td>{{data.sales_status}}</td>
+                                                                                <td>{{data.reference_no}}</td>
+                                                                                <td>{{data.customer_name}}</td>
+                                                                                <td>{{data.total}}</td>
+                                                                                <td>{{data.paid_payment}}</td>
+                                                                                <td>{{data.due}}</td>
+                                                                                <td>
+                                                                                    <span class="badge badge-success" style="cursor:pointer" v-if="data.total == data.paid_payment">
+                                                                                        Paid
+                                                                                    </span>
+                                                                                    <span class="badge badge-danger" style="cursor:pointer" v-else-if="data.paid_payment == 0">
+                                                                                        Unpaid
+                                                                                    </span>
+                                                                                    <span class="badge badge-warning" style="cursor:pointer" v-else>
+                                                                                        Partial
+                                                                                    </span>
+                                                                                </td>
+                                                                                <td>{{data.created_by}}</td>
+                                                                            <td>
+                                                                                <div class="btn-group" title="View Account">
+                                                                                        <a class="btn btn-primary btn-o dropdown-toggle" data-toggle="dropdown" href="#">
+                                                                                            Action <span class="caret"></span>
                                                                                         </a>
-                                                                                    </li>
-                                                                                    <li>
-                                                                                        <a  href="#">
-                                                                                            <i class="fa fa-fw fa-edit text-blue"></i>Edit
-                                                                                        </a>
-                                                                                    </li>
-                                                                                    <li>
-                                                                                        <a  class="pointer" >
-                                                                                            <i class="fa fa-fw fa-money text-blue"></i>View Payments
-                                                                                        </a>
-                                                                                    </li>
-                                                                                    
-                                                                                    <li>
-                                                                                        <a  class="pointer">
-                                                                                            <i class="fa fa-fw  fa-hourglass-half text-blue"></i>Pay Now
-                                                                                        </a>
-                                                                                    </li>
-                                                                                    <li>
-                                                                                        <a  target="#" href="#">
-                                                                                            <i class="fa fa-fw fa-print text-blue"></i>Print
-                                                                                        </a>
-                                                                                    </li>
-                                                                                    <li>
-                                                                                        <a target="#" href="#">
-                                                                                            <i class="fa fa-fw fa-file-pdf-o text-blue"></i>PDF
-                                                                                        </a>
-                                                                                    </li>
-                                                                                    <li>
-                                                                                        <a  href="#">
-                                                                                            <i class="fa fa-fw fa-undo text-blue"></i>Purchase Return
-                                                                                        </a>
-                                                                                    </li>
-                                                                                    <li>
-                                                                                        <a style="cursor:pointer"  >
-                                                                                            <i class="fa fa-fw fa-trash text-red"></i>Delete
-                                                                                        </a>
-                                                                                    </li>
-                                                                                </ul>
-                                                                        </div>
-                                                                    </td>
+                                                                                        <ul role="menu" class="dropdown-menu dropdown-light pull-right">
+                                                                                            <li>
+                                                                                                <a title="View Invoice" href="#"><i class="fa fa-fw fa-eye text-blue"></i>View Purchase
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <a title="Update Record ?" href="#">
+                                                                                                    <i class="fa fa-fw fa-edit text-blue"></i>Edit
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <a title="Pay" class="pointer" >
+                                                                                                    <i class="fa fa-fw fa-money text-blue"></i>View Payments
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <a title="Pay" class="pointer">
+                                                                                                    <i class="fa fa-fw  fa-hourglass-half text-blue"></i>Pay Now
+                                                                                                </a>
+                                                                                            </li><li>
+                                                                                                <a title="Update Record ?" target="_blank" href="#">
+                                                                                                    <i class="fa fa-fw fa-print text-blue"></i>Print
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <a title="Update Record ?" target="_blank" href="#">
+                                                                                                    <i class="fa fa-fw fa-file-pdf-o text-blue"></i>PDF
+                                                                                                </a>
+                                                                                            </li><li>
+                                                                                                <a title="Purchase Return" href="#">
+                                                                                                    <i class="fa fa-fw fa-undo text-blue"></i>Purchase Return
+                                                                                                </a>
+                                                                                            </li><li>
+                                                                                                <a style="cursor:pointer" title="Delete Record ?" >
+                                                                                                    <i class="fa fa-fw fa-trash text-red"></i>Delete
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            
+                                                                                        </ul>
+                                                                                </div>
+                                                                            </td>
                                                                 </tr>
                                                             </tbody>        
                                                     </table>
-                                                    <!-- <div class="next d-flex justify-content-between align-items-center">
+                                                    <div class="next d-flex justify-content-between align-items-center">
                                                         <div   role="status" aria-live="polite">Showing 1 to 10 of 22 entries</div>
                                                         <nav aria-label="Page navigation example">
                                                             <ul class="pagination">
@@ -233,8 +209,8 @@
                                                                 <li class="page-item"><a class="page-link" href="#">3</a></li>
                                                                 <li class="page-item"><a class="page-link" href="#">Next</a></li>
                                                             </ul>
-                                                        </nav>
-                                                    </div>                               -->
+                                                            </nav>
+                                                    </div>                              
                                                 </div>
                                             </div>
                                     </div>
@@ -258,26 +234,39 @@
 <script>
 
 
-    import Navbar from  '../../components/Navbar.vue'
-    import Sidebar from '../../components/Sidebar.vue'
-    import Footer from  '../../components/Footer.vue'
-
+import Navbar from  '../../components/Navbar.vue'
+import Sidebar from '../../components/Sidebar.vue'
+import Footer from  '../../components/Footer.vue'
+import axios from 'axios'
 export default {
     name:'',
+    data(){
+        return{
+            saleData:[]
+        }
+    },
     components:{
         Navbar,
         Sidebar,
         Footer
     },
-    data(){
-        return{
-
-        }
+    mounted(){
+        this.getSalesData()
     },
     methods:{
-      
-  }
-    
+        getSalesData: function(){
+            axios.get("http://192.168.100.9/Project_Laravel/public/api/sale")
+                // return promise
+            .then((res)=>{
+                this.saleData=res.data;
+                console.log(res.data);
+            })
+                // catch error
+            .catch(error =>{
+                console.log(error)
+            });
+        },
+    }
 
 }
 </script>
