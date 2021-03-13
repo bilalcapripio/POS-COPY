@@ -150,36 +150,11 @@
                         <div class="card m-2">
                           <img class="card-img-top" src="../assets/Img/cus.png" alt="Card image cap">
                           <div class="card-body">
-                            <p class="py-2" style="font-size:2rem;"> <span class="font-bold">6</span> CUSTOMERS</p>
+                            <p class="text-bold lead"> <span class="font-bold">6</span> CUSTOMERS</p>
                             <p class="card-text">This is a  card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                             <a href="/Customer"><button class="btn btn-danger">View more</button></a>
                           </div>
-                        </div>
-                        <div class="card m-2">
-                          <img class="card-img-top" src="../assets/Img/cus.png" alt="Card image cap">
-                          <div class="card-body">
-                            <h5 class="card-title">Customer</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <a href="/Customer"><button class="btn btn-danger">View more</button></a>
-                          </div>
-                        </div>
-                        <div class="card m-2">
-                          <img class="card-img-top" src="../assets/Img/cus.png" alt="Card image cap">
-                          <div class="card-body">
-                            <h5 class="card-title">Customer</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <a href="/Customer"><button class="btn btn-danger">View more</button></a>
-                          </div>
-                        </div>
-                        <div class="card m-2">
-                          <img class="card-img-top" src="../assets/Img/cus.png" alt="Card image cap">
-                          <div class="card-body">
-                            <h5 class="card-title">Customer</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <a href="/Customer"><button class="btn btn-danger">View more</button></a>
-                          </div>
-                        </div>
-                        
+                        </div>                        
                       </div>
                           <!-- /.row -->
                           <!---End Third card shop-->
