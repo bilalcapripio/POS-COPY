@@ -180,10 +180,12 @@
 
                   <div class="col-12 col-sm-6 col-md-3 ">
                     <div class=" mb-3 p-5 bg-primary">
+                      <a href="/Purchase-List">
                       <span class="float-right"><i class="fa fa-users fa-4x"></i></span>
+                      </a>
                       <div class="info-box-content">
                         <span class=" text-xl"> &nbsp;10</span><br>
-                        <span class="text-sm"><strong>INVOICE</strong></span>
+                        <span class="text-sm"><strong>Purchase</strong></span>
                       </div>    
                       <!-- /.info-box-content -->
                     </div>
