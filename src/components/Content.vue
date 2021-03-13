@@ -151,9 +151,12 @@
                 <div class="row">
                   <div class="col-12 col-sm-6 col-md-3 ">
                     <div class=" mb-3 p-5 bg-danger">
+                      <a href="/Customers">
                       <span class="float-right"><i class="fa fa-users fa-4x"></i></span>
+                      </a>
                       <div class="info-box-content">
-                        <span class=" text-xl"> &nbsp;6</span><br>
+                        <span class=" text-xl"> &nbsp;6</span>
+                        <br>
                         <span class="text-sm"><strong>Customer</strong></span>
                       </div>    
                       <!-- /.info-box-content -->
@@ -163,7 +166,9 @@
 
                   <div class="col-12 col-sm-6 col-md-3 ">
                     <div class=" mb-3 p-5 bg-warning">
+                      <a href="/Suppliers">
                       <span class="float-right"><i class="fa fa-users fa-4x"></i></span>
+                      </a>
                       <div class="info-box-content">
                         <span class=" text-xl"> &nbsp;8</span><br>
                         <span class="text-sm"><strong>SUPPLIERS</strong></span>
